@@ -1,7 +1,5 @@
 ﻿using Project.Interface;
-using Project.Object;
 using Project.Presenter;
-using Project.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,15 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project
+namespace Project.View
 {
-    public partial class Login : Form, ILogin
+    public partial class Signup : Form , ISignup
     {
-
         LoginSignupPresenter presenter;
 
-  
-        public Login()
+
+        public Signup()
         {
             InitializeComponent();
             presenter = new LoginSignupPresenter(this);
@@ -31,20 +28,23 @@ namespace Project
             get { return textBox1.Text; }
         }
 
-        public string password { get { return textBox2.Text; }
+        public string password
+        {
+            get { return textBox2.Text; }
         }
 
         public Form currentForm { get { return this; } }
 
-        private void button1_Click(object sender, EventArgs e)
+        public string name
         {
-            presenter.gotoSignup();
+            get { return textBox3.Text; }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+         private void button2_Click(object sender, EventArgs e)
         {
-            presenter.startLogin();
-     
+            presenter.signup();
         }
     }
 }

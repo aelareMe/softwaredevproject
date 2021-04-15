@@ -80,8 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbConnect\DbConnect.cs" />
-    <Compile Include="Interface\ILoginSignup.cs" />
+    <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Interface\IMainPage.cs" />
+    <Compile Include="Interface\ISignup.cs" />
     <Compile Include="Model\LoginSginupModel.cs" />
     <Compile Include="Object\UserInfObject..cs" />
     <Compile Include="Presenter\LoginSignupPresenter.cs" />
@@ -100,6 +101,12 @@
     <Compile Include="View\MainPage..Designer.cs">
       <DependentUpon>MainPage..cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Signup.Designer.cs">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="View\MainPage..resx">
       <DependentUpon>MainPage..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
