@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Project.Interface
 {
-    interface ILoginSignup
+    interface ILogin
     {
         String username { get; }
         String password { get; }

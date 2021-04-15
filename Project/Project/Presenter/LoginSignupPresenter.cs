@@ -15,13 +15,20 @@ namespace Project.Presenter
     class LoginSignupPresenter
     {
 
-        ILoginSignup iLogin;
+        ILogin iLogin;
+        ISignup iSignup;
 
         LoginSginupModel model = new LoginSginupModel();
 
-        UserInfObject obj = new UserInfObject("","");
-        public LoginSignupPresenter(ILoginSignup iLogin) {
+        UserInfObject obj = new UserInfObject("","","");
+        public LoginSignupPresenter(ILogin iLogin) {
             this.iLogin = iLogin;
+        }
+
+        public LoginSignupPresenter(ISignup iSignup,ILogin iLogin= null)
+        {
+            this.iLogin = iLogin;
+            this.iSignup = iSignup;
         }
 
 
@@ -32,13 +39,14 @@ namespace Project.Presenter
             if (dt.Rows.Count > 0)
             {
 
-                obj = new UserInfObject(dt.Rows[0]["user_name"].ToString(), dt.Rows[0]["user_name"].ToString());
+                obj = new UserInfObject(dt.Rows[0]["user_name"].ToString(),
+                    dt.Rows[0]["user_name"].ToString() , dt.Rows[0]["name"].ToString());
                 MessageBox.Show("Login Success");
 
 
                 MainPage form = new MainPage();
                 MainPagePresenter pres = new MainPagePresenter();
-                form.txbName = obj.getUserName();
+                form.txbName = obj.getName();
                 form.Show();
                 iLogin.currentForm.Hide();
 
@@ -51,15 +59,29 @@ namespace Project.Presenter
 
         public void signup() {
 
-            DataTable signup = model.signup(iLogin.username, iLogin.password);
+            DataTable signup = model.signup(iSignup.username,
+                iSignup.password , iSignup.name);
 
             if (signup.Rows.Count>0)
             {
                 MessageBox.Show("Success Signup");
+                gotoLogin();
             }
-            else {
-                MessageBox.Show("Signup Failed Username Already Taken");
-            }
+    
+        }
+
+        public void gotoSignup() {
+            Signup form = new Signup();
+            MainPagePresenter pres = new MainPagePresenter();
+            form.Show();
+            iLogin.currentForm.Hide();
+        }
+
+        public void gotoLogin() {
+            Login form = new Login();
+            MainPagePresenter pres = new MainPagePresenter();
+            form.Show();
+            iSignup.currentForm.Hide();
         }
 
     }
