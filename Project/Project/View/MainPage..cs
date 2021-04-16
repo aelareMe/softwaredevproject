@@ -30,5 +30,11 @@ namespace Project.View
         }
 
         public String txbName { set { lblName.Text = value; } }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Add_Subject open_add_subject = new Add_Subject();
+            open_add_subject.Show();
+        }
     }
 }
