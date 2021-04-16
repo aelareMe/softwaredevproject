@@ -79,14 +79,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CelearningTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DbConnect\DbConnect.cs" />
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Interface\IMainPage.cs" />
     <Compile Include="Interface\ISignup.cs" />
     <Compile Include="Model\LoginSginupModel.cs" />
+    <Compile Include="MyRectangle.cs" />
     <Compile Include="Object\UserInfObject..cs" />
     <Compile Include="Presenter\LoginSignupPresenter.cs" />
     <Compile Include="Presenter\MainPagePresenter.cs" />
+    <Compile Include="Trans.cs" />
+    <Compile Include="TrayIco.cs" />
+    <Compile Include="View\Adding_Subject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adding_Subject.Designer.cs">
+      <DependentUpon>Adding_Subject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_Subject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Subject.Designer.cs">
+      <DependentUpon>Add_Subject.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +119,12 @@
     <Compile Include="View\MainPage..Designer.cs">
       <DependentUpon>MainPage..cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adding_Subject.resx">
+      <DependentUpon>Adding_Subject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Subject.resx">
+      <DependentUpon>Add_Subject.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="View\Signup.cs">
       <SubType>Form</SubType>
     </Compile>
