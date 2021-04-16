@@ -10,14 +10,16 @@ namespace Project.Object
     {
         String username = "";
         String password = "";
-        public UserInfObject(String username, String password) {
+        String name = "";
+        public UserInfObject(String username, String password,String name) {
             this.username = username;
             this.password = password;
+            this.name = name;
         }
 
 
-        public String getUserName() {
-            return username;
+        public String getName() {
+            return name;
         }
     }
 }
