@@ -79,10 +79,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\ActivityScheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ActivityScheduler.Designer.cs">
+      <DependentUpon>ActivityScheduler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEvent.Designer.cs">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="CelearningTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DbConnect\DbConnect.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Interface\IMainPage.cs" />
     <Compile Include="Interface\ISignup.cs" />
@@ -119,6 +132,12 @@
     <Compile Include="View\MainPage..Designer.cs">
       <DependentUpon>MainPage..cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ActivityScheduler.resx">
+      <DependentUpon>ActivityScheduler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEvent.resx">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Adding_Subject.resx">
       <DependentUpon>Adding_Subject.cs</DependentUpon>
     </EmbeddedResource>
