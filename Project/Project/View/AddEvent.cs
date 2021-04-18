@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Project.Interface;
+using Project.Object;
+using Project.Presenter;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +17,15 @@ namespace Project
     {
         public Event e1;
         public bool confirm_flag;
-        public AddEvent()
+        SubjectEventScheduler presenter;
+        ISubjectEventScheduler iSubjectEventScheduler;
+        public AddEvent(ISubjectEventScheduler iSubjectEventScheduler)
         {
+            this.iSubjectEventScheduler = iSubjectEventScheduler;
+            presenter = new SubjectEventScheduler(iSubjectEventScheduler);
             InitializeComponent();
+            eventDate.Format = DateTimePickerFormat.Custom;
+            eventDate.CustomFormat = "MM/dd/yyyy hh:mm tt";
         }
 
         private void button2_Click(object sender, EventArgs e) //exit button
@@ -39,6 +48,23 @@ namespace Project
                 return;
             }
 
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            presenter.loadStudyTime();
+            this.Close();
+        }
+
+        private void addEventConfirm_Click(object sender, EventArgs e)
+        {
+     
+            presenter.addEvent(eventDate.Value, eventName.Text.ToString());
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

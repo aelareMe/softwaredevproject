@@ -27,5 +27,11 @@ namespace Project.Presenter
         }
 
 
+        public void showTaskScheduler() {
+            ActSched scheduler = new ActSched(iMainPage.userInfo);
+            scheduler.Show();
+        }
+
+
     }
 }
