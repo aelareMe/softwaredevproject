@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Project.Interface;
+using Project.Object;
+using Project.Presenter;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,20 +13,35 @@ using System.Windows.Forms;
 
 namespace Project.View
 {
-    public partial class Adding_Subject : Form
+    public partial class Adding_Subject : Form,IAddSubject
     {
-        private List<string> Subjects = new List<string>();
-        private Add_Subject add_subject = new Add_Subject();
+
         int PW;
         bool Hided;
-        public Adding_Subject()
+        UserInfObject _userInfObject;
+        AddSubjectPresenter presenter;
+
+        public Adding_Subject(UserInfObject _userInfObject)
         {
             InitializeComponent();
             PW = adding_panel.Height;
             Hided = false;
             //adding_panel.Visible = false;
             adding_panel.Visible = false;
-            show_subjectDetails_panel.Visible = false; 
+            this._userInfObject = _userInfObject;
+            presenter = new AddSubjectPresenter(this,_userInfObject);
+        }
+
+        public string subjectCode
+        {
+            get { return txtSubjectCode.Text; }
+            set { txtSubjectCode.Text = value; }
+
+        }
+        public string subjectDescription
+        {
+            get { return txtSubjectDescription.Text; }
+            set { txtSubjectDescription.Text = value; }
         }
 
         private void Adding_Subject_Load(object sender, EventArgs e)
@@ -84,13 +102,15 @@ namespace Project.View
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            Subjects.Add(subject_code.Text.ToString());
-            subject_code.Text = "";
-            subject_list_view.Items.Add(Subjects.ElementAt(Subjects.Count()-1).ToString(),1);
+            presenter.AddSubject();
             if (Hided) cancel_subjectAdd_btn.Text = "Cancel";
             else cancel_subjectAdd_btn.Text = "Cancel";
             timer1.Start();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

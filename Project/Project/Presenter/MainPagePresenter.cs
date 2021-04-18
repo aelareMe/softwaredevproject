@@ -1,4 +1,6 @@
 ﻿using Project.Interface;
+using Project.Object;
+using Project.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,19 @@ namespace Project.Presenter
 {
     class MainPagePresenter
     {
-     
-        public MainPagePresenter()  {
-       
+        IMainPage iMainPage;
+        public MainPagePresenter(IMainPage iMainPage)  {
+            this.iMainPage = iMainPage;
+
+        }
+
+        public void showAddSubjects() {
+            Add_Subject open_add_subject = new Add_Subject(iMainPage.userInfo);
+            open_add_subject.Show();
+        }
+
+        public UserInfObject getUserObj() {
+            return iMainPage.userInfo;
         }
 
 
