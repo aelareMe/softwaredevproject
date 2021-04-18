@@ -12,15 +12,28 @@ using System.Windows.Forms;
 
 namespace Project.Presenter
 {
-    class LoginSignupPresenter
+    class LoginSignupPresenter:  IMainPage
     {
 
         ILogin iLogin;
         ISignup iSignup;
 
         LoginSginupModel model = new LoginSginupModel();
+    
+        UserInfObject obj = new UserInfObject();
 
-        UserInfObject obj = new UserInfObject("","","");
+        string _name = "";
+
+        public string txbName {
+            set {  _name = obj.getName();
+            }
+
+        }
+        public UserInfObject userInfo {
+            set { obj = value; }
+            get { return obj; }
+        }
+
         public LoginSignupPresenter(ILogin iLogin) {
             this.iLogin = iLogin;
         }
@@ -39,14 +52,13 @@ namespace Project.Presenter
             if (dt.Rows.Count > 0)
             {
 
-                obj = new UserInfObject(dt.Rows[0]["user_name"].ToString(),
-                    dt.Rows[0]["user_name"].ToString() , dt.Rows[0]["name"].ToString());
+                obj = new UserInfObject(true, dt.Rows[0]["user_name"].ToString(),
+                    dt.Rows[0]["user_name"].ToString(), dt.Rows[0]["name"].ToString(),
+                    Int32.Parse(dt.Rows[0]["user_id"].ToString()));
+
                 MessageBox.Show("Login Success");
-
-
-                MainPage form = new MainPage();
-                MainPagePresenter pres = new MainPagePresenter();
-                form.txbName = obj.getName();
+                MainPage form = new MainPage(obj);
+                form.userInfo = obj;
                 form.Show();
                 iLogin.currentForm.Hide();
 
@@ -72,14 +84,12 @@ namespace Project.Presenter
 
         public void gotoSignup() {
             Signup form = new Signup();
-            MainPagePresenter pres = new MainPagePresenter();
             form.Show();
             iLogin.currentForm.Hide();
         }
 
         public void gotoLogin() {
             Login form = new Login();
-            MainPagePresenter pres = new MainPagePresenter();
             form.Show();
             iSignup.currentForm.Hide();
         }

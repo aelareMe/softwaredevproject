@@ -79,12 +79,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="View\StudyHelper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\StudyHelper.Designer.cs">
       <DependentUpon>StudyHelper.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Interface\ISubjectEventScheduler.cs" />
+    <Compile Include="Model\SubjectEventSchedulerModel.cs" />
+    <Compile Include="Presenter\SubjectEventScheduler.cs" />
+
     <Compile Include="View\ActivityScheduler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,13 +107,16 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DbConnect\DbConnect.cs" />
+    <Compile Include="Interface\IAddSubject.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Interface\IMainPage.cs" />
     <Compile Include="Interface\ISignup.cs" />
+    <Compile Include="Model\AddSubjectModel.cs" />
     <Compile Include="Model\LoginSginupModel.cs" />
     <Compile Include="MyRectangle.cs" />
-    <Compile Include="Object\UserInfObject..cs" />
+    <Compile Include="Object\UserInfObject.cs" />
+    <Compile Include="Presenter\AddSubjectPresenter.cs" />
     <Compile Include="Presenter\LoginSignupPresenter.cs" />
     <Compile Include="Presenter\MainPagePresenter.cs" />
     <Compile Include="Trans.cs" />
@@ -132,11 +141,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\MainPage..cs">
+    <Compile Include="View\MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MainPage..Designer.cs">
-      <DependentUpon>MainPage..cs</DependentUpon>
+    <Compile Include="View\MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\StudyHelper.resx">
       <DependentUpon>StudyHelper.cs</DependentUpon>
@@ -171,8 +180,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\MainPage..resx">
-      <DependentUpon>MainPage..cs</DependentUpon>
+    <EmbeddedResource Include="View\MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>

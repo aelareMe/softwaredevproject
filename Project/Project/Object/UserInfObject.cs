@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Project.Object
 {
-    class UserInfObject
+    public class UserInfObject
     {
         private String username = "";
         private String password = "";
         private String name = "";
         private int id ;
         private bool isLoggedIn = false;
-        public UserInfObject(String username, String password,
-            String name, int id = 0,bool isLoggedIn = false) {
+        public UserInfObject(bool isLoggedIn = false,
+            String username = "", String password = "",
+            String name = "", int id = 0) {
             this.username = username;
             this.password = password;
             this.name = name;

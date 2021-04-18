@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project.Object;
+using Project.Presenter;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +15,12 @@ namespace Project.View
     public partial class Add_Subject : Form
     {
         private bool add_subject_btn = false;
-        int PW;
-        bool Hided;
-        public Add_Subject()
+
+        UserInfObject _userInfObject;
+        public Add_Subject(UserInfObject _userInfObject)
         {
             InitializeComponent();
+            this._userInfObject = _userInfObject;
         }
 
         private void celearningTextbox1_Click(object sender, EventArgs e)
@@ -36,10 +39,10 @@ namespace Project.View
         {
             /*Adding_Subject open_add_subject = new Adding_Subject();
             open_add_subject.Show();*/
-            Adding_Subject form = new Adding_Subject();
+            Adding_Subject form = new Adding_Subject(_userInfObject);
             if (add_subject_btn == false)
             {
-                openChildForm(new Adding_Subject());
+                openChildForm(form);
                 add_subject_btn = true;
             }
         }
