@@ -23,7 +23,7 @@ namespace Project.View
             Hided = false;
             //adding_panel.Visible = false;
             adding_panel.Visible = false;
-            show_subjectDetails_panel.Visible = false; 
+ 
         }
 
         private void Adding_Subject_Load(object sender, EventArgs e)

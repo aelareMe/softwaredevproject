@@ -19,7 +19,7 @@ namespace Project.Presenter
         ISignup iSignup;
 
         LoginSginupModel model = new LoginSginupModel();
-
+    
         UserInfObject obj = new UserInfObject("","","");
         public LoginSignupPresenter(ILogin iLogin) {
             this.iLogin = iLogin;
@@ -40,7 +40,8 @@ namespace Project.Presenter
             {
 
                 obj = new UserInfObject(dt.Rows[0]["user_name"].ToString(),
-                    dt.Rows[0]["user_name"].ToString() , dt.Rows[0]["name"].ToString());
+                    dt.Rows[0]["user_name"].ToString() , dt.Rows[0]["name"].ToString(),
+                    Int32.Parse(dt.Rows[0]["id"].ToString()), true);
                 MessageBox.Show("Login Success");
 
 

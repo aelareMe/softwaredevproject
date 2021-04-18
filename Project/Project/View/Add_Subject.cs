@@ -13,8 +13,6 @@ namespace Project.View
     public partial class Add_Subject : Form
     {
         private bool add_subject_btn = false;
-        int PW;
-        bool Hided;
         public Add_Subject()
         {
             InitializeComponent();
