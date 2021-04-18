@@ -33,6 +33,7 @@ namespace Project.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adding_Subject));
             this.panel1 = new System.Windows.Forms.Panel();
             this.adding_panel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cancel_subjectAdd_btn = new System.Windows.Forms.Button();
             this.add_subjectAdd_btn = new System.Windows.Forms.Button();
@@ -40,10 +41,9 @@ namespace Project.View
             this.subject_list_view = new System.Windows.Forms.ListView();
             this.icon_list = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.subject_code = new Project.CelearningTextbox();
+            this.txtSubjectDescription = new Project.CelearningTextbox();
+            this.txtSubjectCode = new Project.CelearningTextbox();
             this.celearningTextbox1 = new Project.CelearningTextbox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.celearningTextbox2 = new Project.CelearningTextbox();
             this.panel1.SuspendLayout();
             this.adding_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,7 +58,7 @@ namespace Project.View
             this.panel1.Controls.Add(this.subject_list_view);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(537, 422);
             this.panel1.TabIndex = 0;
@@ -66,17 +66,29 @@ namespace Project.View
             // adding_panel
             // 
             this.adding_panel.Controls.Add(this.label3);
-            this.adding_panel.Controls.Add(this.celearningTextbox2);
+            this.adding_panel.Controls.Add(this.txtSubjectDescription);
             this.adding_panel.Controls.Add(this.label1);
-            this.adding_panel.Controls.Add(this.subject_code);
+            this.adding_panel.Controls.Add(this.txtSubjectCode);
             this.adding_panel.Controls.Add(this.cancel_subjectAdd_btn);
             this.adding_panel.Controls.Add(this.add_subjectAdd_btn);
             this.adding_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adding_panel.Location = new System.Drawing.Point(0, 47);
-            this.adding_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adding_panel.Margin = new System.Windows.Forms.Padding(4);
             this.adding_panel.Name = "adding_panel";
             this.adding_panel.Size = new System.Drawing.Size(537, 375);
             this.adding_panel.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(36, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 24);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Description:";
             // 
             // label1
             // 
@@ -96,7 +108,7 @@ namespace Project.View
             this.cancel_subjectAdd_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_subjectAdd_btn.ForeColor = System.Drawing.Color.White;
             this.cancel_subjectAdd_btn.Location = new System.Drawing.Point(385, 274);
-            this.cancel_subjectAdd_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancel_subjectAdd_btn.Margin = new System.Windows.Forms.Padding(4);
             this.cancel_subjectAdd_btn.Name = "cancel_subjectAdd_btn";
             this.cancel_subjectAdd_btn.Size = new System.Drawing.Size(143, 63);
             this.cancel_subjectAdd_btn.TabIndex = 13;
@@ -111,7 +123,7 @@ namespace Project.View
             this.add_subjectAdd_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_subjectAdd_btn.ForeColor = System.Drawing.Color.White;
             this.add_subjectAdd_btn.Location = new System.Drawing.Point(235, 274);
-            this.add_subjectAdd_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.add_subjectAdd_btn.Margin = new System.Windows.Forms.Padding(4);
             this.add_subjectAdd_btn.Name = "add_subjectAdd_btn";
             this.add_subjectAdd_btn.Size = new System.Drawing.Size(143, 63);
             this.add_subjectAdd_btn.TabIndex = 12;
@@ -124,11 +136,12 @@ namespace Project.View
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(161, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 53);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // subject_list_view
             // 
@@ -136,7 +149,7 @@ namespace Project.View
             this.subject_list_view.HideSelection = false;
             this.subject_list_view.LargeImageList = this.icon_list;
             this.subject_list_view.Location = new System.Drawing.Point(16, 80);
-            this.subject_list_view.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.subject_list_view.Margin = new System.Windows.Forms.Padding(4);
             this.subject_list_view.Name = "subject_list_view";
             this.subject_list_view.Size = new System.Drawing.Size(504, 326);
             this.subject_list_view.SmallImageList = this.icon_list;
@@ -155,17 +168,29 @@ namespace Project.View
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // subject_code
+            // txtSubjectDescription
             // 
-            this.subject_code.BackColor = System.Drawing.Color.Transparent;
-            this.subject_code.Br = System.Drawing.Color.White;
-            this.subject_code.Font = new System.Drawing.Font("Arial", 12F);
-            this.subject_code.ForeColor = System.Drawing.Color.Black;
-            this.subject_code.Location = new System.Drawing.Point(225, 21);
-            this.subject_code.Margin = new System.Windows.Forms.Padding(4);
-            this.subject_code.Name = "subject_code";
-            this.subject_code.Size = new System.Drawing.Size(293, 41);
-            this.subject_code.TabIndex = 14;
+            this.txtSubjectDescription.BackColor = System.Drawing.Color.Transparent;
+            this.txtSubjectDescription.Br = System.Drawing.Color.White;
+            this.txtSubjectDescription.Font = new System.Drawing.Font("Arial", 12F);
+            this.txtSubjectDescription.ForeColor = System.Drawing.Color.Black;
+            this.txtSubjectDescription.Location = new System.Drawing.Point(225, 90);
+            this.txtSubjectDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSubjectDescription.Name = "txtSubjectDescription";
+            this.txtSubjectDescription.Size = new System.Drawing.Size(293, 41);
+            this.txtSubjectDescription.TabIndex = 23;
+            // 
+            // txtSubjectCode
+            // 
+            this.txtSubjectCode.BackColor = System.Drawing.Color.Transparent;
+            this.txtSubjectCode.Br = System.Drawing.Color.White;
+            this.txtSubjectCode.Font = new System.Drawing.Font("Arial", 12F);
+            this.txtSubjectCode.ForeColor = System.Drawing.Color.Black;
+            this.txtSubjectCode.Location = new System.Drawing.Point(225, 21);
+            this.txtSubjectCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSubjectCode.Name = "txtSubjectCode";
+            this.txtSubjectCode.Size = new System.Drawing.Size(293, 41);
+            this.txtSubjectCode.TabIndex = 14;
             // 
             // celearningTextbox1
             // 
@@ -179,30 +204,6 @@ namespace Project.View
             this.celearningTextbox1.Size = new System.Drawing.Size(293, 41);
             this.celearningTextbox1.TabIndex = 1;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(36, 90);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 24);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Description:";
-            // 
-            // celearningTextbox2
-            // 
-            this.celearningTextbox2.BackColor = System.Drawing.Color.Transparent;
-            this.celearningTextbox2.Br = System.Drawing.Color.White;
-            this.celearningTextbox2.Font = new System.Drawing.Font("Arial", 12F);
-            this.celearningTextbox2.ForeColor = System.Drawing.Color.Black;
-            this.celearningTextbox2.Location = new System.Drawing.Point(225, 90);
-            this.celearningTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.celearningTextbox2.Name = "celearningTextbox2";
-            this.celearningTextbox2.Size = new System.Drawing.Size(293, 41);
-            this.celearningTextbox2.TabIndex = 23;
-            // 
             // Adding_Subject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,7 +211,7 @@ namespace Project.View
             this.ClientSize = new System.Drawing.Size(537, 422);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Adding_Subject";
             this.Text = "Adding_Subject";
             this.Load += new System.EventHandler(this.Adding_Subject_Load);
@@ -233,9 +234,9 @@ namespace Project.View
         private System.Windows.Forms.Button cancel_subjectAdd_btn;
         private System.Windows.Forms.Button add_subjectAdd_btn;
         private System.Windows.Forms.Timer timer1;
-        private CelearningTextbox subject_code;
+        private CelearningTextbox txtSubjectCode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private CelearningTextbox celearningTextbox2;
+        private CelearningTextbox txtSubjectDescription;
     }
 }

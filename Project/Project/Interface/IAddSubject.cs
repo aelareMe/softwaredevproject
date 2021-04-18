@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Project.Interface
 {
-    class IAddSubject
+    interface IAddSubject
     {
-        public string subjectCode { get; set; }
-        public string subjectDescription { get; set; }
+         string subjectCode { get; set; }
+         string subjectDescription { get; set; }
     }
 }

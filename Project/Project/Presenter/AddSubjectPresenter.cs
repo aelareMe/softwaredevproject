@@ -21,7 +21,7 @@ namespace Project.Presenter
             this.userInfo = userInfo;
         }   
 
-        public  void saveToDatabase() {
+        public  void AddSubject() {
 
             DataTable reponse = model.AddSubject(iAddSubject.subjectCode,
                 iAddSubject.subjectDescription, userInfo.getId());

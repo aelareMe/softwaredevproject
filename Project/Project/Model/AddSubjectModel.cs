@@ -17,8 +17,8 @@ namespace Project.Model
         public DataTable AddSubject(string studyName,string desc,int userId)
         {
 
-            string sql = "INSERT INTO subject VALUES('"+ studyName + "' ," +
-                "'"+desc+"', 300 ,"+userId+" ) RETURNING * ";
+            string sql = "INSERT INTO subject ( study_name,study_decription,study_limit,user_id)" +
+                "VALUES('"+ studyName + "' ," +"'"+desc+"', 300 ,"+userId+" ) RETURNING * ";
             DataTable dt = new DataTable();
             trans.OpenConnection();
             trans.startTransaction();

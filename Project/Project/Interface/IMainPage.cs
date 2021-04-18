@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.Object;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Project.Interface
 {
     interface IMainPage
     {
-        String txbName { set; }
+        UserInfObject userInfo { get; set; }
 
     }
 }
