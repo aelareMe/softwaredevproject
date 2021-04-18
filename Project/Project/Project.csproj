@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\StudyHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StudyHelper.Designer.cs">
+      <DependentUpon>StudyHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ActivityScheduler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <Compile Include="View\MainPage..Designer.cs">
       <DependentUpon>MainPage..cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\StudyHelper.resx">
+      <DependentUpon>StudyHelper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ActivityScheduler.resx">
       <DependentUpon>ActivityScheduler.cs</DependentUpon>
     </EmbeddedResource>
