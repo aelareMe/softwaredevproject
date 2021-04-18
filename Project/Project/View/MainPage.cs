@@ -55,5 +55,10 @@ namespace Project.View
             presenter.showAddSubjects();
   
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            presenter.showTaskScheduler();
+        }
     }
 }

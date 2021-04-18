@@ -79,6 +79,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\ISubjectEventScheduler.cs" />
+    <Compile Include="Model\SubjectEventSchedulerModel.cs" />
+    <Compile Include="Presenter\SubjectEventScheduler.cs" />
     <Compile Include="View\ActivityScheduler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +98,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DbConnect\DbConnect.cs" />
-
     <Compile Include="Interface\IAddSubject.cs" />
-
     <Compile Include="Event.cs" />
-
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Interface\IMainPage.cs" />
     <Compile Include="Interface\ISignup.cs" />
