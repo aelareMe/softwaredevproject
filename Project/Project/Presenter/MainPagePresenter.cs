@@ -32,6 +32,11 @@ namespace Project.Presenter
             scheduler.Show();
         }
 
+        public void showStudyHelper() {
+            StudyHelper studyHelper = new StudyHelper();
+            studyHelper.Show();
+        }
+
 
     }
 }
