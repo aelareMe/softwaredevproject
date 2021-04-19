@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Project.Interface
 {
-    interface ILoginSignup
+    interface IAddSubject
     {
-        String username { get; }
-        String password { get; }
-
-        Form currentForm { get; }
+         string subjectCode { get; set; }
+         string subjectDescription { get; set; }
     }
 }

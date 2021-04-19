@@ -12,16 +12,36 @@ using System.Windows.Forms;
 
 namespace Project.Presenter
 {
-    class LoginSignupPresenter
+    class LoginSignupPresenter:  IMainPage
     {
 
-        ILoginSignup iLogin;
+        ILogin iLogin;
+        ISignup iSignup;
 
         LoginSginupModel model = new LoginSginupModel();
+    
+        UserInfObject obj = new UserInfObject();
 
-        UserInfObject obj = new UserInfObject("","");
-        public LoginSignupPresenter(ILoginSignup iLogin) {
+        string _name = "";
+
+        public string txbName {
+            set {  _name = obj.getName();
+            }
+
+        }
+        public UserInfObject userInfo {
+            set { obj = value; }
+            get { return obj; }
+        }
+
+        public LoginSignupPresenter(ILogin iLogin) {
             this.iLogin = iLogin;
+        }
+
+        public LoginSignupPresenter(ISignup iSignup,ILogin iLogin= null)
+        {
+            this.iLogin = iLogin;
+            this.iSignup = iSignup;
         }
 
 
@@ -32,13 +52,13 @@ namespace Project.Presenter
             if (dt.Rows.Count > 0)
             {
 
-                obj = new UserInfObject(dt.Rows[0]["user_name"].ToString(), dt.Rows[0]["user_name"].ToString());
+                obj = new UserInfObject(true, dt.Rows[0]["user_name"].ToString(),
+                    dt.Rows[0]["user_name"].ToString(), dt.Rows[0]["name"].ToString(),
+                    Int32.Parse(dt.Rows[0]["user_id"].ToString()));
+
                 MessageBox.Show("Login Success");
-
-
-                MainPage form = new MainPage();
-                MainPagePresenter pres = new MainPagePresenter();
-                form.txbName = obj.getUserName();
+                MainPage form = new MainPage(obj);
+                form.userInfo = obj;
                 form.Show();
                 iLogin.currentForm.Hide();
 
@@ -51,15 +71,27 @@ namespace Project.Presenter
 
         public void signup() {
 
-            DataTable signup = model.signup(iLogin.username, iLogin.password);
+            DataTable signup = model.signup(iSignup.username,
+                iSignup.password , iSignup.name);
 
             if (signup.Rows.Count>0)
             {
                 MessageBox.Show("Success Signup");
+                gotoLogin();
             }
-            else {
-                MessageBox.Show("Signup Failed Username Already Taken");
-            }
+    
+        }
+
+        public void gotoSignup() {
+            Signup form = new Signup();
+            form.Show();
+            iLogin.currentForm.Hide();
+        }
+
+        public void gotoLogin() {
+            Login form = new Login();
+            form.Show();
+            iSignup.currentForm.Hide();
         }
 
     }
