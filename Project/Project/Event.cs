@@ -11,13 +11,18 @@ namespace Project
         public string name;
         public DateTime date;
         public double remainingDays;
+        public int numDaysToAccomplish;
+        public int numOfSessions;
+        Dictionary<String,DateTime> sessions;
 
 
-        public Event(string name, DateTime date)
+        public Event(string name, DateTime date, int numDaysToAccomplish, int numOfSessions)
         {
             this.name = name;
             this.date = date;
             this.remainingDays = ((date - DateTime.Today).TotalDays);
+            this.numDaysToAccomplish = numDaysToAccomplish;
+            this.numOfSessions = numOfSessions;
         }
 
         public void UpdateEventData() //update sa remaining days 
