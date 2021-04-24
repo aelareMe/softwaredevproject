@@ -118,5 +118,33 @@ namespace Project.Model
 
         }
 
+        public DataTable GetScheduledStudy(int userID)
+        {
+
+            string sql = "SELECT subject.study_name AS \"Subject Code\",subject.study_decription," +
+                         "schedule_study.study_notes,schedule_study.time_start FROM  schedule_study " +
+                         "INNER JOIN subject ON subject.study_id = schedule_study.study_id " +
+                         "INNER JOIN user_info ON subject.user_id = user_info.user_id " +
+                         "WHERE user_info.user_id =" + userID + "";
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
     }
 }

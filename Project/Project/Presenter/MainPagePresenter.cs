@@ -61,6 +61,7 @@ namespace Project.Presenter
         {
             while (true)
             {
+                DataTable scheduledEvents = subjModel.GetScheduledStudy(iMainPage.userInfo.getId());
 
                 await Task.Delay(3000);
             }
