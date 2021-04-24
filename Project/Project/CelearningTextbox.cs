@@ -15,7 +15,7 @@ namespace Project
         public TextBox textbox = new TextBox();
         private GraphicsPath shape;
         private GraphicsPath innerRect;
-        private Color br; 
+        private Color br;
 
         public CelearningTextbox()
         {
@@ -32,7 +32,7 @@ namespace Project
             textbox.BackColor = this.br;
             this.Text = null;
             this.Font = new Font("Arial", 12f);
-            base.Size = new Size(0x87,0x21);
+            base.Size = new Size(0x87, 0x21);
             this.DoubleBuffered = true;
             textbox.KeyDown += new KeyEventHandler(textbox_KeyDown);
             textbox.TextChanged += new EventHandler(textbox_TextChanged);
@@ -54,7 +54,7 @@ namespace Project
 
         private void textbox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Control&& (e.KeyCode == Keys.A))
+            if (e.Control && (e.KeyCode == Keys.A))
             {
                 textbox.SelectionStart = 0;
                 textbox.SelectionLength = this.Text.Length;
@@ -74,9 +74,9 @@ namespace Project
         }
         protected override void OnPaint(PaintEventArgs e)
         {
-            this.shape = new MyRectangle((float)base.Width, (float)base.Height,(float)this.radius,0f,0f).Path;
+            this.shape = new MyRectangle((float)base.Width, (float)base.Height, (float)this.radius, 0f, 0f).Path;
             this.innerRect = new MyRectangle(base.Width - 0.5f, base.Height - 0.5f, (float)this.radius, 0.5f, 0.5f).Path;
-            if(textbox.Height >= (base.Height - 4))
+            if (textbox.Height >= (base.Height - 4))
             {
                 base.Height = textbox.Height + 4;
             }
@@ -106,20 +106,20 @@ namespace Project
         {
             get =>
                 this.br;
-            set 
+            set
             {
                 this.br = value;
-                if(this.br != Color.Transparent)
+                if (this.br != Color.Transparent)
                 {
                     textbox.BackColor = this.br;
                 }
                 base.Invalidate();
             }
         }
-        public override Color BackColor 
+        public override Color BackColor
         {
-            get => base.BackColor; 
-            set => base.BackColor = Color.Transparent; 
+            get => base.BackColor;
+            set => base.BackColor = Color.Transparent;
         }
     }
 }
