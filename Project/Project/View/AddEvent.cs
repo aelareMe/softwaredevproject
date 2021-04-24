@@ -42,7 +42,7 @@ namespace Project
             }
             else
             {
-                e1 = new Event(eventName.Text, eventDate.Value);
+                e1 = new Event(eventName.Text, eventDate.Value, Int32.Parse(days2Accomplish.Text), Int32.Parse(noOfSession.Text));
                 confirm_flag = true;
                 MessageBox.Show("Success");
                 return;
