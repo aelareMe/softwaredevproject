@@ -15,11 +15,11 @@ namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
+        Adding_Subject Adding_Subject = new Adding_Subject(null);
 
         DataTable _studyList = new DataTable();
         DataTable _studyProgress = new DataTable();
         UserInfObject _userInfObject;
-
         MainPagePresenter presenter;
         public MainPage(UserInfObject _userInfObject)
         {
@@ -59,6 +59,7 @@ namespace Project.View
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.showTaskScheduler();
+            MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
         }
 
         private void button3_Click(object sender, EventArgs e)
