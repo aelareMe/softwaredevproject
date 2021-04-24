@@ -27,6 +27,8 @@ namespace Project.View
             this.presenter = new MainPagePresenter(this);
             this._userInfObject = _userInfObject;
 
+            presenter.loadSubjectsAsync();
+
         }
 
         public DataTable studyList {
@@ -37,8 +39,7 @@ namespace Project.View
             set { _studyProgress = value; }
         }
 
-        public UserInfObject userInfo
-        {
+        public UserInfObject userInfo {
             get { return _userInfObject; }
             set {
 
@@ -48,7 +49,26 @@ namespace Project.View
             }
         }
 
-    
+        public DataGridView subjectList {
+            get { return dataGridView1; }
+            set { dataGridView1 = value; }
+        }
+        public DataGridView eventList {
+            get { return dataGridView2; }
+            set { dataGridView2 = value; }
+        }
+   
+
+        Label IMainPage.lblUpComingEvents {
+            get { return this.lblUpComingEvent; }
+            set { this.lblUpComingEvent = value; }
+        }
+
+        Label IMainPage.lblSubjectsEnrolled {
+            get { return this.lblSubjectsEnrolled; }
+            set { this.lblSubjectsEnrolled = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 

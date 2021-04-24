@@ -79,18 +79,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
+    <Compile Include="Object\EventType.cs" />
     <Compile Include="View\StudyHelper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\StudyHelper.Designer.cs">
       <DependentUpon>StudyHelper.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Interface\ISubjectEventScheduler.cs" />
     <Compile Include="Model\SubjectEventSchedulerModel.cs" />
     <Compile Include="Presenter\SubjectEventScheduler.cs" />
-
     <Compile Include="View\ActivityScheduler.cs">
       <SubType>Form</SubType>
     </Compile>

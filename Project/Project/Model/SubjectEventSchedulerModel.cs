@@ -39,12 +39,38 @@ namespace Project.Model
         }
 
 
-
-        public DataTable AddEventToSubject(int studyID,string timeStart,string eventName)
+        public DataTable LoadAllMainPageSubjects(int userId)
         {
 
-            string sql = "INSERT INTO schedule_study (study_id,time_start,study_notes)VALUES("+ studyID + "" +
-                ",'"+ timeStart + "','"+ eventName +"')RETURNING * ";
+            string sql = "Select study_name as \"Subject Name\",study_decription as \"Description\"from subject " +
+                "where user_id = " + userId + "";
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+
+
+        public DataTable AddEventToSubject(int studyID,string timeStart,string eventName,int eventType)
+        {
+
+            string sql = "INSERT INTO schedule_study (study_id,time_start,study_notes,type)VALUES("+ studyID + "" +
+                ",'"+ timeStart + "','"+ eventName +"',"+eventType+")RETURNING * ";
             DataTable dt = new DataTable();
             trans.OpenConnection();
             trans.startTransaction();
