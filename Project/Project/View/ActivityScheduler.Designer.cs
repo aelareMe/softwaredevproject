@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.eventList = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.numEvent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +107,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(243, 91);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 19);
             this.button2.TabIndex = 15;
@@ -114,11 +115,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // numEvent
+            // 
+            this.numEvent.AutoSize = true;
+            this.numEvent.Location = new System.Drawing.Point(502, 246);
+            this.numEvent.Name = "numEvent";
+            this.numEvent.Size = new System.Drawing.Size(65, 13);
+            this.numEvent.TabIndex = 16;
+            this.numEvent.Text = "/300 events";
+            // 
             // ActSched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 379);
+            this.ClientSize = new System.Drawing.Size(607, 393);
+            this.Controls.Add(this.numEvent);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.eventList);
             this.Controls.Add(this.label3);
@@ -141,7 +152,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView eventList;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.DataGridView eventList;
+        public System.Windows.Forms.Label numEvent;
     }
 }

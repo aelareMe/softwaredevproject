@@ -28,6 +28,7 @@ namespace Project
             eventDate.CustomFormat = "MM/dd/yyyy hh:mm tt";
         }
 
+
         private void button2_Click(object sender, EventArgs e) //exit button
         {
             AddEvent.ActiveForm.Close();
@@ -61,6 +62,9 @@ namespace Project
         {
      
             presenter.addEvent(eventDate.Value, eventName.Text.ToString());
+            
+            
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
