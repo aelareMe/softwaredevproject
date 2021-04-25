@@ -79,7 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Object\DataGridViewProgressColumn .cs" />
+    <Compile Include="Object\DataGridViewProgressColumn.cs" />
     <Compile Include="Object\EventType.cs" />
     <Compile Include="View\StudyHelper.cs">
       <SubType>Form</SubType>

@@ -110,7 +110,7 @@ namespace Project.Presenter
 
                 iMainPage.subjectList.DataSource = subjectList;
 
-                await Task.Delay(100);
+                await Task.Delay(1000);
             }
         }
 
@@ -162,7 +162,7 @@ namespace Project.Presenter
 
                 }
                 //  iMainPage.eventList.DataSource = perEventPercentage;
-                await Task.Delay(100);
+                await Task.Delay(1000);
             }
 
         }
