@@ -16,9 +16,9 @@ namespace Project.View
     public partial class MainPage : Form,IMainPage
     {
 
-        DataTable _studyList = new DataTable();
-        DataTable _studyProgress = new DataTable();
         UserInfObject _userInfObject;
+
+        int _minuteRange = 5;
 
         MainPagePresenter presenter;
         public MainPage(UserInfObject _userInfObject)
@@ -28,17 +28,9 @@ namespace Project.View
             this._userInfObject = _userInfObject;
 
             presenter.loadSubjectsAsync();
+            txtMinuteRange.Text = _minuteRange.ToString();
 
         }
-
-        public DataTable studyList {
-            get { return _studyList; }
-            set { _studyList = value; } }
-        public DataTable studyProgress {
-            get { return _studyProgress; }
-            set { _studyProgress = value; }
-        }
-
         public UserInfObject userInfo {
             get { return _userInfObject; }
             set {
@@ -57,7 +49,11 @@ namespace Project.View
             get { return dataGridView2; }
             set { dataGridView2 = value; }
         }
-   
+
+        public int minuteRange {
+            get { return _minuteRange; }
+            set { _minuteRange = value; }
+        }
 
         Label IMainPage.lblUpComingEvents {
             get { return this.lblUpComingEvent; }
@@ -84,6 +80,11 @@ namespace Project.View
         private void button3_Click(object sender, EventArgs e)
         {
             presenter.showStudyHelper();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
         }
     }
 }

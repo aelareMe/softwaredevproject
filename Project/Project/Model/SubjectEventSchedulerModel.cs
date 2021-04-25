@@ -118,14 +118,49 @@ namespace Project.Model
 
         }
 
-        public DataTable GetScheduledStudy(int userID)
+        public DataTable GetScheduledStudy(int userID,string range)
         {
 
-            string sql = "SELECT subject.study_name AS \"Subject Code\",subject.study_decription," +
-                         "schedule_study.study_notes,schedule_study.time_start FROM  schedule_study " +
-                         "INNER JOIN subject ON subject.study_id = schedule_study.study_id " +
+            string sql = "SELECT schedule_study.type as \"_ScheduleID\",subject.study_id as \"_StudyID\"," +
+                         "subject.study_name as \"Subject Code\", subject.study_name as \"Subject Name\"," +
+                         "schedule_study.study_notes as \"Notes\" " +
+                         "FROM schedule_study " +
+                         "INNER JOIN subject ON schedule_study.study_id = subject.study_id " +
                          "INNER JOIN user_info ON subject.user_id = user_info.user_id " +
-                         "WHERE user_info.user_id =" + userID + "";
+                         "where now()> (time_start - interval '"+ range + "' MINUTE )  AND " +
+                         "now() < (time_start + interval '" + range + "' MINUTE ) AND " +
+                         "user_info.user_id = " + userID + "";
+
+
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+        public DataTable GetAllPercentage(int userID) {
+
+            string sql = "SELECT  schedule_study.study_percent, schedule_study.type "+
+                          "FROM schedule_study "+
+                          "INNER JOIN subject ON schedule_study.study_id = subject.study_id "+
+                          "INNER JOIN user_info ON subject.user_id = user_info.user_id "+
+                          "WHERE user_info.user_id = 1";
+
+
             DataTable dt = new DataTable();
             trans.OpenConnection();
             trans.startTransaction();

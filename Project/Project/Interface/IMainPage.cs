@@ -20,5 +20,7 @@ namespace Project.Interface
 
         Label lblSubjectsEnrolled { get; set; }
 
+        int minuteRange { get; set; }
+
     }
 }

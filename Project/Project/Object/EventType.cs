@@ -10,13 +10,23 @@ namespace Project.Object
     class EventType
     {
 
-        public string typeName { get; set; }
-        public int typeId { get; set; }
-        private  EventType(int intValue,string stringValue)
+        public string typeName { get; }
+        public int typeId { get; }
+        public double percent { get; set; }
+        public int percentDenominator { get; set; }
+        public int ctr { get; set; }
+
+        private  EventType(int intValue,string stringValue , int percent =0)
         {
+            percentDenominator = 0;
+            ctr = 0;
+            percent = 0;
             typeName = stringValue;
             typeId = intValue;
+            this.percent = percent;
         }
+
+
 
         public static List<EventType> getTypes()
         {
