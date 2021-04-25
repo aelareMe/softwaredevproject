@@ -19,6 +19,7 @@ namespace Project
         public bool confirm_flag;
         SubjectEventScheduler presenter;
         ISubjectEventScheduler iSubjectEventScheduler;
+  
         public AddEvent(ISubjectEventScheduler iSubjectEventScheduler)
         {
             this.iSubjectEventScheduler = iSubjectEventScheduler;
@@ -26,6 +27,11 @@ namespace Project
             InitializeComponent();
             eventDate.Format = DateTimePickerFormat.Custom;
             eventDate.CustomFormat = "MM/dd/yyyy hh:mm tt";
+       
+    
+            cmbSubjectList.DataSource = EventType.getTypes();
+            cmbSubjectList.DisplayMember = "typeName";
+            cmbSubjectList.ValueMember = "typeId";
         }
 
 
@@ -60,16 +66,11 @@ namespace Project
 
         private void addEventConfirm_Click(object sender, EventArgs e)
         {
-     
-            presenter.addEvent(eventDate.Value, eventName.Text.ToString());
-            
-            
+            int selectedValueMember =Int32.Parse( cmbSubjectList.SelectedValue.ToString());
+            presenter.addEvent(eventDate.Value, eventName.Text.ToString(), selectedValueMember);
+           
             
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

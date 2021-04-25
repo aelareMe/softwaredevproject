@@ -36,12 +36,12 @@ namespace Project.Presenter
 
         }
 
-        public void addEvent(DateTime selectedDate,string eventName) {
+        public void addEvent(DateTime selectedDate,string eventName,int eventType) {
             int selectedSubjectID =Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());
 
             string strBuildDate = selectedDate.Date.Year.ToString() + "-" + selectedDate.Date.Month.ToString() +
                 "-" + selectedDate.Date.Day.ToString() + " " + selectedDate.TimeOfDay.ToString();
-            DataTable response = model.AddEventToSubject(selectedSubjectID, strBuildDate,eventName);
+            DataTable response = model.AddEventToSubject(selectedSubjectID, strBuildDate,eventName, eventType);
             if (response.Rows.Count > 0)
             {
                 MessageBox.Show("Success Adding Event");
