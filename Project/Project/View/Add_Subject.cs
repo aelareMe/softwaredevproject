@@ -14,9 +14,11 @@ namespace Project.View
 {
     public partial class Add_Subject : Form
     {
-        private bool add_subject_btn = false;
 
+        private bool add_subject_btn = false;
+        //private bool button2 = false;
         UserInfObject _userInfObject;
+       
         public Add_Subject(UserInfObject _userInfObject)
         {
             InitializeComponent();
@@ -66,11 +68,10 @@ namespace Project.View
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // edit_subject_btn
         {
-
+            openChildForm(new Edit_Subject());
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {

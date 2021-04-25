@@ -15,8 +15,10 @@ namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
+        Adding_Subject Adding_Subject = new Adding_Subject(null);
 
         UserInfObject _userInfObject;
+
 
         int _minuteRange = 5;
 
@@ -75,6 +77,7 @@ namespace Project.View
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.showTaskScheduler();
+            MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
         }
 
         private void button3_Click(object sender, EventArgs e)
