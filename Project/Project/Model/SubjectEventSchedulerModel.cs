@@ -69,7 +69,7 @@ namespace Project.Model
         public DataTable AddEventToSubject(int studyID,string timeStart,string eventName,int eventType)
         {
 
-            string sql = "INSERT INTO schedule_study (study_id,time_start,study_notes,type)VALUES("+ studyID + "" +
+            string sql = "INSERT INTO schedule_study (study_id,time_start,study_description,type)VALUES("+ studyID + "" +
                 ",'"+ timeStart + "','"+ eventName +"',"+eventType+")RETURNING * ";
             DataTable dt = new DataTable();
             trans.OpenConnection();
@@ -96,7 +96,7 @@ namespace Project.Model
         public DataTable LoadSubjectStudyTime(int studyID)
         {
 
-            string sql = "SELECT study_id, study_notes AS \"Name\" ,time_start AS \"Scheduled Time\"" +
+            string sql = "SELECT study_id, study_description AS \"Description\" ,time_start AS \"Scheduled Time\"" +
                 "FROM schedule_study WHERE study_id = "+ studyID + "";
             DataTable dt = new DataTable();
             trans.OpenConnection();
@@ -121,9 +121,10 @@ namespace Project.Model
         public DataTable GetScheduledStudy(int userID,string range)
         {
 
-            string sql = "SELECT schedule_study.type as \"_ScheduleID\",subject.study_id as \"_StudyID\"," +
+            string sql = "SELECT schedule_study.study_details_id as \"_StudyDetails\"," +
+                         "schedule_study.type as \"_ScheduleType\",subject.study_id as \"_StudyID\"," +
                          "subject.study_name as \"Subject Code\", subject.study_name as \"Subject Name\"," +
-                         "schedule_study.study_notes as \"Notes\" " +
+                         "schedule_study.study_description as \"Description\" " +
                          "FROM schedule_study " +
                          "INNER JOIN subject ON schedule_study.study_id = subject.study_id " +
                          "INNER JOIN user_info ON subject.user_id = user_info.user_id " +
@@ -158,7 +159,7 @@ namespace Project.Model
                           "FROM schedule_study "+
                           "INNER JOIN subject ON schedule_study.study_id = subject.study_id "+
                           "INNER JOIN user_info ON subject.user_id = user_info.user_id "+
-                          "WHERE user_info.user_id = 1";
+                          "WHERE user_info.user_id = "+userID+"";
 
 
             DataTable dt = new DataTable();
@@ -180,6 +181,8 @@ namespace Project.Model
             return dt;
 
         }
+
+
 
     }
 }

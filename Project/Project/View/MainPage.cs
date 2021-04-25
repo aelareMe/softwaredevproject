@@ -20,7 +20,8 @@ namespace Project.View
         UserInfObject _userInfObject;
 
 
-        int _minuteRange = 5;
+        int _minuteRange =1;
+        int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
         public MainPage(UserInfObject _userInfObject)
@@ -31,6 +32,7 @@ namespace Project.View
 
             presenter.loadSubjectsAsync();
             txtMinuteRange.Text = _minuteRange.ToString();
+            textBox1.Text = _minuteNotifyEvery.ToString();
 
         }
         public UserInfObject userInfo {
@@ -57,6 +59,11 @@ namespace Project.View
             set { _minuteRange = value; }
         }
 
+        public int minuteNotifyEvery {
+            get { return _minuteNotifyEvery; }
+            set { _minuteNotifyEvery = value; }
+        }
+
         Label IMainPage.lblUpComingEvents {
             get { return this.lblUpComingEvent; }
             set { this.lblUpComingEvent = value; }
@@ -77,12 +84,12 @@ namespace Project.View
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.showTaskScheduler();
-            MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
+         //   MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            presenter.showStudyHelper();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -83,20 +83,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
+    <Compile Include="Interface\IStudyHelper.cs" />
+    <Compile Include="Model\StudyHelperModel.cs" />
     <Compile Include="Object\DataGridViewProgressColumn.cs" />
     <Compile Include="Object\EventType.cs" />
-
     <Compile Include="CelearningTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Presenter\StudyHelperPresenter.cs" />
     <Compile Include="View\Edit_Subject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Edit_Subject.Designer.cs">
       <DependentUpon>Edit_Subject.cs</DependentUpon>
     </Compile>
-
     <Compile Include="View\StudyHelper.cs">
       <SubType>Form</SubType>
     </Compile>

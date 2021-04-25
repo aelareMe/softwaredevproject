@@ -53,22 +53,19 @@ namespace Project.Presenter
             scheduler.Show();
         }
 
-        public void showStudyHelper() {
-            StudyHelper studyHelper = new StudyHelper();
-            studyHelper.Show();
-        }
-
 
         public async void loadSubjectsAsync()
         {
-            Task[] task = { asyncUpcommingvents(),
-                asyncLoadAllMainPageSubjects() ,
-                asyncScheduledWithinTimeFrame(),
-                getAllPercentage()
-        };
+            Task[] task1 = { asyncUpcommingvents(),
+                            asyncLoadAllMainPageSubjects(),
+                            getAllPercentage()
+                           };
 
-            await Task.WhenAll(task);     
-        }
+              Task[] task2 = { asyncScheduledWithinTimeFrame() };
+
+            await Task.WhenAll(task1);
+            await Task.WhenAll(task2);
+    }
 
 
         public async Task asyncScheduledWithinTimeFrame()
@@ -79,11 +76,16 @@ namespace Project.Presenter
                     subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), "5");
                
                 foreach(DataRow dr in scheduledEvents.Rows) {
-               
+
+
+                    int studyScheduleId = Convert.ToInt32( dr["_StudyDetails"].ToString());
+                    string studyScheduleName = dr["Description"].ToString();
+                    StudyHelper studyHelper = new StudyHelper(studyScheduleId, studyScheduleName);
+                    studyHelper.Show();
                 }
 
-
-                await Task.Delay(3000);
+                int delay = iMainPage.minuteNotifyEvery * 60000;
+                await Task.Delay(delay);
             }
         }
 
@@ -94,8 +96,9 @@ namespace Project.Presenter
                 DataTable scheduledEvents = 
                     subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
                 iMainPage.lblUpComingEvents.Text = scheduledEvents.Rows.Count.ToString();
-          
-                await Task.Delay(100);
+
+
+                await Task.Delay(1000);
             }
         }
 

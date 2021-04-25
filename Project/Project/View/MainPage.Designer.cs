@@ -35,7 +35,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lblSubjectsEnrolled = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblUpComingEvent = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,6 +42,9 @@
             this.txtMinuteRange = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(401, 447);
+            this.button2.Location = new System.Drawing.Point(693, 443);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 67);
@@ -112,15 +114,6 @@
             this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Subject List";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(533, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Event List";
             // 
             // label5
             // 
@@ -171,7 +164,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Enabled = false;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(452, 118);
+            this.dataGridView2.Location = new System.Drawing.Point(454, 117);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -182,7 +175,7 @@
             // 
             // txtMinuteRange
             // 
-            this.txtMinuteRange.Location = new System.Drawing.Point(578, 51);
+            this.txtMinuteRange.Location = new System.Drawing.Point(616, 58);
             this.txtMinuteRange.Name = "txtMinuteRange";
             this.txtMinuteRange.Size = new System.Drawing.Size(100, 22);
             this.txtMinuteRange.TabIndex = 18;
@@ -190,15 +183,15 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(449, 56);
+            this.label6.Location = new System.Drawing.Point(451, 64);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 17);
+            this.label6.Size = new System.Drawing.Size(159, 17);
             this.label6.TabIndex = 19;
-            this.label6.Text = "Notify Every:";
+            this.label6.Text = "UpComing Event Range";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(699, 49);
+            this.button4.Location = new System.Drawing.Point(743, 58);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 20;
@@ -206,11 +199,39 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(743, 87);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Start";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(451, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(151, 17);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Notify Schedule Every:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(616, 89);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 21;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 521);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMinuteRange);
@@ -218,7 +239,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblUpComingEvent);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSubjectsEnrolled);
             this.Controls.Add(this.button2);
@@ -245,7 +265,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblSubjectsEnrolled;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblUpComingEvent;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -253,5 +272,8 @@
         private System.Windows.Forms.TextBox txtMinuteRange;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

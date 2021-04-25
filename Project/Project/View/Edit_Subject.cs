@@ -16,7 +16,7 @@ namespace Project.View
         public Edit_Subject()
         {
             InitializeComponent();
-            MessageBox.Show(Adding_Subject.s+"");
+           
             for (int x = 0; x < Adding_Subject.Subject_Adding_Subject.Count;x++)
             {
 

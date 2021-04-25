@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project.Interface;
+using Project.Presenter;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +12,26 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class StudyHelper : Form
+    public partial class StudyHelper : Form, IStudyHelper
     {
         int set_progress;
 
-        public StudyHelper()
+        string _studyScheduleName = "";
+
+        int _studyScheduleId= 0;
+
+        
+
+        StudyHelperPresenter presenter;
+
+        public StudyHelper(int _studyScheduleId,string _studyScheduleName)
         {
             InitializeComponent();
+            this._studyScheduleId = _studyScheduleId;
+            this._studyScheduleName = _studyScheduleName;
+            presenter = new StudyHelperPresenter(this);
+            lblStudyName.Text = _studyScheduleName;
+
 
         }
 
@@ -35,6 +50,20 @@ namespace Project
                 return progressBar;
 
             }
+        }
+
+        public string studyScheduleName {
+            get { return _studyScheduleName; }
+            set { _studyScheduleName = value; }
+        }
+        public int studyScheduleId {
+            get { return _studyScheduleId; }
+            set { _studyScheduleId = value; }
+        }
+
+        public int percent {
+            get { return set_progress; }
+            set { set_progress = value; }
         }
 
         private void SetBtn_Click(object sender, EventArgs e)
@@ -283,5 +312,12 @@ namespace Project
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            presenter.updateScheduledEvent();
+        }
+
+     
     }
 }
