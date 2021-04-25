@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Project.Presenter
 {
-    class LoginSignupPresenter:  IMainPage
+    class LoginSignupPresenter
     {
 
         ILogin iLogin;

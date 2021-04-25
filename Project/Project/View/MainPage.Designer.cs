@@ -33,6 +33,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblSubjectsEnrolled = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblUpComingEvent = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.txtMinuteRange = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -40,18 +54,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.Size = new System.Drawing.Size(118, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Pick a Task";
+            this.label1.Text = "Subjects Enrolled";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 61);
+            this.button1.Location = new System.Drawing.Point(15, 443);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 67);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Add Task";
+            this.button1.Text = "Add Subject";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -74,20 +88,159 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(177, 61);
+            this.button2.Location = new System.Drawing.Point(693, 443);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 67);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Add Events to Subject";
+            this.button2.Text = "Add Activity";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblSubjectsEnrolled
+            // 
+            this.lblSubjectsEnrolled.AutoSize = true;
+            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(136, 30);
+            this.lblSubjectsEnrolled.Name = "lblSubjectsEnrolled";
+            this.lblSubjectsEnrolled.Size = new System.Drawing.Size(16, 17);
+            this.lblSubjectsEnrolled.TabIndex = 9;
+            this.lblSubjectsEnrolled.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(136, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Subject List";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(449, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "UpComing Events";
+            // 
+            // lblUpComingEvent
+            // 
+            this.lblUpComingEvent.AutoSize = true;
+            this.lblUpComingEvent.Location = new System.Drawing.Point(575, 30);
+            this.lblUpComingEvent.Name = "lblUpComingEvent";
+            this.lblUpComingEvent.Size = new System.Drawing.Size(16, 17);
+            this.lblUpComingEvent.TabIndex = 15;
+            this.lblUpComingEvent.Text = "0";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Enabled = false;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 118);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(366, 300);
+            this.dataGridView1.TabIndex = 16;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Enabled = false;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.Location = new System.Drawing.Point(454, 117);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(366, 142);
+            this.dataGridView2.TabIndex = 17;
+            // 
+            // txtMinuteRange
+            // 
+            this.txtMinuteRange.Location = new System.Drawing.Point(616, 58);
+            this.txtMinuteRange.Name = "txtMinuteRange";
+            this.txtMinuteRange.Size = new System.Drawing.Size(100, 22);
+            this.txtMinuteRange.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(451, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(159, 17);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "UpComing Event Range";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(743, 58);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Start";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(743, 87);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Start";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(451, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(151, 17);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Notify Schedule Every:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(616, 89);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 21;
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 155);
+            this.ClientSize = new System.Drawing.Size(844, 521);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtMinuteRange);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblUpComingEvent);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSubjectsEnrolled);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label3);
@@ -97,6 +250,8 @@
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +263,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblSubjectsEnrolled;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUpComingEvent;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox txtMinuteRange;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
