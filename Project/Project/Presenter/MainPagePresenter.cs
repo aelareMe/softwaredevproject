@@ -86,9 +86,20 @@ namespace Project.Presenter
 
                     string strTitleBuild = "Subject Code: " + subjectCode;
 
+                   
+                    string[] subs = studyTime.Split(':');
+                    int temp = Convert.ToInt32(subs[0]);
+                    string amPM = "AM";
+                    string notifString = "";
+                    if (temp > 12)
+                    {
+                        amPM = "PM";
+                        temp -= 12;
+                    }
+                    notifString = temp.ToString() + ":" + subs[1] + " " + amPM;
                     iMainPage.notifyIcon.
                         ShowBalloonTip(1000, strTitleBuild,
-                        " Time to study at " + studyTime + " Please Adhere", ToolTipIcon.Info);
+                        " Time to study at " + notifString + " Please Adhere", ToolTipIcon.Info);
 
                     if (iMainPage.mainpageForm.WindowState == FormWindowState.Minimized) {
                         iMainPage.mainpageForm.Hide();

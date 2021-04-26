@@ -100,7 +100,7 @@ namespace Project.Model
         {
 
             string sql = "SELECT study_id, study_description AS \"Description\" ," +
-                "time_start AS \"Scheduled Time\", no_days_accomplish AS \"No of Days To Accomplish\" , " +
+                "time_start::time(0) AS \"Scheduled Time\", no_days_accomplish AS \"No of Days To Accomplish\" , " +
                 "no_sessions_day AS \"No of Sessions Per Day\"" +
                 "FROM schedule_study WHERE study_id = "+ studyID + "";
             DataTable dt = new DataTable();

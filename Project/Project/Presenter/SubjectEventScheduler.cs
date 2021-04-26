@@ -51,7 +51,7 @@ namespace Project.Presenter
 
         public void loadStudyTime() {
           int selectedSubjectID = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());
-          DataTable response = model.LoadSubjectStudyTime(selectedSubjectID);
+          DataTable response = model.LoadSubjectStudyTime(selectedSubjectID); 
           iSubjectEventScheduler.listEvents.DataSource = response;
 
         }
