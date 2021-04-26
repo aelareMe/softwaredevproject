@@ -22,6 +22,8 @@ namespace Project.View
         bool Hided;
         UserInfObject _userInfObject;
         AddSubjectPresenter presenter;
+
+        int ctrTraverse = 2;
         
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -57,6 +59,30 @@ namespace Project.View
             this._userInfObject = _userInfObject;
             presenter = new AddSubjectPresenter(this,_userInfObject);
             edit_panel.Hide();
+
+
+            if (_userInfObject != null)
+            {
+                DataTable dt = presenter.loadSubjects();
+     
+                foreach (DataRow dr in dt.Rows)
+                {
+                  //bug
+                    string subjectCode = dr["study_name"].ToString();
+                    string description = dr["study_decription"].ToString();
+                    subject_list_view.Items.Add(subjectCode, 1);
+                    Subject.Add(new Subjects
+                    {
+                        Subject_Code = subjectCode,
+                        Subject_Description = description
+                    });
+                    SubjectCode_txt.Text = "";
+                    SubjectDescription_txt.Text = "";
+                    adding_panel.Visible = false;
+  
+                }
+            }
+
         }
         public List<Subjects> Subject_Adding_Subject
         {
@@ -73,6 +99,11 @@ namespace Project.View
         {
             get { return SubjectDescription_txt.Text; }
             set { SubjectDescription_txt.Text = value; }
+        }
+
+        public ListView subjectList {
+            get { return subject_list_view; }
+            set { subject_list_view = value; }
         }
 
         private void subject_list_view_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,11 +134,24 @@ namespace Project.View
                 {
                     subject_list_view.FocusedItem = null;
                     presenter.AddSubject();
-                    subject_list_view.Items.Add(SubjectCode_txt.Text, 1);
-                    Subject.Add(new Subjects { Subject_Code = SubjectCode_txt.Text, Subject_Description = SubjectDescription_txt.Text });
-                    SubjectCode_txt.Text = "";
-                    SubjectDescription_txt.Text = "";
-                    adding_panel.Visible = false;
+                    DataTable dt = presenter.loadSubjects();
+                 
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        //bug
+                        string subjectCode = dr["study_name"].ToString();
+                        string description = dr["study_decription"].ToString();
+                        subject_list_view.Items.Add(subjectCode, 1);
+                        Subject.Add(new Subjects
+                        {
+                            Subject_Code = subjectCode,
+                            Subject_Description = description
+                        });
+                        SubjectCode_txt.Text = "";
+                        SubjectDescription_txt.Text = "";
+                        adding_panel.Visible = false;
+                    }
+
                 }
                 add_Subject_limiter.Value = Subject.Count();
 
@@ -280,5 +324,7 @@ namespace Project.View
                 edit_list_view.Items.Add(Subject.ElementAt(x).Subject_Code, 1);
             }
         }
+
+     
     }
 }

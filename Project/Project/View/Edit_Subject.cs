@@ -16,11 +16,7 @@ namespace Project.View
         public Edit_Subject()
         {
             InitializeComponent();
-           
-            for (int x = 0; x < Adding_Subject.Subject_Adding_Subject.Count;x++)
-            {
-
-            }
+     
         }
     }
 }
