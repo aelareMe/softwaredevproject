@@ -24,5 +24,9 @@ namespace Project.Interface
 
         int minuteNotifyEvery { get; set; }
 
+        NotifyIcon notifyIcon { get; set; }
+
+        Form mainpageForm { get; }
+
     }
 }
