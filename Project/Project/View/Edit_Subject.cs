@@ -17,11 +17,15 @@ namespace Project.View
         {
             InitializeComponent();
 <<<<<<< HEAD
+<<<<<<< HEAD
            
             for (int x = 0; x < Adding_Subject.Subject_Adding_Subject.Count;x++)    
             {
 
             }
+=======
+     
+>>>>>>> b03cbfecf26a0a14561b714645dfdc6b33a11266
 =======
      
 >>>>>>> b03cbfecf26a0a14561b714645dfdc6b33a11266
