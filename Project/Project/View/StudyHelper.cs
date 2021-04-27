@@ -18,16 +18,16 @@ namespace Project
 
         string _studyScheduleName = "";
 
-        int _studyScheduleId= 0;
+        int _studyDetailsId = 0;
 
         
 
         StudyHelperPresenter presenter;
 
-        public StudyHelper(int _studyScheduleId,string _studyScheduleName)
+        public StudyHelper(int _studyDetailsId,string _studyScheduleName)
         {
             InitializeComponent();
-            this._studyScheduleId = _studyScheduleId;
+            this._studyDetailsId = _studyDetailsId;
             this._studyScheduleName = _studyScheduleName;
             presenter = new StudyHelperPresenter(this);
             lblStudyName.Text = _studyScheduleName;
@@ -56,9 +56,9 @@ namespace Project
             get { return _studyScheduleName; }
             set { _studyScheduleName = value; }
         }
-        public int studyScheduleId {
-            get { return _studyScheduleId; }
-            set { _studyScheduleId = value; }
+        public int studyDetailsId  {
+            get { return _studyDetailsId; }
+            set { _studyDetailsId = value; }
         }
 
         public int percent {

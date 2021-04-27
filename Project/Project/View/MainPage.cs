@@ -64,6 +64,14 @@ namespace Project.View
             set { _minuteNotifyEvery = value; }
         }
 
+        public NotifyIcon notifyIcon {
+            get { return notifyIcon1; }
+            set { notifyIcon1 = value; }
+        }
+        public Form mainpageForm {
+            get { return this; }
+        }
+
         Label IMainPage.lblUpComingEvents {
             get { return this.lblUpComingEvent; }
             set { this.lblUpComingEvent = value; }
@@ -95,6 +103,18 @@ namespace Project.View
         private void button4_Click(object sender, EventArgs e)
         {
             _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+        }
+
+       
+
+        private void dataGridView2_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            presenter.showStudyHelper();
         }
     }
 }

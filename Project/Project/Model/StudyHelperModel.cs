@@ -39,5 +39,33 @@ namespace Project.Model
 
         }
 
+        public DataTable InsertStudyProgress(int studyDetailsID, int percent)
+        {
+
+            string sql = "INSERT INTO study_progress (study_details_id ,study_percent )"+
+                         "VALUES("+ studyDetailsID + ","+ percent + ") RETURNING *";
+
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+
+
     }
 }
