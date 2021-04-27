@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace Project
 {
+
     public partial class ActSched : Form, ISubjectEventScheduler
     {
 
@@ -42,10 +43,20 @@ namespace Project
             set { eventList = value; }
         }
 
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            presenter.showAddEvent();
+            if (eventList.Rows.Count == 300){ //puno na ang events
+                MessageBox.Show("Maximum events reached.");
+            }
+            else
+            {
+                presenter.showAddEvent();
+            }
+            
+            
+            
         }
 
    
@@ -53,6 +64,8 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.loadStudyTime();
+            numEvent.Text = eventList.Rows.Count.ToString() + "/300 Events"; //para ni sa number of events
         }
+
     }
 }

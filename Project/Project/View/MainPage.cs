@@ -15,10 +15,13 @@ namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
+        Adding_Subject Adding_Subject = new Adding_Subject(null);
 
-        DataTable _studyList = new DataTable();
-        DataTable _studyProgress = new DataTable();
         UserInfObject _userInfObject;
+
+
+        int _minuteRange =1;
+        int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
         public MainPage(UserInfObject _userInfObject)
@@ -27,18 +30,12 @@ namespace Project.View
             this.presenter = new MainPagePresenter(this);
             this._userInfObject = _userInfObject;
 
-        }
+            presenter.loadSubjectsAsync();
+            txtMinuteRange.Text = _minuteRange.ToString();
+            textBox1.Text = _minuteNotifyEvery.ToString();
 
-        public DataTable studyList {
-            get { return _studyList; }
-            set { _studyList = value; } }
-        public DataTable studyProgress {
-            get { return _studyProgress; }
-            set { _studyProgress = value; }
         }
-
-        public UserInfObject userInfo
-        {
+        public UserInfObject userInfo {
             get { return _userInfObject; }
             set {
 
@@ -48,7 +45,35 @@ namespace Project.View
             }
         }
 
-    
+        public DataGridView subjectList {
+            get { return dataGridView1; }
+            set { dataGridView1 = value; }
+        }
+        public DataGridView eventList {
+            get { return dataGridView2; }
+            set { dataGridView2 = value; }
+        }
+
+        public int minuteRange {
+            get { return _minuteRange; }
+            set { _minuteRange = value; }
+        }
+
+        public int minuteNotifyEvery {
+            get { return _minuteNotifyEvery; }
+            set { _minuteNotifyEvery = value; }
+        }
+
+        Label IMainPage.lblUpComingEvents {
+            get { return this.lblUpComingEvent; }
+            set { this.lblUpComingEvent = value; }
+        }
+
+        Label IMainPage.lblSubjectsEnrolled {
+            get { return this.lblSubjectsEnrolled; }
+            set { this.lblSubjectsEnrolled = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -59,11 +84,17 @@ namespace Project.View
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.showTaskScheduler();
+         //   MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            presenter.showStudyHelper();
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
         }
     }
 }
