@@ -1,9 +1,8 @@
 
-DROP TABLE  IF EXISTS  study_progress ;
+
 DROP TABLE  IF EXISTS  schedule_study ;
 DROP TABLE  IF EXISTS  subject ;
 DROP TABLE  IF EXISTS  user_info ;
-
 CREATE TABLE user_info (
 	user_id serial2 PRIMARY KEY,
 	user_name VARCHAR (255) UNIQUE NOT NULL,
@@ -22,18 +21,11 @@ CREATE TABLE subject (
 CREATE TABLE schedule_study (
 	study_details_id serial2 PRIMARY KEY,
 	study_id int8,
-	no_days_accomplish int8,
-	no_sessions_day int8,
 	type int8,
-	study_description VARCHAR (255),
-	time_start time,
-	CONSTRAINT fkstudy_id FOREIGN KEY (study_id) REFERENCES subject (study_id)
-);
-
-CREATE TABLE study_progress (
-	study_progress_id serial2 PRIMARY KEY,
-	study_details_id int8,
 	study_percent int2 DEFAULT 0,
-CONSTRAINT fkstudy_details_id FOREIGN KEY (study_details_id) REFERENCES schedule_study (study_details_id)
+	study_description VARCHAR (255),
+	time_start TIMESTAMP,
+	time_end TIMESTAMP,
+	CONSTRAINT fkstudy_id FOREIGN KEY (study_id) REFERENCES subject (study_id)
 );
 

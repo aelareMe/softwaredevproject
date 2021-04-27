@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Project.Presenter
 {
-    class MainPagePresenter
+  class MainPagePresenter
     { 
 
         IMainPage iMainPage;

@@ -47,7 +47,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(37, 391);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 13;
@@ -59,7 +59,7 @@
             // 
             this.addEventConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEventConfirm.Location = new System.Drawing.Point(188, 317);
-            this.addEventConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.addEventConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addEventConfirm.Name = "addEventConfirm";
             this.addEventConfirm.Size = new System.Drawing.Size(155, 54);
             this.addEventConfirm.TabIndex = 12;
@@ -71,7 +71,7 @@
             // 
             this.eventDate.CustomFormat = "dd/MM/yy HH:mm";
             this.eventDate.Location = new System.Drawing.Point(188, 179);
-            this.eventDate.Margin = new System.Windows.Forms.Padding(4);
+            this.eventDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eventDate.Name = "eventDate";
             this.eventDate.Size = new System.Drawing.Size(265, 22);
             this.eventDate.TabIndex = 11;
@@ -79,7 +79,7 @@
             // eventName
             // 
             this.eventName.Location = new System.Drawing.Point(188, 86);
-            this.eventName.Margin = new System.Windows.Forms.Padding(4);
+            this.eventName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eventName.Name = "eventName";
             this.eventName.Size = new System.Drawing.Size(269, 20);
             this.eventName.TabIndex = 10;
@@ -132,7 +132,7 @@
             // days2Accomplish
             // 
             this.days2Accomplish.Location = new System.Drawing.Point(325, 223);
-            this.days2Accomplish.Margin = new System.Windows.Forms.Padding(4);
+            this.days2Accomplish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.days2Accomplish.Name = "days2Accomplish";
             this.days2Accomplish.Size = new System.Drawing.Size(93, 18);
             this.days2Accomplish.TabIndex = 15;
@@ -152,7 +152,7 @@
             // noOfSession
             // 
             this.noOfSession.Location = new System.Drawing.Point(325, 253);
-            this.noOfSession.Margin = new System.Windows.Forms.Padding(4);
+            this.noOfSession.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.noOfSession.Name = "noOfSession";
             this.noOfSession.Size = new System.Drawing.Size(91, 25);
             this.noOfSession.TabIndex = 17;
@@ -195,7 +195,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEvent";

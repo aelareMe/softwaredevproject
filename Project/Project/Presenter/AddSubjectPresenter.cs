@@ -16,8 +16,6 @@ namespace Project.Presenter
         IAddSubject iAddSubject;
         UserInfObject userInfo;
         AddSubjectModel model = new AddSubjectModel();
-
-        SubjectEventSchedulerModel modelSubjects = new SubjectEventSchedulerModel();
         public AddSubjectPresenter(IAddSubject iAddSubject, UserInfObject userInfo) {
             this.iAddSubject = iAddSubject;
             this.userInfo = userInfo;
@@ -31,12 +29,6 @@ namespace Project.Presenter
                 MessageBox.Show("Adding Subject Success");
 
             }
-        }
-
-
-        public DataTable loadSubjects()
-        {
-           return modelSubjects.LoadAllSubjects(userInfo.getId());
         }
 
     }
