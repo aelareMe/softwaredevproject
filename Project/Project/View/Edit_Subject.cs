@@ -16,15 +16,11 @@ namespace Project.View
         public Edit_Subject()
         {
             InitializeComponent();
-<<<<<<< HEAD
            
-            for (int x = 0; x < Adding_Subject.Subject_Adding_Subject.Count;x++)    
+            for (int x = 0; x < Adding_Subject.Subject_Adding_Subject.Count;x++)
             {
 
             }
-=======
-     
->>>>>>> b03cbfecf26a0a14561b714645dfdc6b33a11266
         }
     }
 }

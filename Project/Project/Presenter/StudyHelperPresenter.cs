@@ -19,7 +19,7 @@ namespace Project.Presenter
 
         public void updateScheduledEvent() {
 
-            DataTable dt = model.InsertStudyProgress(iStudyHelper.studyDetailsId,
+            DataTable dt = model.UpdateScheduledStudy(iStudyHelper.studyScheduleId,
                 iStudyHelper.percent);
 
             if (dt.Rows.Count > 0) {
