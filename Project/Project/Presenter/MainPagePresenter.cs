@@ -14,6 +14,7 @@ namespace Project.Presenter
 {
     class MainPagePresenter
     {
+
         IMainPage iMainPage;
 
         SubjectEventSchedulerModel subjModel = new SubjectEventSchedulerModel();
