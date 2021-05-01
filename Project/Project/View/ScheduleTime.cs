@@ -21,12 +21,6 @@ namespace Project.View
             loadItems(dr);
         }
 
-        public ScheduleTime(ISubjectEventScheduler iSubjectEventScheduler, DataTable eventList)
-        {
-
-
-        }
-
             private void loadItems(DataRow dr) {
             this.dr = dr;
 

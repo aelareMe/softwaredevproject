@@ -120,15 +120,22 @@
             this.eventList.AllowUserToDeleteRows = false;
             this.eventList.AllowUserToResizeColumns = false;
             this.eventList.AllowUserToResizeRows = false;
-            this.eventList.BackgroundColor = System.Drawing.Color.White;
+            this.eventList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.eventList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.eventList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.eventList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventList.GridColor = System.Drawing.Color.White;
-            this.eventList.Location = new System.Drawing.Point(65, 322);
+            this.eventList.GridColor = System.Drawing.SystemColors.Control;
+            this.eventList.Location = new System.Drawing.Point(65, 338);
+            this.eventList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.eventList.MultiSelect = false;
             this.eventList.Name = "eventList";
+            this.eventList.ReadOnly = true;
+            this.eventList.RowHeadersVisible = false;
             this.eventList.RowTemplate.Height = 24;
-            this.eventList.Size = new System.Drawing.Size(686, 150);
-            this.eventList.TabIndex = 17;
-            this.eventList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventList_CellContentDoubleClick);
+            this.eventList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.eventList.Size = new System.Drawing.Size(686, 135);
+            this.eventList.TabIndex = 26;
+            this.eventList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventList_CellContentDoubleClick);
             // 
             // ActSched
             // 
