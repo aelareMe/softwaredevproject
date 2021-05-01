@@ -22,7 +22,7 @@ namespace Project.View
         bool Hided;
         public string d;
         UserInfObject _userInfObject;
-        MainPagePresenter presenter;
+        AddSubjectPresenter presenter;
         int total_subject = 0;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -36,16 +36,31 @@ namespace Project.View
             );
         public Adding_Subject(int total_subject)
         {
-            
+       
         }
         private void Adding_Subject_Load(object sender, EventArgs e)
         {
+            loadSubjects();
+        }
+
+
+        public void loadSubjects() {
+
+            subject_list_view.Clear();
             subject_list_view.FocusedItem = null;
             subject_list_view.Items.Add("Add Subject", 0);
-            add_subjectAdd_btn.Region = Region.FromHrgn(CreateRoundRectRgn(0,0, add_subjectAdd_btn.Width, add_subjectAdd_btn.Height, 30, 30));
+            add_subjectAdd_btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, add_subjectAdd_btn.Width, add_subjectAdd_btn.Height, 30, 30));
             cancel_subjectAdd_btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cancel_subjectAdd_btn.Width, cancel_subjectAdd_btn.Height, 30, 30));
-            
 
+            DataTable dt = presenter.loadSubjects();
+            Subject.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                string name = dr["study_name"].ToString();
+                string descr = dr["study_decription"].ToString();
+                addToListStack(name, descr);
+            }
         }
         public Adding_Subject(UserInfObject _userInfObject)
         {
@@ -60,6 +75,9 @@ namespace Project.View
             add_activity_btn.Visible = false;
             back_btn.Visible = false;
             edit_btn.Visible = false;
+
+            presenter = new AddSubjectPresenter(this, _userInfObject);
+
         }
 
         public string subjectCode
@@ -89,6 +107,7 @@ namespace Project.View
                     subjectCode_lbl.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Code;
                     view_subject_desription.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index-1).Subject_Description;
                     add_activity_btn.Visible = true;
+                    edit_subject_panel.Visible = false;
                     back_btn.Visible = true;
                     edit_btn.Visible = true;
                 }
@@ -97,7 +116,6 @@ namespace Project.View
         }
         private void add_subject_btn_Click(object sender, EventArgs e)
         {
-            
         }
         private void add_btn_Click(object sender, EventArgs e)
         {
@@ -109,14 +127,9 @@ namespace Project.View
                 }
                 else
                 {
-                    subject_list_view.FocusedItem = null;
-                    subject_list_view.Items.Add(SubjectCode_txt.Text, 1);
-                    Subject.Add(new Subjects { Subject_Code = SubjectCode_txt.Text, Subject_Description = SubjectDescription_txt.Text });
-                    //Edit_Subject m = new Edit_Subject(Subject);
-                    SubjectCode_txt.Text = "";
-                    SubjectDescription_txt.Text = "";
+                    presenter.AddSubject();
+                    loadSubjects();
                 }
-                add_Subject_limiter.Value = Subject.Count();
             }
             else 
             {
@@ -124,6 +137,20 @@ namespace Project.View
             }
             add_subject_panel.Visible = false;
             view_subject_panel.Visible = true;
+        }
+
+
+        private void addToListStack(string code,string desrc) {
+
+            subject_list_view.FocusedItem = null;
+            subject_list_view.Items.Add(code, 1);
+            Subject.Add(new Subjects { Subject_Code = code,
+                Subject_Description = desrc
+            });
+            //Edit_Subject m = new Edit_Subject(Subject);
+            SubjectCode_txt.Text = "";
+            SubjectDescription_txt.Text = "";
+            add_Subject_limiter.Value = Subject.Count();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -160,6 +187,8 @@ namespace Project.View
         {
             edit_subject_panel.Visible = true;
             add_subject_panel.Visible = true;
+            view_subject_details.Visible = false;
+            add_activity_btn.Visible = false;
             edit_subject_code.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Code;
             edit_subject_description.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Description;
             edit_subject_code.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Code;
@@ -178,9 +207,15 @@ namespace Project.View
         }
         private void edit_subject_edit_btn_Click(object sender, EventArgs e)
         {
+            int selectedIndex = subject_list_view.FocusedItem.Index;
             subject_list_view.Items[subject_list_view.FocusedItem.Index].Text = edit_subject_code.Text;
-            Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Code = edit_subject_code.Text;
-            Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Description = edit_subject_description.Text;
+            Subject.ElementAt(selectedIndex - 1).Subject_Code = edit_subject_code.Text;
+            Subject.ElementAt(selectedIndex - 1).Subject_Description = edit_subject_description.Text;
+            string editTextDescr = edit_subject_description.Text;
+            string subjCode = edit_subject_code.Text;
+            presenter.updateSubject(selectedIndex, subjCode, editTextDescr);
+
+
             edit_subject_panel.Visible = false;
             add_subject_panel.Visible = false;
         }
