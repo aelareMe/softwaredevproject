@@ -91,11 +91,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Presenter\StudyHelperPresenter.cs" />
-    <Compile Include="View\Edit_Subject.cs">
+    <Compile Include="Subjects.cs" />
+    <Compile Include="View\ScheduleTime.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Edit_Subject.Designer.cs">
-      <DependentUpon>Edit_Subject.cs</DependentUpon>
+    <Compile Include="View\ScheduleTime.Designer.cs">
+      <DependentUpon>ScheduleTime.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StudyHelper.cs">
       <SubType>Form</SubType>
@@ -133,17 +134,17 @@
     <Compile Include="Presenter\MainPagePresenter.cs" />
     <Compile Include="Trans.cs" />
     <Compile Include="TrayIco.cs" />
-    <Compile Include="View\Adding_Subject.cs">
+    <Compile Include="View\AddEdit_Subject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Adding_Subject.Designer.cs">
-      <DependentUpon>Adding_Subject.cs</DependentUpon>
+    <Compile Include="View\AddEdit_Subject.Designer.cs">
+      <DependentUpon>AddEdit_Subject.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Add_Subject.cs">
+    <Compile Include="View\Oversight.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Add_Subject.Designer.cs">
-      <DependentUpon>Add_Subject.cs</DependentUpon>
+    <Compile Include="View\Oversight.Designer.cs">
+      <DependentUpon>Oversight.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -159,8 +160,8 @@
     <Compile Include="View\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Edit_Subject.resx">
-      <DependentUpon>Edit_Subject.cs</DependentUpon>
+    <EmbeddedResource Include="View\ScheduleTime.resx">
+      <DependentUpon>ScheduleTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudyHelper.resx">
       <DependentUpon>StudyHelper.cs</DependentUpon>
@@ -171,11 +172,12 @@
     <EmbeddedResource Include="View\AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Adding_Subject.resx">
-      <DependentUpon>Adding_Subject.cs</DependentUpon>
+    <EmbeddedResource Include="View\AddEdit_Subject.resx">
+      <DependentUpon>AddEdit_Subject.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Add_Subject.resx">
-      <DependentUpon>Add_Subject.cs</DependentUpon>
+    <EmbeddedResource Include="View\Oversight.resx">
+      <DependentUpon>Oversight.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="View\Signup.cs">
       <SubType>Form</SubType>
@@ -216,5 +218,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\notif.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
