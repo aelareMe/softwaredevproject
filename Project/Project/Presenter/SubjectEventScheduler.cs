@@ -85,26 +85,27 @@ namespace Project.Presenter
         public void loadScheduledTime(int studyDetailsId,DataGridView dtg) {
 
             studyProgress = model.GettStudyProgress(studyDetailsId);
+            DataGridViewProgressColumn column = new DataGridViewProgressColumn();
 
-            DataTable newDt = new DataTable();
+            dtg.Rows.Clear();
+            dtg.ColumnCount = 1;
+            dtg.Columns[0].Name = "Subject Code";
+            dtg.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtg.Columns.Add(column);
+            dtg.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            column.HeaderText = "Progress";
 
-            newDt.Columns.Add("Scheduled Time").DataType = typeof(string);
-            int ctr = 0;
             foreach (DataRow dr in studyProgress.Rows) {
 
                 DateTime date = Convert.ToDateTime(dr["Scheduled Time"].ToString());
-                object[] temp = new object[] { date.ToString("hh:mm tt") };
-                newDt.Rows.Add(temp);
+                int percent = Convert.ToInt32(dr["study_percent"].ToString());
+      
+                object[] temp = new object[] { date.ToString("hh:mm tt"), percent };
+                dtg.Rows.Add(temp);
 
             }
 
-            dtg.DataSource = newDt;
-
-            foreach (DataGridViewColumn dc in dtg.Columns) {
-                if (dc.Name.Contains("_")) {
-                    dc.Visible = false;
-                }
-            }
+      
 
 
         }

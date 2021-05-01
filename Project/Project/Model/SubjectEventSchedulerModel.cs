@@ -161,19 +161,24 @@ namespace Project.Model
 
         public DataTable GetPercentsPerType(int userID) {
 
-            string sql = "Select subject.study_name as \"Subject Code\" ," +
-                         "schedule_study.type as \"_type\"," +
-                         "schedule_study.study_description as \"Description\"," +
-                         "schedule_study.study_details_id, " +
-                         "s1.sum_type as \"Total Percent\" " +
-                         "from user_info " +
+            string sql = "Select subject.study_name as \"Subject Code\", "+
+                         "schedule_study.type as \"_type\", "+
+                         "schedule_study.study_description as \"Description\", "+
+                         "schedule_study.study_details_id, "+
+                         "s1.sum_type as \"Total Percent\" , s1.count as \"Percent Denomitator\" "+
+                         "from user_info "+
                          "inner join subject on user_info.user_id = subject.user_id " +
-                         "inner join schedule_study on subject.study_id = schedule_study.study_id " +
-                         "inner join( Select SUM(study_progress.study_percent) as \"sum_type\"," +
-                         "schedule_study.study_details_id " +
+                         "inner join schedule_study on subject.study_id = schedule_study.study_id "+
+                         "inner join (Select SUM(study_progress.study_percent) as \"sum_type\", " +
+                         "schedule_study.study_details_id , ctr.count " +
                          "from schedule_study " +
-                         "inner join study_progress on schedule_study.study_details_id = study_progress.study_details_id "  +
-                         "group by schedule_study.study_details_id, schedule_study.type) as s1  " +
+                         "inner join study_progress on schedule_study.study_details_id = study_progress.study_details_id " +        
+                         "inner join ( Select count(study_progress.study_progress_id )as \"count\", " +
+                         "schedule_study.type as \"typee\" " +
+                         "from study_progress "+
+                         "inner join schedule_study on study_progress.study_details_id = schedule_study.study_details_id "+
+                         "group by typee) as \"ctr\" on schedule_study.type = ctr.typee " +
+                         "group by schedule_study.study_details_id, schedule_study.type,ctr.count) as s1 " +
                          "on schedule_study.study_details_id = s1.study_details_id " +
                          "WHERE user_info.user_id = "+ userID + "";
             DataTable dt = new DataTable();

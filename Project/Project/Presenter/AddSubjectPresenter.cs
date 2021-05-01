@@ -48,7 +48,7 @@ namespace Project.Presenter
               newDescription, userInfo.getId());
             if (reponse.Rows.Count > 0)
             {
-                MessageBox.Show("Adding Subject Success");
+                MessageBox.Show("Editing Subject Success");
 
             }
 

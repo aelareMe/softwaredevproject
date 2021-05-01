@@ -154,8 +154,10 @@ namespace Project.Presenter
                     string subjCode = dr["Subject Code"].ToString();
                     string studyName = dr["Description"].ToString();
                     int totalPercent = Convert.ToInt32(dr["Total Percent"].ToString());
+                    double denominator = Convert.ToDouble(dr["Percent Denomitator"].ToString());
+                    int value = Convert.ToInt32((totalPercent / denominator).ToString());
                     object[] row1 = new object[] { subjCode.ToString(),
-                     studyName, totalPercent };
+                     studyName, value };
                     iMainPage.eventList.Rows.Add(row1);
 
                 }
