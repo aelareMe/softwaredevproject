@@ -28,5 +28,7 @@ namespace Project.Interface
 
         Form mainpageForm { get; }
 
+        ContextMenuStrip contextMenu { get; set; }
+
     }
 }

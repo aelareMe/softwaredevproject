@@ -82,6 +82,11 @@ namespace Project.View
             set { this.lblSubjectsEnrolled = value; }
         }
 
+        public ContextMenuStrip contextMenu {
+            get { return this.contextMenuStrip1; }
+            set { this.contextMenuStrip1 = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -91,8 +96,8 @@ namespace Project.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            presenter.showTaskScheduler();
-         //   MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
+            presenter.ShowScheduleTime();
+ 
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -114,7 +119,8 @@ namespace Project.View
 
         private void dataGridView2_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.showStudyHelper();
+            presenter.ShowAllProgress(e.RowIndex);
+
         }
     }
 }

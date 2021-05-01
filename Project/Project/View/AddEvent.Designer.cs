@@ -92,9 +92,9 @@
             this.label3.Location = new System.Drawing.Point(33, 184);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 9;
-            this.label3.Text = "DATE:";
+            this.label3.Text = "Deadline:";
             // 
             // label2
             // 

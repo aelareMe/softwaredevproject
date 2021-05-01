@@ -49,7 +49,7 @@ namespace Project.Presenter
         }
 
 
-        public void showTaskScheduler() {
+        public void ShowScheduleTime() {
             ActSched scheduler = new ActSched(iMainPage.userInfo);
             scheduler.Show();
         }
@@ -97,13 +97,13 @@ namespace Project.Presenter
                         temp -= 12;
                     }
                     notifString = temp.ToString() + ":" + subs[1] + " " + amPM;
-                    iMainPage.notifyIcon.
-                        ShowBalloonTip(1000, strTitleBuild,
-                        " Time to study at " + notifString + " Please Adhere", ToolTipIcon.Info);
+                       iMainPage.notifyIcon.
+                           ShowBalloonTip(1000, strTitleBuild,
+                           " Time to study at " + notifString + " Please Adhere", ToolTipIcon.Info);
 
                     if (iMainPage.mainpageForm.WindowState == FormWindowState.Minimized) {
                         iMainPage.mainpageForm.Hide();
-                    }
+                    }   
 
                 }
 
@@ -112,12 +112,14 @@ namespace Project.Presenter
             }
         }
 
+  
+
         public  async Task asyncUpcommingvents()
         {
             while (true)
             {
                 DataTable scheduledEvents = 
-                    subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
+                subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
                 iMainPage.lblUpComingEvents.Text = scheduledEvents.Rows.Count.ToString();
 
 
@@ -143,17 +145,18 @@ namespace Project.Presenter
         public async Task getAllPercentage() {
             while (true)
             {
-                scheduledEvents = subjModel.GetAllPercentage(iMainPage.userInfo.getId());
+                scheduledEvents = subjModel.GetPercentsPerType(iMainPage.userInfo.getId());
+
                 List<EventType> eventTypes = EventType.getTypes();
                 iMainPage.eventList.Rows.Clear();
                 foreach (DataRow dr in scheduledEvents.Rows)
                 {
 
                     string subjCode = dr["Subject Code"].ToString();
-                    string studyName = dr["Study Name"].ToString();
-                
+                    string studyName = dr["Description"].ToString();
+                    int totalPercent = Convert.ToInt32(dr["Total Percent"].ToString());
                     object[] row1 = new object[] { subjCode.ToString(),
-                     studyName, 0 };
+                     studyName, totalPercent };
                     iMainPage.eventList.Rows.Add(row1);
 
                 }
@@ -165,20 +168,12 @@ namespace Project.Presenter
         }
 
 
-        public void showStudyHelper() {
+        public void ShowAllProgress(int selectedIndex) {
+            DataRow dr = scheduledEvents.Rows[selectedIndex];
 
-            if (scheduledEvents.Rows.Count > 0) {
-
-                int index = iMainPage.eventList.SelectedRows[0].Index;
-                DataRow dr = scheduledEvents.Rows[index];
-
-                int studyId = Convert.ToInt32(dr["study_details_id"].ToString());
-                string name = dr["Study Name"].ToString();
-                StudyHelper studyHelper = new StudyHelper(studyId, name);
-                studyHelper.ShowDialog();
-
-            }
-
+            ActSched scheduler = new ActSched(iMainPage.userInfo);
+            ScheduleTime form = new ScheduleTime(scheduler,dr);
+            form.Show();
         }
 
 

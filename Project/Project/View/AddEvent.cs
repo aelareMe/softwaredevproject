@@ -26,7 +26,7 @@ namespace Project
             presenter = new SubjectEventScheduler(iSubjectEventScheduler);
             InitializeComponent();
             eventDate.Format = DateTimePickerFormat.Custom;
-            eventDate.CustomFormat = "hh:mm tt";
+            eventDate.CustomFormat = "MM/dd/yyyy";
    
 
 

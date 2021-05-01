@@ -13,11 +13,11 @@ namespace Project.Model
     {
         Transactions trans = new Transactions();
 
-        public DataTable UpdateScheduledStudy(int studyID,int percent)
+        public DataTable UpdateStudyProgress(int studyProgressId,int percent)
         {
 
-            string sql = "UPDATE schedule_study set study_percent = " + percent + " " +
-                         "WHERE study_details_id =" + studyID + " RETURNING *";
+            string sql = "UPDATE study_progress set study_percent = " + percent + " " +
+                         "WHERE study_progress_id =" + studyProgressId + " RETURNING *";
 
             DataTable dt = new DataTable();
             trans.OpenConnection();
@@ -39,11 +39,11 @@ namespace Project.Model
 
         }
 
-        public DataTable InsertStudyProgress(int studyDetailsID, int percent)
+
+        public DataTable LoadCurrentProgress(int studyProgressId)
         {
 
-            string sql = "INSERT INTO study_progress (study_details_id ,study_percent )"+
-                         "VALUES("+ studyDetailsID + ","+ percent + ") RETURNING *";
+            string sql = "Select * from study_progress where study_progress_id  = "+ studyProgressId + "";
 
             DataTable dt = new DataTable();
             trans.OpenConnection();
@@ -64,7 +64,6 @@ namespace Project.Model
             return dt;
 
         }
-
 
 
     }

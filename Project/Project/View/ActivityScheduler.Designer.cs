@@ -54,7 +54,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(323, 165);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 55);
             this.button1.TabIndex = 11;
@@ -77,7 +77,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(157, 112);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 9;
@@ -120,17 +120,15 @@
             this.eventList.AllowUserToDeleteRows = false;
             this.eventList.AllowUserToResizeColumns = false;
             this.eventList.AllowUserToResizeRows = false;
-            this.eventList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.eventList.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.eventList.BackgroundColor = System.Drawing.Color.White;
             this.eventList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventList.GridColor = System.Drawing.SystemColors.Control;
-            this.eventList.Location = new System.Drawing.Point(64, 323);
-            this.eventList.MultiSelect = false;
+            this.eventList.GridColor = System.Drawing.Color.White;
+            this.eventList.Location = new System.Drawing.Point(65, 322);
             this.eventList.Name = "eventList";
-            this.eventList.ReadOnly = true;
             this.eventList.RowTemplate.Height = 24;
-            this.eventList.Size = new System.Drawing.Size(687, 149);
+            this.eventList.Size = new System.Drawing.Size(686, 150);
             this.eventList.TabIndex = 17;
+            this.eventList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventList_CellContentDoubleClick);
             // 
             // ActSched
             // 
@@ -145,7 +143,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActSched";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ActivityScheduler";
