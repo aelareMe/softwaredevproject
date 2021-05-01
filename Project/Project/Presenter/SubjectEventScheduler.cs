@@ -17,14 +17,18 @@ namespace Project.Presenter
 
         ISubjectEventScheduler iSubjectEventScheduler;
         SubjectEventSchedulerModel model = new SubjectEventSchedulerModel();
-  
+        DataTable subjectList = new DataTable();
+
+        DataTable studyProgress = new DataTable();
+
+
         public SubjectEventScheduler(ISubjectEventScheduler iSubjectEventScheduler) {
             this.iSubjectEventScheduler = iSubjectEventScheduler;
         }
 
         public void loadSubjects() {
         
-            DataTable subjectList = model.LoadAllSubjects(iSubjectEventScheduler.userInfo.getId());
+            subjectList = model.LoadAllSubjects(iSubjectEventScheduler.userInfo.getId());
             iSubjectEventScheduler.cmbSubjectList.DataSource = subjectList;
             iSubjectEventScheduler.cmbSubjectList.DisplayMember = "study_name";
             iSubjectEventScheduler.cmbSubjectList.ValueMember = "study_id";
@@ -36,12 +40,14 @@ namespace Project.Presenter
 
         }
 
-        public void addEvent(DateTime selectedDate,string eventName,int eventType) {
+        public void addEvent(DateTime selectedDate,string eventName, 
+            int eventType,int numberOfDaysAccomplish ,int numberOfSessionsDay) {
             int selectedSubjectID =Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());
 
             string strBuildDate = selectedDate.Date.Year.ToString() + "-" + selectedDate.Date.Month.ToString() +
-                "-" + selectedDate.Date.Day.ToString() + " " + selectedDate.TimeOfDay.ToString();
-            DataTable response = model.AddEventToSubject(selectedSubjectID, strBuildDate,eventName, eventType);
+                    "-" + selectedDate.Date.Day.ToString();
+            DataTable response = model.AddEventToSubject(selectedSubjectID,
+                strBuildDate,eventName, eventType , numberOfDaysAccomplish, numberOfSessionsDay);
             if (response.Rows.Count > 0)
             {
                 MessageBox.Show("Success Adding Event");
@@ -51,10 +57,66 @@ namespace Project.Presenter
         public void loadStudyTime() {
           int selectedSubjectID = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());
           DataTable response = model.LoadSubjectStudyTime(selectedSubjectID);
+          iSubjectEventScheduler.dtEventList = response;
           iSubjectEventScheduler.listEvents.DataSource = response;
+
+            foreach (DataGridViewColumn dc in iSubjectEventScheduler.listEvents.Columns)
+            {
+                if (dc.Name.Contains("_")) {
+                    dc.Visible = false;
+                }
+            }
 
         }
 
- 
+        public void submitScheduledTime(int studyDetailsId, DateTime selectedDate) {
+
+            string strBuildDate = selectedDate.TimeOfDay.ToString();
+
+            DataTable response = model.InsertStudyProgress(studyDetailsId, strBuildDate);
+
+            if (response.Rows.Count > 0) {
+                MessageBox.Show("Sucesss");
+            }
+
+        }
+
+
+        public void loadScheduledTime(int studyDetailsId,DataGridView dtg) {
+
+            studyProgress = model.GettStudyProgress(studyDetailsId);
+
+            DataTable newDt = new DataTable();
+
+            newDt.Columns.Add("Scheduled Time").DataType = typeof(string);
+            int ctr = 0;
+            foreach (DataRow dr in studyProgress.Rows) {
+
+                DateTime date = Convert.ToDateTime(dr["Scheduled Time"].ToString());
+                object[] temp = new object[] { date.ToString("hh:mm tt") };
+                newDt.Rows.Add(temp);
+
+            }
+
+            dtg.DataSource = newDt;
+
+            foreach (DataGridViewColumn dc in dtg.Columns) {
+                if (dc.Name.Contains("_")) {
+                    dc.Visible = false;
+                }
+            }
+
+
+        }
+
+
+        public void showStudyHelper(int rowIndex)
+        {
+            int progressId = Convert.ToInt32(studyProgress.Rows[rowIndex]["study_progress_id"].ToString());
+            string name = studyProgress.Rows[rowIndex]["Study Name"].ToString();
+            StudyHelper studyHelper = new StudyHelper(progressId, name);
+            studyHelper.ShowDialog();
+        }
+
     }
 }

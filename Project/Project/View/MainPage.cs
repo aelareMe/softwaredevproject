@@ -63,6 +63,14 @@ namespace Project.View
             set { _minuteNotifyEvery = value; }
         }
 
+        public NotifyIcon notifyIcon {
+            get { return notifyIcon1; }
+            set { notifyIcon1 = value; }
+        }
+        public Form mainpageForm {
+            get { return this; }
+        }
+
         Label IMainPage.lblUpComingEvents {
             get { return this.lblUpComingEvent; }
             set { this.lblUpComingEvent = value; }
@@ -73,6 +81,11 @@ namespace Project.View
             set { this.lblSubjectsEnrolled = value; }
         }
 
+        public ContextMenuStrip contextMenu {
+            get { return this.contextMenuStrip1; }
+            set { this.contextMenuStrip1 = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -81,8 +94,9 @@ namespace Project.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MainPage MainPage;
-            presenter.showTaskScheduler();
+
+            presenter.ShowScheduleTime();
+ 
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -95,5 +109,18 @@ namespace Project.View
             _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
         }
 
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+        }
+
+       
+
+        private void dataGridView2_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            presenter.ShowAllProgress(e.RowIndex);
+
+        }
     }
 }

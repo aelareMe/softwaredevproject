@@ -1,6 +1,7 @@
 ﻿using Project.Interface;
 using Project.Object;
 using Project.Presenter;
+using Project.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace Project
 
         UserInfObject _userInfObject;
         SubjectEventScheduler presenter;
+        DataTable _dtEventList = new DataTable();
+    
         public ActSched(UserInfObject _userInfObject)
         {
             this._userInfObject = _userInfObject;
@@ -42,7 +45,10 @@ namespace Project
             set { eventList = value; }
         }
 
-        
+        public DataTable dtEventList {
+            get { return _dtEventList; }
+            set { _dtEventList = value; }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -66,5 +72,11 @@ namespace Project
             numEvent.Text = eventList.Rows.Count.ToString() + "/300 Events"; //para ni sa number of events
         }
 
+        private void eventList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataRow dr = this.dtEventList.Rows[e.RowIndex];
+            ScheduleTime form = new ScheduleTime(this, dr);
+            form.ShowDialog();
+        }
     }
 }

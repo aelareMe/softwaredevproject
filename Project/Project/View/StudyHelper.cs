@@ -18,21 +18,23 @@ namespace Project
 
         string _studyScheduleName = "";
 
-        int _studyScheduleId= 0;
+        int _studyProgressId = 0;
 
         
 
         StudyHelperPresenter presenter;
 
-        public StudyHelper(int _studyScheduleId,string _studyScheduleName)
+        public StudyHelper(int _studyProgressId, string _studyScheduleName)
         {
             InitializeComponent();
-            this._studyScheduleId = _studyScheduleId;
+            this._studyProgressId = _studyProgressId;
             this._studyScheduleName = _studyScheduleName;
             presenter = new StudyHelperPresenter(this);
+        
             lblStudyName.Text = _studyScheduleName;
-
-
+            set_progress = presenter.loadCurrentProgress();
+            percentTb.Text = set_progress.ToString();
+            setProgress(set_progress);
         }
 
         public string getProgress
@@ -56,9 +58,9 @@ namespace Project
             get { return _studyScheduleName; }
             set { _studyScheduleName = value; }
         }
-        public int studyScheduleId {
-            get { return _studyScheduleId; }
-            set { _studyScheduleId = value; }
+        public int studyProgressId  {
+            get { return _studyProgressId; }
+            set { _studyProgressId = value; }
         }
 
         public int percent {
@@ -69,6 +71,10 @@ namespace Project
         private void SetBtn_Click(object sender, EventArgs e)
         {
             int.TryParse((percentTb.Text), out set_progress);
+            setProgress(set_progress);
+        }
+
+        private void setProgress(int set_progress) {
 
             if (set_progress > 100)
             {
@@ -93,10 +99,6 @@ namespace Project
 
 
             }
-
-
-
-
         }
 
         public void dispMessage(int set_progress)
