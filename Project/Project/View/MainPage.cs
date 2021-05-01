@@ -15,7 +15,6 @@ namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
-        Adding_Subject Adding_Subject = new Adding_Subject(null);
 
         UserInfObject _userInfObject;
 
@@ -24,6 +23,7 @@ namespace Project.View
         int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
+
         public MainPage(UserInfObject _userInfObject)
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace Project.View
             presenter.loadSubjectsAsync();
             txtMinuteRange.Text = _minuteRange.ToString();
             textBox1.Text = _minuteNotifyEvery.ToString();
-
         }
         public UserInfObject userInfo {
             get { return _userInfObject; }
@@ -78,13 +77,12 @@ namespace Project.View
         {
 
             presenter.showAddSubjects();
-  
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MainPage MainPage;
             presenter.showTaskScheduler();
-         //   MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -96,5 +94,6 @@ namespace Project.View
         {
             _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
         }
+
     }
 }

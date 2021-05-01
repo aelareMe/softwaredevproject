@@ -52,18 +52,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(9, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 17);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Subjects Enrolled";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 443);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(11, 360);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 67);
+            this.button1.Size = new System.Drawing.Size(94, 54);
             this.button1.TabIndex = 4;
             this.button1.Text = "Add Subject";
             this.button1.UseVisualStyleBackColor = true;
@@ -72,26 +73,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 7);
+            this.label3.Location = new System.Drawing.Point(9, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 17);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Welcome: ";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(63, 9);
+            this.lblName.Location = new System.Drawing.Point(47, 7);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 17);
+            this.lblName.Size = new System.Drawing.Size(0, 13);
             this.lblName.TabIndex = 6;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(693, 443);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(520, 360);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 67);
+            this.button2.Size = new System.Drawing.Size(94, 54);
             this.button2.TabIndex = 7;
             this.button2.Text = "Add Activity";
             this.button2.UseVisualStyleBackColor = true;
@@ -100,36 +103,40 @@
             // lblSubjectsEnrolled
             // 
             this.lblSubjectsEnrolled.AutoSize = true;
-            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(136, 30);
+            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(102, 24);
+            this.lblSubjectsEnrolled.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubjectsEnrolled.Name = "lblSubjectsEnrolled";
-            this.lblSubjectsEnrolled.Size = new System.Drawing.Size(16, 17);
+            this.lblSubjectsEnrolled.Size = new System.Drawing.Size(13, 13);
             this.lblSubjectsEnrolled.TabIndex = 9;
             this.lblSubjectsEnrolled.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(136, 92);
+            this.label2.Location = new System.Drawing.Point(102, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Subject List";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(449, 30);
+            this.label5.Location = new System.Drawing.Point(337, 24);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 17);
+            this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "UpComing Events";
             // 
             // lblUpComingEvent
             // 
             this.lblUpComingEvent.AutoSize = true;
-            this.lblUpComingEvent.Location = new System.Drawing.Point(575, 30);
+            this.lblUpComingEvent.Location = new System.Drawing.Point(431, 24);
+            this.lblUpComingEvent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUpComingEvent.Name = "lblUpComingEvent";
-            this.lblUpComingEvent.Size = new System.Drawing.Size(16, 17);
+            this.lblUpComingEvent.Size = new System.Drawing.Size(13, 13);
             this.lblUpComingEvent.TabIndex = 15;
             this.lblUpComingEvent.Text = "0";
             // 
@@ -144,13 +151,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 96);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(366, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(274, 244);
             this.dataGridView1.TabIndex = 16;
             // 
             // dataGridView2
@@ -164,36 +172,40 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Enabled = false;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(454, 117);
+            this.dataGridView2.Location = new System.Drawing.Point(340, 95);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(366, 142);
+            this.dataGridView2.Size = new System.Drawing.Size(274, 115);
             this.dataGridView2.TabIndex = 17;
             // 
             // txtMinuteRange
             // 
-            this.txtMinuteRange.Location = new System.Drawing.Point(616, 58);
+            this.txtMinuteRange.Location = new System.Drawing.Point(462, 47);
+            this.txtMinuteRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMinuteRange.Name = "txtMinuteRange";
-            this.txtMinuteRange.Size = new System.Drawing.Size(100, 22);
+            this.txtMinuteRange.Size = new System.Drawing.Size(76, 20);
             this.txtMinuteRange.TabIndex = 18;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(451, 64);
+            this.label6.Location = new System.Drawing.Point(338, 52);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 17);
+            this.label6.Size = new System.Drawing.Size(122, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "UpComing Event Range";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(743, 58);
+            this.button4.Location = new System.Drawing.Point(557, 47);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(56, 19);
             this.button4.TabIndex = 20;
             this.button4.Text = "Start";
             this.button4.UseVisualStyleBackColor = true;
@@ -201,9 +213,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(743, 87);
+            this.button3.Location = new System.Drawing.Point(557, 71);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(56, 19);
             this.button3.TabIndex = 23;
             this.button3.Text = "Start";
             this.button3.UseVisualStyleBackColor = true;
@@ -211,24 +224,26 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(451, 92);
+            this.label7.Location = new System.Drawing.Point(338, 75);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 17);
+            this.label7.Size = new System.Drawing.Size(115, 13);
             this.label7.TabIndex = 22;
             this.label7.Text = "Notify Schedule Every:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(616, 89);
+            this.textBox1.Location = new System.Drawing.Point(462, 72);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 21;
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 521);
+            this.ClientSize = new System.Drawing.Size(633, 423);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox1);
@@ -246,7 +261,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";

@@ -25,7 +25,6 @@ namespace Project
             presenter = new SubjectEventScheduler(this);
             InitializeComponent();
             presenter.loadSubjects();
-        
         }
 
         public ComboBox cmbSubjectList {

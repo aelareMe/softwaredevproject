@@ -27,7 +27,7 @@ namespace Project.Presenter
                 iAddSubject.subjectDescription, userInfo.getId());
             if (reponse.Rows.Count > 0) {
                 MessageBox.Show("Adding Subject Success");
-
+           
             }
         }
 

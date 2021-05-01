@@ -34,12 +34,11 @@ namespace Project.Presenter
             iMainPage.eventList.Columns.Add(column);
             iMainPage.eventList.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             column.HeaderText = "Progress";
-
-
+            
         }
 
         public void showAddSubjects() {
-            Add_Subject open_add_subject = new Add_Subject(iMainPage.userInfo);
+            Subject_Oversight open_add_subject = new Subject_Oversight(iMainPage.userInfo);
             open_add_subject.Show();
         }
 
@@ -110,9 +109,7 @@ namespace Project.Presenter
                 DataTable subjectList = subjModel.LoadAllMainPageSubjects(iMainPage.userInfo.getId());
 
                 iMainPage.lblSubjectsEnrolled.Text = subjectList.Rows.Count.ToString();
-
                 iMainPage.subjectList.DataSource = subjectList;
-
                 await Task.Delay(1000);
             }
         }
