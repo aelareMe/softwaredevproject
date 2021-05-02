@@ -28,13 +28,15 @@ namespace Project.Presenter
         public MainPagePresenter(IMainPage iMainPage)  {
             this.iMainPage = iMainPage;
 
-            iMainPage.eventList.ColumnCount = 2;
+            iMainPage.eventList.ColumnCount = 3;
             iMainPage.eventList.Columns[0].Name = "Subject Code";
             iMainPage.eventList.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             iMainPage.eventList.Columns[1].Name = "Study Name";
             iMainPage.eventList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            iMainPage.eventList.Columns.Add(column);
+            iMainPage.eventList.Columns[2].Name = "Type";
             iMainPage.eventList.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            iMainPage.eventList.Columns.Add(column);
+            iMainPage.eventList.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             column.HeaderText = "Progress";
             
         }
@@ -155,9 +157,21 @@ namespace Project.Presenter
                     string studyName = dr["Description"].ToString();
                     int totalPercent = Convert.ToInt32(dr["Total Percent"].ToString());
                     double denominator = Convert.ToDouble(dr["Percent Denomitator"].ToString());
-                    int value = Convert.ToInt32((totalPercent / denominator).ToString());
+
+                    int type = Convert.ToInt32(dr["_type"].ToString());
+
+                    string strType = "Exam";
+                    if (type == 1) {
+                        strType = "Exam";
+                    } else if (type == 2) {
+                        strType = "Quiz";
+                    } else {
+                        strType = "Assignment";
+                    }
+
+                        int value = Convert.ToInt32((totalPercent / denominator).ToString());
                     object[] row1 = new object[] { subjCode.ToString(),
-                     studyName, value };
+                     studyName,strType, value };
                     iMainPage.eventList.Rows.Add(row1);
 
                 }
