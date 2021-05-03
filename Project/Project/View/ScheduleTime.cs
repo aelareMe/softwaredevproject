@@ -44,5 +44,6 @@ namespace Project.View
         {
             presenter.showStudyHelper(e.RowIndex);
         }
+
     }
 }

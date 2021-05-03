@@ -320,6 +320,9 @@ namespace Project
             presenter.updateScheduledEvent();
         }
 
-     
+        private void exitBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
