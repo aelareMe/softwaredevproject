@@ -44,9 +44,12 @@ namespace Project.View
             this.close_btn = new System.Windows.Forms.Button();
             this.minimize_btn = new System.Windows.Forms.Button();
             this.maximize_btn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -56,7 +59,7 @@ namespace Project.View
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(42)))), ((int)(((byte)(39)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button3);
@@ -86,7 +89,7 @@ namespace Project.View
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(42)))), ((int)(((byte)(39)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 265);
             this.panel2.Name = "panel2";
@@ -95,6 +98,7 @@ namespace Project.View
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -107,11 +111,12 @@ namespace Project.View
             this.button3.TabIndex = 10;
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // edit_subject_btn
             // 
+            this.edit_subject_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.edit_subject_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.edit_subject_btn.FlatAppearance.BorderSize = 0;
             this.edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -124,12 +129,13 @@ namespace Project.View
             this.edit_subject_btn.TabIndex = 9;
             this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.edit_subject_btn.UseVisualStyleBackColor = true;
+            this.edit_subject_btn.UseVisualStyleBackColor = false;
             this.edit_subject_btn.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(42)))), ((int)(((byte)(39)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -139,7 +145,7 @@ namespace Project.View
             // 
             // main_panel
             // 
-            this.main_panel.BackColor = System.Drawing.Color.White;
+            this.main_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
             this.main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_panel.Location = new System.Drawing.Point(85, 0);
             this.main_panel.Name = "main_panel";
@@ -159,7 +165,7 @@ namespace Project.View
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
             this.panel5.Controls.Add(this.close_btn);
             this.panel5.Controls.Add(this.minimize_btn);
             this.panel5.Controls.Add(this.maximize_btn);
@@ -171,7 +177,7 @@ namespace Project.View
             // 
             // close_btn
             // 
-            this.close_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(42)))), ((int)(((byte)(39)))));
+            this.close_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.close_btn.FlatAppearance.BorderSize = 0;
             this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,7 +192,7 @@ namespace Project.View
             // 
             // minimize_btn
             // 
-            this.minimize_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(158)))), ((int)(((byte)(15)))));
+            this.minimize_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(128)))), ((int)(((byte)(180)))));
             this.minimize_btn.FlatAppearance.BorderSize = 0;
             this.minimize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.minimize_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,7 +207,7 @@ namespace Project.View
             // 
             // maximize_btn
             // 
-            this.maximize_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maximize_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(73)))), ((int)(((byte)(116)))));
             this.maximize_btn.FlatAppearance.BorderSize = 0;
             this.maximize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximize_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,11 +220,21 @@ namespace Project.View
             this.maximize_btn.UseVisualStyleBackColor = false;
             this.maximize_btn.Click += new System.EventHandler(this.maximize_btn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // Subject_Oversight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(53)))), ((int)(((byte)(68)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(128)))), ((int)(((byte)(180)))));
             this.ClientSize = new System.Drawing.Size(700, 400);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -227,8 +243,10 @@ namespace Project.View
             this.Text = "Add_Subject";
             this.Load += new System.EventHandler(this.Add_Subject_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +265,6 @@ namespace Project.View
         private System.Windows.Forms.Button close_btn;
         private System.Windows.Forms.Button minimize_btn;
         private System.Windows.Forms.Button maximize_btn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
