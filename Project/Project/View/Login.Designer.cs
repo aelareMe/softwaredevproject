@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,10 +40,16 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.close_btn = new System.Windows.Forms.Button();
+            this.minimize_btn = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -136,7 +143,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(37, 118);
+            this.panel1.Location = new System.Drawing.Point(68, 162);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(289, 192);
             this.panel1.TabIndex = 6;
@@ -167,21 +174,80 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 56);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(364, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 35;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.panel5.Controls.Add(this.close_btn);
+            this.panel5.Controls.Add(this.minimize_btn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(424, 56);
+            this.panel5.TabIndex = 8;
+            // 
+            // close_btn
+            // 
+            this.close_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.close_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.close_btn.FlatAppearance.BorderSize = 0;
+            this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close_btn.ForeColor = System.Drawing.Color.Black;
+            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
+            this.close_btn.Location = new System.Drawing.Point(375, 7);
+            this.close_btn.Name = "close_btn";
+            this.close_btn.Size = new System.Drawing.Size(46, 40);
+            this.close_btn.TabIndex = 32;
+            this.close_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.close_btn.UseVisualStyleBackColor = false;
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
+            // 
+            // minimize_btn
+            // 
+            this.minimize_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimize_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.minimize_btn.FlatAppearance.BorderSize = 0;
+            this.minimize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimize_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimize_btn.ForeColor = System.Drawing.Color.Black;
+            this.minimize_btn.Image = ((System.Drawing.Image)(resources.GetObject("minimize_btn.Image")));
+            this.minimize_btn.Location = new System.Drawing.Point(324, 5);
+            this.minimize_btn.Name = "minimize_btn";
+            this.minimize_btn.Size = new System.Drawing.Size(45, 44);
+            this.minimize_btn.TabIndex = 34;
+            this.minimize_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.minimize_btn.UseVisualStyleBackColor = false;
+            this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel5;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(362, 345);
+            this.ClientSize = new System.Drawing.Size(424, 432);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -191,6 +257,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,6 +274,11 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button close_btn;
+        private System.Windows.Forms.Button minimize_btn;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
 

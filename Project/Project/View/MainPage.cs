@@ -88,15 +88,12 @@ namespace Project.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             presenter.showAddSubjects();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            presenter.ShowScheduleTime();
- 
+            //presenter.ShowScheduleTime();
         }
 
         private void button3_Click(object sender, EventArgs e)

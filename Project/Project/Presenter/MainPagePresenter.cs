@@ -138,7 +138,7 @@ namespace Project.Presenter
 
                 iMainPage.lblSubjectsEnrolled.Text = subjectList.Rows.Count.ToString();
                 iMainPage.subjectList.DataSource = subjectList;
-
+                //MessageBox.Show(subjectList.Rows[0].ItemArray[0].ToString());
                 await Task.Delay(1000);
             }
         }

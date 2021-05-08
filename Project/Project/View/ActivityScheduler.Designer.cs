@@ -49,7 +49,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 71);
+            this.label3.Location = new System.Drawing.Point(71, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 18);
             this.label3.TabIndex = 12;
@@ -59,7 +59,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button1.Location = new System.Drawing.Point(216, 336);
+            this.button1.Location = new System.Drawing.Point(294, 344);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 45);
             this.button1.TabIndex = 11;
@@ -72,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Copperplate Gothic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.label2.Location = new System.Drawing.Point(3, 12);
+            this.label2.Location = new System.Drawing.Point(70, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 21);
             this.label2.TabIndex = 10;
@@ -81,7 +81,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(124, 12);
+            this.comboBox1.Location = new System.Drawing.Point(191, 21);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;
@@ -102,7 +102,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.button2.Font = new System.Drawing.Font("Copperplate Gothic Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(263, 8);
+            this.button2.Location = new System.Drawing.Point(330, 17);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(167, 29);
@@ -116,7 +116,7 @@
             this.numEvent.AutoSize = true;
             this.numEvent.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.numEvent.Location = new System.Drawing.Point(412, 74);
+            this.numEvent.Location = new System.Drawing.Point(489, 74);
             this.numEvent.Name = "numEvent";
             this.numEvent.Size = new System.Drawing.Size(99, 15);
             this.numEvent.TabIndex = 16;
@@ -133,7 +133,7 @@
             this.eventList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.eventList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventList.GridColor = System.Drawing.SystemColors.Control;
-            this.eventList.Location = new System.Drawing.Point(0, 96);
+            this.eventList.Location = new System.Drawing.Point(74, 91);
             this.eventList.Margin = new System.Windows.Forms.Padding(2);
             this.eventList.MultiSelect = false;
             this.eventList.Name = "eventList";
@@ -147,7 +147,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.eventList);
             this.panel1.Controls.Add(this.numEvent);
@@ -156,13 +156,13 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Location = new System.Drawing.Point(31, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(514, 225);
+            this.panel1.Size = new System.Drawing.Size(656, 245);
             this.panel1.TabIndex = 27;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(471, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(587, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,8 +173,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(578, 393);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.ClientSize = new System.Drawing.Size(717, 415);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
