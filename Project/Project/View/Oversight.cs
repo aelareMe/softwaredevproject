@@ -2,9 +2,11 @@
 using Project.Model;
 using Project.Object;
 using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,11 +16,31 @@ namespace Project.View
     public partial class Subject_Oversight : Form
     {
 
-        private bool add_subject_btn = false;
-        //private bool button2 = false;
         UserInfObject _userInfObject;
         int total_subject;
         Adding_Subject Adding_Subject;
+        Panel main_panel1;
+
+        public Subject_Oversight()
+        {
+
+        }
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+            (
+                int nleft,
+                int nTop,
+                int nRight,
+                int nBottom,
+                int nWidthEllipse,
+                int nHeightEllipse
+            );
+        private void Add_Subject_Load(object sender, EventArgs e)
+        {
+            close_btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, close_btn.Width, close_btn.Height, 30, 30));
+            //maximize_btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, maximize_btn.Width, maximize_btn.Height, 30, 30));
+            minimize_btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, minimize_btn.Width, minimize_btn.Height, 30, 30));
+        }
         public Subject_Oversight(int value)
         {
             InitializeComponent();
@@ -30,11 +52,8 @@ namespace Project.View
         {
             InitializeComponent();
             this._userInfObject = _userInfObject;
-            
-        }
-        private void celearningTextbox1_Click(object sender, EventArgs e)
-        {
-
+            MainPage MainPage = new MainPage(_userInfObject);
+            openChildForm(MainPage);
         }
 
 
@@ -57,32 +76,23 @@ namespace Project.View
             childForm.BringToFront();
             childForm.Show();
         }
-
+        
         private void button2_Click(object sender, EventArgs e) // edit_subject_btn
         {
             Adding_Subject Adding_Subject = new Adding_Subject(_userInfObject);
-            if (add_subject_btn == false)
-            {
-                openChildForm(Adding_Subject);
-                add_subject_btn = true;
-            }
+            openChildForm(Adding_Subject);
+            edit_subject_btn.BackColor = Color.FromArgb(15, 39, 63);
+            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-        }
-        public void close_window()
-        {
-        }
-        private void Add_Subject_Load(object sender, EventArgs e)
-        {
-
+            edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
+            Schedule_btn.BackColor = Color.FromArgb(15, 39, 63);
+            addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void close_btn_Click(object sender, EventArgs e)
         {
@@ -94,9 +104,20 @@ namespace Project.View
             this.WindowState = FormWindowState.Minimized;
         }
         bool size_return = true;
-        private void maximize_btn_Click(object sender, EventArgs e)
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //Control.DoMaximize(this);
+            MainPage MainPage = new MainPage(_userInfObject);
+            openChildForm(MainPage);
+        }
+
+        private void addAcitivty_btn_Click(object sender, EventArgs e)
+        {
+            ActSched ActSched = new ActSched(_userInfObject);
+            openChildForm(ActSched);
+            edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
+            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(15, 39, 63);
         }
     }
 }

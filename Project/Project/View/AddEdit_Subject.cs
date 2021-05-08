@@ -72,9 +72,9 @@ namespace Project.View
             view_subject_panel.Visible = true;
             edit_subject_panel.Visible = false;
             view_subject_details.Visible = false;
-            add_activity_btn.Visible = false;
             back_btn.Visible = false;
             edit_btn.Visible = false;
+            delete_btn.Visible = false;
 
             presenter = new AddSubjectPresenter(this, _userInfObject);
 
@@ -103,13 +103,13 @@ namespace Project.View
                 else if(subject_list_view.FocusedItem.Index >=1)
                 {
                     view_subject_details.Visible = true;
-                    subject_list_view.Size = new Size(253, 262);
+                    subject_list_view.Size = new Size(361, 296);
                     subjectCode_lbl.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Code;
                     view_subject_desription.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index-1).Subject_Description;
-                    add_activity_btn.Visible = true;
                     edit_subject_panel.Visible = false;
                     back_btn.Visible = true;
                     edit_btn.Visible = true;
+                    delete_btn.Visible = true;
                 }
                 subject_list_view.FocusedItem = null;
             }
@@ -188,7 +188,6 @@ namespace Project.View
             edit_subject_panel.Visible = true;
             add_subject_panel.Visible = true;
             view_subject_details.Visible = false;
-            add_activity_btn.Visible = false;
             edit_subject_code.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Code;
             edit_subject_description.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Description;
             edit_subject_code.Text = Subject.ElementAt(subject_list_view.FocusedItem.Index - 1).Subject_Code;
@@ -229,20 +228,23 @@ namespace Project.View
         private void back_btn_Click(object sender, EventArgs e)
         {
             view_subject_details.Visible = false;
-            add_activity_btn.Visible = false;
             back_btn.Visible = false;
-            subject_list_view.Size = new Size(592, 262);
+            subject_list_view.Size = new Size(711, 313);
             edit_btn.Visible = false;
+            delete_btn.Visible = false;
         }
         private void delete_btn_Click(object sender, EventArgs e)
         {
+
             Subject.RemoveAt(subject_list_view.FocusedItem.Index - 1);
             subject_list_view.Items[subject_list_view.FocusedItem.Index].Remove();
             view_subject_details.Visible = false;
-            add_activity_btn.Visible = false;
             back_btn.Visible = false;
-            subject_list_view.Size = new Size(592, 262);
+            subject_list_view.Size = new Size(711, 313);
             edit_btn.Visible = false;
+            delete_btn.Visible = false;
+            DataTable dt = presenter.loadSubjects();
+            
         }
     }
 }
