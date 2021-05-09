@@ -44,7 +44,16 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.startLogin();
-     
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

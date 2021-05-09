@@ -1,6 +1,7 @@
 ﻿using Project.Interface;
 using Project.Object;
 using Project.Presenter;
+using Project.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,13 +20,14 @@ namespace Project
 
         UserInfObject _userInfObject;
         SubjectEventScheduler presenter;
+        DataTable _dtEventList = new DataTable();
+
         public ActSched(UserInfObject _userInfObject)
         {
             this._userInfObject = _userInfObject;
             presenter = new SubjectEventScheduler(this);
             InitializeComponent();
             presenter.loadSubjects();
-        
         }
 
         public ComboBox cmbSubjectList {
@@ -43,7 +45,11 @@ namespace Project
             set { eventList = value; }
         }
 
-        
+        public DataTable dtEventList {
+            get { return _dtEventList; }
+            set { _dtEventList = value; }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -67,5 +73,34 @@ namespace Project
             numEvent.Text = eventList.Rows.Count.ToString() + "/300 Events"; //para ni sa number of events
         }
 
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (eventList.Rows.Count > 0)
+            {
+                DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
+
+                presenter.deleteScheduledStudy(dr);
+                presenter.loadStudyTime();
+            }
+            else {
+                MessageBox.Show("Nothing to delete");
+            }
+ 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (eventList.Rows.Count > 0)
+            {
+                DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
+                ScheduleTime form = new ScheduleTime(this, dr);
+                form.ShowDialog();
+            }
+            else {
+                MessageBox.Show("Nothing to Show");
+            }
+        
+        }
     }
 }

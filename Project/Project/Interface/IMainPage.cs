@@ -22,7 +22,13 @@ namespace Project.Interface
 
         int minuteRange { get; set; }
 
-        int minuteNotifyEvery { get; set; }
+        double minuteNotifyEvery { get; set; }
+
+        NotifyIcon notifyIcon { get; set; }
+
+        Form mainpageForm { get; }
+
+        ContextMenuStrip contextMenu { get; set; }
 
     }
 }

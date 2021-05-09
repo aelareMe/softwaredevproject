@@ -38,5 +38,58 @@ namespace Project.Model
             return dt;
 
         }
+
+
+        public DataTable UpdateSubject(string studyName, string desc, int subjectId)
+        {
+
+            string sql = "UPDATE subject  SET study_name= '" + studyName + "'  ," +
+                "study_decription  = '" + desc + "' " +
+                "where study_id  = " + subjectId + " RETURNING * ";
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+
+        public DataTable DeleteSubject(int subjectId)
+        {
+
+            string sql = "Delete from subject where study_id = "+ subjectId +" RETURNING * ";
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
     }
 }

@@ -32,14 +32,13 @@ namespace Project.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adding_Subject));
             this.add_subject_panel = new System.Windows.Forms.Panel();
-            this.temp_add_subject_btn = new System.Windows.Forms.Button();
             this.edit_panel = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.temp_edit_subject_btn = new System.Windows.Forms.Button();
             this.edit_panel_subject = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.cancel_edit_btn = new System.Windows.Forms.Button();
+            this.edit_SubjectCode_txt = new Project.CelearningTextbox();
             this.edit_description_txt = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,12 +51,15 @@ namespace Project.View
             this.button11 = new System.Windows.Forms.Button();
             this.edit_list_view = new System.Windows.Forms.ListView();
             this.icon_list = new System.Windows.Forms.ImageList(this.components);
+            this.edit_search_txt = new Project.CelearningTextbox();
             this.button12 = new System.Windows.Forms.Button();
+            this.temp_add_subject_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.adding_panel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.cancel_subjectAdd_btn = new System.Windows.Forms.Button();
+            this.SubjectCode_txt = new Project.CelearningTextbox();
             this.SubjectDescription_txt = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,11 +71,9 @@ namespace Project.View
             this.minimize_application_btn = new System.Windows.Forms.Button();
             this.maximize_application_btn = new System.Windows.Forms.Button();
             this.subject_list_view = new System.Windows.Forms.ListView();
-            this.Search_btn = new System.Windows.Forms.Button();
-            this.edit_SubjectCode_txt = new Project.CelearningTextbox();
-            this.edit_search_txt = new Project.CelearningTextbox();
-            this.SubjectCode_txt = new Project.CelearningTextbox();
             this.search_txtbox = new Project.CelearningTextbox();
+            this.Search_btn = new System.Windows.Forms.Button();
+            this.temp_edit_subject_btn = new System.Windows.Forms.Button();
             this.add_subject_panel.SuspendLayout();
             this.edit_panel.SuspendLayout();
             this.edit_panel_subject.SuspendLayout();
@@ -98,25 +98,10 @@ namespace Project.View
             this.add_subject_panel.Controls.Add(this.temp_edit_subject_btn);
             this.add_subject_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.add_subject_panel.Location = new System.Drawing.Point(0, 0);
+            this.add_subject_panel.Margin = new System.Windows.Forms.Padding(4);
             this.add_subject_panel.Name = "add_subject_panel";
-            this.add_subject_panel.Size = new System.Drawing.Size(617, 400);
+            this.add_subject_panel.Size = new System.Drawing.Size(823, 492);
             this.add_subject_panel.TabIndex = 0;
-            // 
-            // temp_add_subject_btn
-            // 
-            this.temp_add_subject_btn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.temp_add_subject_btn.FlatAppearance.BorderSize = 0;
-            this.temp_add_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.temp_add_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.temp_add_subject_btn.ForeColor = System.Drawing.Color.Black;
-            this.temp_add_subject_btn.Location = new System.Drawing.Point(11, 58);
-            this.temp_add_subject_btn.Name = "temp_add_subject_btn";
-            this.temp_add_subject_btn.Size = new System.Drawing.Size(180, 39);
-            this.temp_add_subject_btn.TabIndex = 39;
-            this.temp_add_subject_btn.Text = "temporary add subject button";
-            this.temp_add_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.temp_add_subject_btn.UseVisualStyleBackColor = false;
-            this.temp_add_subject_btn.Click += new System.EventHandler(this.temp_add_subject_btn_Click);
             // 
             // edit_panel
             // 
@@ -134,8 +119,9 @@ namespace Project.View
             this.edit_panel.Controls.Add(this.button12);
             this.edit_panel.Controls.Add(this.temp_add_subject_btn);
             this.edit_panel.Location = new System.Drawing.Point(1, 0);
+            this.edit_panel.Margin = new System.Windows.Forms.Padding(4);
             this.edit_panel.Name = "edit_panel";
-            this.edit_panel.Size = new System.Drawing.Size(617, 400);
+            this.edit_panel.Size = new System.Drawing.Size(823, 492);
             this.edit_panel.TabIndex = 37;
             // 
             // label4
@@ -143,27 +129,12 @@ namespace Project.View
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(30, 220);
+            this.label4.Location = new System.Drawing.Point(40, 271);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 26);
+            this.label4.Size = new System.Drawing.Size(183, 33);
             this.label4.TabIndex = 35;
             this.label4.Text = "Subject Limit";
-            // 
-            // temp_edit_subject_btn
-            // 
-            this.temp_edit_subject_btn.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.temp_edit_subject_btn.FlatAppearance.BorderSize = 0;
-            this.temp_edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.temp_edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.temp_edit_subject_btn.ForeColor = System.Drawing.Color.Black;
-            this.temp_edit_subject_btn.Location = new System.Drawing.Point(10, 60);
-            this.temp_edit_subject_btn.Name = "temp_edit_subject_btn";
-            this.temp_edit_subject_btn.Size = new System.Drawing.Size(180, 39);
-            this.temp_edit_subject_btn.TabIndex = 38;
-            this.temp_edit_subject_btn.Text = "temporary edit subject button";
-            this.temp_edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.temp_edit_subject_btn.UseVisualStyleBackColor = false;
-            this.temp_edit_subject_btn.Click += new System.EventHandler(this.temp_edit_subject_btn_Click);
             // 
             // edit_panel_subject
             // 
@@ -177,9 +148,10 @@ namespace Project.View
             this.edit_panel_subject.Controls.Add(this.label5);
             this.edit_panel_subject.Controls.Add(this.label6);
             this.edit_panel_subject.Controls.Add(this.edit_btn);
-            this.edit_panel_subject.Location = new System.Drawing.Point(196, 60);
+            this.edit_panel_subject.Location = new System.Drawing.Point(261, 74);
+            this.edit_panel_subject.Margin = new System.Windows.Forms.Padding(4);
             this.edit_panel_subject.Name = "edit_panel_subject";
-            this.edit_panel_subject.Size = new System.Drawing.Size(398, 323);
+            this.edit_panel_subject.Size = new System.Drawing.Size(529, 397);
             this.edit_panel_subject.TabIndex = 3;
             // 
             // button3
@@ -190,9 +162,10 @@ namespace Project.View
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(67, 196);
+            this.button3.Location = new System.Drawing.Point(89, 241);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 58);
+            this.button3.Size = new System.Drawing.Size(73, 71);
             this.button3.TabIndex = 30;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
@@ -205,9 +178,10 @@ namespace Project.View
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(67, 116);
+            this.button4.Location = new System.Drawing.Point(89, 143);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 58);
+            this.button4.Size = new System.Drawing.Size(73, 71);
             this.button4.TabIndex = 29;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
@@ -219,22 +193,36 @@ namespace Project.View
             this.cancel_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel_edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_edit_btn.ForeColor = System.Drawing.Color.Black;
-            this.cancel_edit_btn.Location = new System.Drawing.Point(285, 238);
+            this.cancel_edit_btn.Location = new System.Drawing.Point(380, 293);
+            this.cancel_edit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.cancel_edit_btn.Name = "cancel_edit_btn";
-            this.cancel_edit_btn.Size = new System.Drawing.Size(89, 48);
+            this.cancel_edit_btn.Size = new System.Drawing.Size(119, 59);
             this.cancel_edit_btn.TabIndex = 28;
             this.cancel_edit_btn.Text = "Cancel";
             this.cancel_edit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cancel_edit_btn.UseVisualStyleBackColor = false;
             this.cancel_edit_btn.Click += new System.EventHandler(this.cancel_edit_btn_Click);
             // 
+            // edit_SubjectCode_txt
+            // 
+            this.edit_SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
+            this.edit_SubjectCode_txt.Br = System.Drawing.Color.White;
+            this.edit_SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
+            this.edit_SubjectCode_txt.Location = new System.Drawing.Point(221, 15);
+            this.edit_SubjectCode_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.edit_SubjectCode_txt.Name = "edit_SubjectCode_txt";
+            this.edit_SubjectCode_txt.Size = new System.Drawing.Size(277, 42);
+            this.edit_SubjectCode_txt.TabIndex = 27;
+            // 
             // edit_description_txt
             // 
             this.edit_description_txt.BackColor = System.Drawing.Color.White;
             this.edit_description_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_description_txt.Location = new System.Drawing.Point(175, 57);
+            this.edit_description_txt.Location = new System.Drawing.Point(233, 70);
+            this.edit_description_txt.Margin = new System.Windows.Forms.Padding(4);
             this.edit_description_txt.Name = "edit_description_txt";
-            this.edit_description_txt.Size = new System.Drawing.Size(199, 159);
+            this.edit_description_txt.Size = new System.Drawing.Size(264, 195);
             this.edit_description_txt.TabIndex = 26;
             this.edit_description_txt.Text = "";
             // 
@@ -243,9 +231,10 @@ namespace Project.View
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(27, 57);
+            this.label5.Location = new System.Drawing.Point(36, 70);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 26);
+            this.label5.Size = new System.Drawing.Size(170, 33);
             this.label5.TabIndex = 24;
             this.label5.Text = "Description:";
             // 
@@ -254,9 +243,10 @@ namespace Project.View
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(7, 17);
+            this.label6.Location = new System.Drawing.Point(9, 21);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 26);
+            this.label6.Size = new System.Drawing.Size(197, 33);
             this.label6.TabIndex = 15;
             this.label6.Text = "Subject Code:";
             // 
@@ -267,9 +257,10 @@ namespace Project.View
             this.edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_btn.ForeColor = System.Drawing.Color.Black;
-            this.edit_btn.Location = new System.Drawing.Point(175, 238);
+            this.edit_btn.Location = new System.Drawing.Point(233, 293);
+            this.edit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(89, 48);
+            this.edit_btn.Size = new System.Drawing.Size(119, 59);
             this.edit_btn.TabIndex = 12;
             this.edit_btn.Text = "Edit";
             this.edit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -289,14 +280,14 @@ namespace Project.View
             this.edit_Subject_limiter.LabelVisible = true;
             this.edit_Subject_limiter.LineProgressThickness = 8;
             this.edit_Subject_limiter.LineThickness = 8;
-            this.edit_Subject_limiter.Location = new System.Drawing.Point(51, 252);
-            this.edit_Subject_limiter.Margin = new System.Windows.Forms.Padding(6);
+            this.edit_Subject_limiter.Location = new System.Drawing.Point(68, 310);
+            this.edit_Subject_limiter.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.edit_Subject_limiter.MaxValue = 30;
             this.edit_Subject_limiter.Name = "edit_Subject_limiter";
             this.edit_Subject_limiter.ProgressBackColor = System.Drawing.Color.Gainsboro;
             this.edit_Subject_limiter.ProgressColor = System.Drawing.Color.Red;
             this.edit_Subject_limiter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.edit_Subject_limiter.Size = new System.Drawing.Size(100, 100);
+            this.edit_Subject_limiter.Size = new System.Drawing.Size(123, 123);
             this.edit_Subject_limiter.TabIndex = 34;
             this.edit_Subject_limiter.Value = 0;
             // 
@@ -307,9 +298,10 @@ namespace Project.View
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(568, 12);
+            this.button7.Location = new System.Drawing.Point(757, 15);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(32, 32);
+            this.button7.Size = new System.Drawing.Size(43, 39);
             this.button7.TabIndex = 29;
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button7.UseVisualStyleBackColor = false;
@@ -321,9 +313,10 @@ namespace Project.View
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(9, 163);
+            this.button8.Location = new System.Drawing.Point(12, 201);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(180, 48);
+            this.button8.Size = new System.Drawing.Size(240, 59);
             this.button8.TabIndex = 33;
             this.button8.Text = "Cancel Edit Subject";
             this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -336,9 +329,10 @@ namespace Project.View
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(9, 109);
+            this.button9.Location = new System.Drawing.Point(12, 134);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(180, 48);
+            this.button9.Size = new System.Drawing.Size(240, 59);
             this.button9.TabIndex = 32;
             this.button9.Text = "Edit List of Subject";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -351,9 +345,10 @@ namespace Project.View
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(483, 12);
+            this.button10.Location = new System.Drawing.Point(644, 15);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(32, 32);
+            this.button10.Size = new System.Drawing.Size(43, 39);
             this.button10.TabIndex = 31;
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button10.UseVisualStyleBackColor = false;
@@ -365,9 +360,10 @@ namespace Project.View
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(525, 12);
+            this.button11.Location = new System.Drawing.Point(700, 15);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(32, 32);
+            this.button11.Size = new System.Drawing.Size(43, 39);
             this.button11.TabIndex = 30;
             this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button11.UseVisualStyleBackColor = false;
@@ -378,9 +374,10 @@ namespace Project.View
             this.edit_list_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_list_view.HideSelection = false;
             this.edit_list_view.LargeImageList = this.icon_list;
-            this.edit_list_view.Location = new System.Drawing.Point(196, 109);
+            this.edit_list_view.Location = new System.Drawing.Point(261, 134);
+            this.edit_list_view.Margin = new System.Windows.Forms.Padding(4);
             this.edit_list_view.Name = "edit_list_view";
-            this.edit_list_view.Size = new System.Drawing.Size(398, 274);
+            this.edit_list_view.Size = new System.Drawing.Size(529, 336);
             this.edit_list_view.SmallImageList = this.icon_list;
             this.edit_list_view.TabIndex = 0;
             this.edit_list_view.UseCompatibleStateImageBehavior = false;
@@ -394,6 +391,19 @@ namespace Project.View
             this.icon_list.Images.SetKeyName(0, "sign-add-icon.png");
             this.icon_list.Images.SetKeyName(1, "pngwing.com_3_1_40x40.png");
             // 
+            // edit_search_txt
+            // 
+            this.edit_search_txt.BackColor = System.Drawing.Color.Transparent;
+            this.edit_search_txt.Br = System.Drawing.Color.White;
+            this.edit_search_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_search_txt.ForeColor = System.Drawing.Color.Black;
+            this.edit_search_txt.Location = new System.Drawing.Point(449, 81);
+            this.edit_search_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.edit_search_txt.Name = "edit_search_txt";
+            this.edit_search_txt.Size = new System.Drawing.Size(277, 42);
+            this.edit_search_txt.TabIndex = 28;
+            this.edit_search_txt.TextChanged += new System.EventHandler(this.edit_search_txt_TextChanged);
+            // 
             // button12
             // 
             this.button12.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -402,21 +412,40 @@ namespace Project.View
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.Black;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.Location = new System.Drawing.Point(552, 60);
+            this.button12.Location = new System.Drawing.Point(736, 74);
+            this.button12.Margin = new System.Windows.Forms.Padding(4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(42, 44);
+            this.button12.Size = new System.Drawing.Size(56, 54);
             this.button12.TabIndex = 36;
             this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button12.UseVisualStyleBackColor = false;
+            // 
+            // temp_add_subject_btn
+            // 
+            this.temp_add_subject_btn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.temp_add_subject_btn.FlatAppearance.BorderSize = 0;
+            this.temp_add_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.temp_add_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temp_add_subject_btn.ForeColor = System.Drawing.Color.Black;
+            this.temp_add_subject_btn.Location = new System.Drawing.Point(15, 71);
+            this.temp_add_subject_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.temp_add_subject_btn.Name = "temp_add_subject_btn";
+            this.temp_add_subject_btn.Size = new System.Drawing.Size(240, 48);
+            this.temp_add_subject_btn.TabIndex = 39;
+            this.temp_add_subject_btn.Text = "temporary add subject button";
+            this.temp_add_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.temp_add_subject_btn.UseVisualStyleBackColor = false;
+            this.temp_add_subject_btn.Click += new System.EventHandler(this.temp_add_subject_btn_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(30, 220);
+            this.label2.Location = new System.Drawing.Point(40, 271);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 26);
+            this.label2.Size = new System.Drawing.Size(183, 33);
             this.label2.TabIndex = 35;
             this.label2.Text = "Subject Limit";
             // 
@@ -432,9 +461,10 @@ namespace Project.View
             this.adding_panel.Controls.Add(this.label3);
             this.adding_panel.Controls.Add(this.label1);
             this.adding_panel.Controls.Add(this.add_subjectAdd_btn);
-            this.adding_panel.Location = new System.Drawing.Point(196, 60);
+            this.adding_panel.Location = new System.Drawing.Point(261, 74);
+            this.adding_panel.Margin = new System.Windows.Forms.Padding(4);
             this.adding_panel.Name = "adding_panel";
-            this.adding_panel.Size = new System.Drawing.Size(398, 323);
+            this.adding_panel.Size = new System.Drawing.Size(529, 397);
             this.adding_panel.TabIndex = 3;
             // 
             // button2
@@ -445,9 +475,10 @@ namespace Project.View
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(67, 196);
+            this.button2.Location = new System.Drawing.Point(89, 241);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 58);
+            this.button2.Size = new System.Drawing.Size(73, 71);
             this.button2.TabIndex = 30;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
@@ -460,9 +491,10 @@ namespace Project.View
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(67, 116);
+            this.button1.Location = new System.Drawing.Point(89, 143);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 58);
+            this.button1.Size = new System.Drawing.Size(73, 71);
             this.button1.TabIndex = 29;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
@@ -474,22 +506,36 @@ namespace Project.View
             this.cancel_subjectAdd_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel_subjectAdd_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_subjectAdd_btn.ForeColor = System.Drawing.Color.Black;
-            this.cancel_subjectAdd_btn.Location = new System.Drawing.Point(285, 238);
+            this.cancel_subjectAdd_btn.Location = new System.Drawing.Point(380, 293);
+            this.cancel_subjectAdd_btn.Margin = new System.Windows.Forms.Padding(4);
             this.cancel_subjectAdd_btn.Name = "cancel_subjectAdd_btn";
-            this.cancel_subjectAdd_btn.Size = new System.Drawing.Size(89, 48);
+            this.cancel_subjectAdd_btn.Size = new System.Drawing.Size(119, 59);
             this.cancel_subjectAdd_btn.TabIndex = 28;
             this.cancel_subjectAdd_btn.Text = "Cancel";
             this.cancel_subjectAdd_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cancel_subjectAdd_btn.UseVisualStyleBackColor = false;
             this.cancel_subjectAdd_btn.Click += new System.EventHandler(this.cancel_btn_Click_1);
             // 
+            // SubjectCode_txt
+            // 
+            this.SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
+            this.SubjectCode_txt.Br = System.Drawing.Color.White;
+            this.SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
+            this.SubjectCode_txt.Location = new System.Drawing.Point(221, 15);
+            this.SubjectCode_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.SubjectCode_txt.Name = "SubjectCode_txt";
+            this.SubjectCode_txt.Size = new System.Drawing.Size(277, 42);
+            this.SubjectCode_txt.TabIndex = 27;
+            // 
             // SubjectDescription_txt
             // 
             this.SubjectDescription_txt.BackColor = System.Drawing.Color.White;
             this.SubjectDescription_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectDescription_txt.Location = new System.Drawing.Point(175, 57);
+            this.SubjectDescription_txt.Location = new System.Drawing.Point(233, 70);
+            this.SubjectDescription_txt.Margin = new System.Windows.Forms.Padding(4);
             this.SubjectDescription_txt.Name = "SubjectDescription_txt";
-            this.SubjectDescription_txt.Size = new System.Drawing.Size(199, 159);
+            this.SubjectDescription_txt.Size = new System.Drawing.Size(264, 195);
             this.SubjectDescription_txt.TabIndex = 26;
             this.SubjectDescription_txt.Text = "";
             // 
@@ -498,9 +544,10 @@ namespace Project.View
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(27, 57);
+            this.label3.Location = new System.Drawing.Point(36, 70);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 26);
+            this.label3.Size = new System.Drawing.Size(170, 33);
             this.label3.TabIndex = 24;
             this.label3.Text = "Description:";
             // 
@@ -509,9 +556,10 @@ namespace Project.View
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 17);
+            this.label1.Location = new System.Drawing.Point(9, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 26);
+            this.label1.Size = new System.Drawing.Size(197, 33);
             this.label1.TabIndex = 15;
             this.label1.Text = "Subject Code:";
             // 
@@ -522,9 +570,10 @@ namespace Project.View
             this.add_subjectAdd_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_subjectAdd_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_subjectAdd_btn.ForeColor = System.Drawing.Color.Black;
-            this.add_subjectAdd_btn.Location = new System.Drawing.Point(175, 238);
+            this.add_subjectAdd_btn.Location = new System.Drawing.Point(233, 293);
+            this.add_subjectAdd_btn.Margin = new System.Windows.Forms.Padding(4);
             this.add_subjectAdd_btn.Name = "add_subjectAdd_btn";
-            this.add_subjectAdd_btn.Size = new System.Drawing.Size(89, 48);
+            this.add_subjectAdd_btn.Size = new System.Drawing.Size(119, 59);
             this.add_subjectAdd_btn.TabIndex = 12;
             this.add_subjectAdd_btn.Text = "Add";
             this.add_subjectAdd_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -544,14 +593,14 @@ namespace Project.View
             this.add_Subject_limiter.LabelVisible = true;
             this.add_Subject_limiter.LineProgressThickness = 8;
             this.add_Subject_limiter.LineThickness = 8;
-            this.add_Subject_limiter.Location = new System.Drawing.Point(51, 252);
-            this.add_Subject_limiter.Margin = new System.Windows.Forms.Padding(6);
+            this.add_Subject_limiter.Location = new System.Drawing.Point(68, 310);
+            this.add_Subject_limiter.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.add_Subject_limiter.MaxValue = 30;
             this.add_Subject_limiter.Name = "add_Subject_limiter";
             this.add_Subject_limiter.ProgressBackColor = System.Drawing.Color.Gainsboro;
             this.add_Subject_limiter.ProgressColor = System.Drawing.Color.Red;
             this.add_Subject_limiter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.add_Subject_limiter.Size = new System.Drawing.Size(100, 100);
+            this.add_Subject_limiter.Size = new System.Drawing.Size(123, 123);
             this.add_Subject_limiter.TabIndex = 34;
             this.add_Subject_limiter.Value = 0;
             // 
@@ -562,9 +611,10 @@ namespace Project.View
             this.close_application_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_application_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.close_application_btn.ForeColor = System.Drawing.Color.Black;
-            this.close_application_btn.Location = new System.Drawing.Point(568, 12);
+            this.close_application_btn.Location = new System.Drawing.Point(757, 15);
+            this.close_application_btn.Margin = new System.Windows.Forms.Padding(4);
             this.close_application_btn.Name = "close_application_btn";
-            this.close_application_btn.Size = new System.Drawing.Size(32, 32);
+            this.close_application_btn.Size = new System.Drawing.Size(43, 39);
             this.close_application_btn.TabIndex = 29;
             this.close_application_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.close_application_btn.UseVisualStyleBackColor = false;
@@ -576,9 +626,10 @@ namespace Project.View
             this.Cancel_Add_Subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel_Add_Subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel_Add_Subject_btn.ForeColor = System.Drawing.Color.Black;
-            this.Cancel_Add_Subject_btn.Location = new System.Drawing.Point(9, 163);
+            this.Cancel_Add_Subject_btn.Location = new System.Drawing.Point(12, 201);
+            this.Cancel_Add_Subject_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Cancel_Add_Subject_btn.Name = "Cancel_Add_Subject_btn";
-            this.Cancel_Add_Subject_btn.Size = new System.Drawing.Size(180, 48);
+            this.Cancel_Add_Subject_btn.Size = new System.Drawing.Size(240, 59);
             this.Cancel_Add_Subject_btn.TabIndex = 33;
             this.Cancel_Add_Subject_btn.Text = "Cancel Add Subject";
             this.Cancel_Add_Subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -591,9 +642,10 @@ namespace Project.View
             this.Add_List_of_Subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_List_of_Subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_List_of_Subject_btn.ForeColor = System.Drawing.Color.Black;
-            this.Add_List_of_Subject_btn.Location = new System.Drawing.Point(9, 109);
+            this.Add_List_of_Subject_btn.Location = new System.Drawing.Point(12, 134);
+            this.Add_List_of_Subject_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Add_List_of_Subject_btn.Name = "Add_List_of_Subject_btn";
-            this.Add_List_of_Subject_btn.Size = new System.Drawing.Size(180, 48);
+            this.Add_List_of_Subject_btn.Size = new System.Drawing.Size(240, 59);
             this.Add_List_of_Subject_btn.TabIndex = 32;
             this.Add_List_of_Subject_btn.Text = "Add List of Subject";
             this.Add_List_of_Subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -606,9 +658,10 @@ namespace Project.View
             this.minimize_application_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.minimize_application_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimize_application_btn.ForeColor = System.Drawing.Color.Black;
-            this.minimize_application_btn.Location = new System.Drawing.Point(483, 12);
+            this.minimize_application_btn.Location = new System.Drawing.Point(644, 15);
+            this.minimize_application_btn.Margin = new System.Windows.Forms.Padding(4);
             this.minimize_application_btn.Name = "minimize_application_btn";
-            this.minimize_application_btn.Size = new System.Drawing.Size(32, 32);
+            this.minimize_application_btn.Size = new System.Drawing.Size(43, 39);
             this.minimize_application_btn.TabIndex = 31;
             this.minimize_application_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.minimize_application_btn.UseVisualStyleBackColor = false;
@@ -620,9 +673,10 @@ namespace Project.View
             this.maximize_application_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximize_application_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maximize_application_btn.ForeColor = System.Drawing.Color.Black;
-            this.maximize_application_btn.Location = new System.Drawing.Point(525, 12);
+            this.maximize_application_btn.Location = new System.Drawing.Point(700, 15);
+            this.maximize_application_btn.Margin = new System.Windows.Forms.Padding(4);
             this.maximize_application_btn.Name = "maximize_application_btn";
-            this.maximize_application_btn.Size = new System.Drawing.Size(32, 32);
+            this.maximize_application_btn.Size = new System.Drawing.Size(43, 39);
             this.maximize_application_btn.TabIndex = 30;
             this.maximize_application_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.maximize_application_btn.UseVisualStyleBackColor = false;
@@ -633,13 +687,27 @@ namespace Project.View
             this.subject_list_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subject_list_view.HideSelection = false;
             this.subject_list_view.LargeImageList = this.icon_list;
-            this.subject_list_view.Location = new System.Drawing.Point(196, 109);
+            this.subject_list_view.Location = new System.Drawing.Point(261, 134);
+            this.subject_list_view.Margin = new System.Windows.Forms.Padding(4);
             this.subject_list_view.Name = "subject_list_view";
-            this.subject_list_view.Size = new System.Drawing.Size(398, 274);
+            this.subject_list_view.Size = new System.Drawing.Size(529, 336);
             this.subject_list_view.SmallImageList = this.icon_list;
             this.subject_list_view.TabIndex = 0;
             this.subject_list_view.UseCompatibleStateImageBehavior = false;
             this.subject_list_view.SelectedIndexChanged += new System.EventHandler(this.subject_list_view_SelectedIndexChanged);
+            // 
+            // search_txtbox
+            // 
+            this.search_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.search_txtbox.Br = System.Drawing.Color.White;
+            this.search_txtbox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.search_txtbox.Location = new System.Drawing.Point(449, 81);
+            this.search_txtbox.Margin = new System.Windows.Forms.Padding(4);
+            this.search_txtbox.Name = "search_txtbox";
+            this.search_txtbox.Size = new System.Drawing.Size(277, 42);
+            this.search_txtbox.TabIndex = 28;
+            this.search_txtbox.TextChanged += new System.EventHandler(this.search_txtbox_TextChanged);
             // 
             // Search_btn
             // 
@@ -649,67 +717,40 @@ namespace Project.View
             this.Search_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_btn.ForeColor = System.Drawing.Color.Black;
             this.Search_btn.Image = ((System.Drawing.Image)(resources.GetObject("Search_btn.Image")));
-            this.Search_btn.Location = new System.Drawing.Point(552, 60);
+            this.Search_btn.Location = new System.Drawing.Point(736, 74);
+            this.Search_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Search_btn.Name = "Search_btn";
-            this.Search_btn.Size = new System.Drawing.Size(42, 44);
+            this.Search_btn.Size = new System.Drawing.Size(56, 54);
             this.Search_btn.TabIndex = 36;
             this.Search_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Search_btn.UseVisualStyleBackColor = false;
             this.Search_btn.Click += new System.EventHandler(this.Search_btn_Click);
             // 
-            // edit_SubjectCode_txt
+            // temp_edit_subject_btn
             // 
-            this.edit_SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
-            this.edit_SubjectCode_txt.Br = System.Drawing.Color.White;
-            this.edit_SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
-            this.edit_SubjectCode_txt.Location = new System.Drawing.Point(166, 12);
-            this.edit_SubjectCode_txt.Name = "edit_SubjectCode_txt";
-            this.edit_SubjectCode_txt.Size = new System.Drawing.Size(208, 34);
-            this.edit_SubjectCode_txt.TabIndex = 27;
-            // 
-            // edit_search_txt
-            // 
-            this.edit_search_txt.BackColor = System.Drawing.Color.Transparent;
-            this.edit_search_txt.Br = System.Drawing.Color.White;
-            this.edit_search_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_search_txt.ForeColor = System.Drawing.Color.Black;
-            this.edit_search_txt.Location = new System.Drawing.Point(337, 66);
-            this.edit_search_txt.Name = "edit_search_txt";
-            this.edit_search_txt.Size = new System.Drawing.Size(208, 34);
-            this.edit_search_txt.TabIndex = 28;
-            this.edit_search_txt.TextChanged += new System.EventHandler(this.edit_search_txt_TextChanged);
-            // 
-            // SubjectCode_txt
-            // 
-            this.SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
-            this.SubjectCode_txt.Br = System.Drawing.Color.White;
-            this.SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
-            this.SubjectCode_txt.Location = new System.Drawing.Point(166, 12);
-            this.SubjectCode_txt.Name = "SubjectCode_txt";
-            this.SubjectCode_txt.Size = new System.Drawing.Size(208, 34);
-            this.SubjectCode_txt.TabIndex = 27;
-            // 
-            // search_txtbox
-            // 
-            this.search_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.search_txtbox.Br = System.Drawing.Color.White;
-            this.search_txtbox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.search_txtbox.Location = new System.Drawing.Point(337, 66);
-            this.search_txtbox.Name = "search_txtbox";
-            this.search_txtbox.Size = new System.Drawing.Size(208, 34);
-            this.search_txtbox.TabIndex = 28;
-            this.search_txtbox.TextChanged += new System.EventHandler(this.search_txtbox_TextChanged);
+            this.temp_edit_subject_btn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.temp_edit_subject_btn.FlatAppearance.BorderSize = 0;
+            this.temp_edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.temp_edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temp_edit_subject_btn.ForeColor = System.Drawing.Color.Black;
+            this.temp_edit_subject_btn.Location = new System.Drawing.Point(13, 74);
+            this.temp_edit_subject_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.temp_edit_subject_btn.Name = "temp_edit_subject_btn";
+            this.temp_edit_subject_btn.Size = new System.Drawing.Size(240, 48);
+            this.temp_edit_subject_btn.TabIndex = 38;
+            this.temp_edit_subject_btn.Text = "temporary edit subject button";
+            this.temp_edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.temp_edit_subject_btn.UseVisualStyleBackColor = false;
+            this.temp_edit_subject_btn.Click += new System.EventHandler(this.temp_edit_subject_btn_Click);
             // 
             // Adding_Subject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 400);
+            this.ClientSize = new System.Drawing.Size(823, 492);
             this.Controls.Add(this.add_subject_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Adding_Subject";
             this.Text = "Adding_Subject";
             this.Load += new System.EventHandler(this.Adding_Subject_Load);

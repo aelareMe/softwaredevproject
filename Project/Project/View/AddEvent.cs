@@ -26,12 +26,17 @@ namespace Project
             presenter = new SubjectEventScheduler(iSubjectEventScheduler);
             InitializeComponent();
             eventDate.Format = DateTimePickerFormat.Custom;
-            eventDate.CustomFormat = "MM/dd/yyyy hh:mm tt";
-       
-    
+            eventDate.CustomFormat = "MM/dd/yyyy";
+   
+
+
+
             cmbSubjectList.DataSource = EventType.getTypes();
             cmbSubjectList.DisplayMember = "typeName";
             cmbSubjectList.ValueMember = "typeId";
+
+
+
         }
 
 
@@ -67,10 +72,23 @@ namespace Project
         private void addEventConfirm_Click(object sender, EventArgs e)
         {
             int selectedValueMember =Int32.Parse( cmbSubjectList.SelectedValue.ToString());
-            presenter.addEvent(eventDate.Value, eventName.Text.ToString(), selectedValueMember);
+            int numberOfDaysAccomplish = Int32.Parse(days2Accomplish.Text.ToString());
+            int numberOfSessionsDay = Int32.Parse(noOfSession.Text.ToString());
+            presenter.addEvent(eventDate.Value, eventName.Text.ToString(),
+                selectedValueMember, numberOfDaysAccomplish , numberOfSessionsDay);
            
             
         }
 
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            presenter.loadStudyTime();
+            this.Close();
+        }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

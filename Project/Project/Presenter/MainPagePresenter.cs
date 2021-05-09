@@ -21,26 +21,28 @@ namespace Project.Presenter
 
         DataGridViewProgressColumn column = new DataGridViewProgressColumn();
 
+        DataTable scheduledEvents = new DataTable();
+
         DataTable perEventPercentage = new DataTable();
 
         public MainPagePresenter(IMainPage iMainPage)  {
             this.iMainPage = iMainPage;
 
-            iMainPage.eventList.ColumnCount =2;
-            iMainPage.eventList.ColumnCount = 2;
-            iMainPage.eventList.Columns[0].Name = "Activty Name";
+            iMainPage.eventList.ColumnCount = 3;
+            iMainPage.eventList.Columns[0].Name = "Subject Code";
             iMainPage.eventList.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            iMainPage.eventList.Columns[1].Name = "Count";
+            iMainPage.eventList.Columns[1].Name = "Study Name";
             iMainPage.eventList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            iMainPage.eventList.Columns.Add(column);
+            iMainPage.eventList.Columns[2].Name = "Type";
             iMainPage.eventList.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            iMainPage.eventList.Columns.Add(column);
+            iMainPage.eventList.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             column.HeaderText = "Progress";
-
-
+            
         }
 
         public void showAddSubjects() {
-            Add_Subject open_add_subject = new Add_Subject(iMainPage.userInfo);
+            Subject_Oversight open_add_subject = new Subject_Oversight(iMainPage.userInfo);
             open_add_subject.Show();
         }
 
@@ -49,7 +51,7 @@ namespace Project.Presenter
         }
 
 
-        public void showTaskScheduler() {
+        public void ShowScheduleTime() {
             ActSched scheduler = new ActSched(iMainPage.userInfo);
             scheduler.Show();
         }
@@ -73,33 +75,57 @@ namespace Project.Presenter
         {
             while (true)
             {
-                DataTable scheduledEvents =
+                 DataTable dt =
                     subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), "5");
                
-                foreach(DataRow dr in scheduledEvents.Rows) {
+                foreach(DataRow dr in dt.Rows) {
 
 
                     int studyScheduleId = Convert.ToInt32( dr["_StudyDetails"].ToString());
                     string studyScheduleName = dr["Description"].ToString();
-                    StudyHelper studyHelper = new StudyHelper(studyScheduleId, studyScheduleName);
-                    studyHelper.Show();
+                    string studyTime = dr["Study Time"].ToString();
+                    string subjectCode = dr["Subject Code"].ToString();
+
+                    string strTitleBuild = "Subject Code: " + subjectCode;
+
+                   
+                    string[] subs = studyTime.Split(':');
+                    int temp = Convert.ToInt32(subs[0]);
+                    string amPM = "AM";
+                    string notifString = "";
+                    if (temp > 12)
+                    {
+                        amPM = "PM";
+                        temp -= 12;
+                    }
+                    notifString = temp.ToString() + ":" + subs[1] + " " + amPM;
+                       iMainPage.notifyIcon.
+                           ShowBalloonTip(1000, strTitleBuild,
+                           " Time to study at " + notifString + " Please Adhere", ToolTipIcon.Info);
+
+                    if (iMainPage.mainpageForm.WindowState == FormWindowState.Minimized) {
+                        iMainPage.mainpageForm.Hide();
+                    }   
+
                 }
 
-                int delay = iMainPage.minuteNotifyEvery * 60000;
-                await Task.Delay(delay);
+                double delay = iMainPage.minuteNotifyEvery * 60000;
+                await Task.Delay(Convert.ToInt32(delay.ToString()));
             }
         }
+
+  
 
         public  async Task asyncUpcommingvents()
         {
             while (true)
             {
                 DataTable scheduledEvents = 
-                    subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
+                subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
                 iMainPage.lblUpComingEvents.Text = scheduledEvents.Rows.Count.ToString();
 
 
-                await Task.Delay(1000);
+                await Task.Delay(60000);
             }
         }
 
@@ -111,9 +137,8 @@ namespace Project.Presenter
                 DataTable subjectList = subjModel.LoadAllMainPageSubjects(iMainPage.userInfo.getId());
 
                 iMainPage.lblSubjectsEnrolled.Text = subjectList.Rows.Count.ToString();
-
                 iMainPage.subjectList.DataSource = subjectList;
-
+                //MessageBox.Show(subjectList.Rows[0].ItemArray[0].ToString());
                 await Task.Delay(1000);
             }
         }
@@ -121,54 +146,53 @@ namespace Project.Presenter
         public async Task getAllPercentage() {
             while (true)
             {
-                DataTable allScheduledStudy = subjModel.GetAllPercentage(iMainPage.userInfo.getId());
+                scheduledEvents = subjModel.GetPercentsPerType(iMainPage.userInfo.getId());
+
                 List<EventType> eventTypes = EventType.getTypes();
-                int ctr = 0;
-
-                foreach (DataRow dr in allScheduledStudy.Rows)
-                {
-
-                    int ctrFast = ctr + 1;
-                    foreach (EventType eType in eventTypes)
-                    {
-
-                        int type = Int32.Parse(dr["type"].ToString());
-                        int percent = Int32.Parse(dr["study_percent"].ToString());
-                        if (eType.typeId == type)
-                        {
-                            eType.ctr += 1;
-                            eType.percentDenominator += 1;
-                            eType.percent += percent;
-                        }
-                    }
-                }
                 iMainPage.eventList.Rows.Clear();
-                foreach (EventType types in eventTypes)
+                foreach (DataRow dr in scheduledEvents.Rows)
                 {
 
-                    if (types.percent > 0.0)
-                    {
-                        types.percent = ((types.percent / (100 * types.percentDenominator)) * 100);
+                    string subjCode = dr["Subject Code"].ToString();
+                    string studyName = dr["Description"].ToString();
+                    int totalPercent = Convert.ToInt32(dr["Total Percent"].ToString());
+                    int studyDetailsId = Convert.ToInt32(dr["study_details_id"].ToString());
 
-                        object[] row1 = new object[] { types.typeName.ToString(),
-                     types.percentDenominator.ToString(),
-                    Convert.ToInt32(types.percent) };
-                        iMainPage.eventList.Rows.Add(row1);
-                    }
-                    else
-                    {
-                        object[] row1 = new object[] { types.typeName.ToString(),
-                     types.percentDenominator.ToString(),
-                    0 };
-                        iMainPage.eventList.Rows.Add(row1);
+                    double denominator = Convert.ToDouble(subjModel.GetCountStudyDetailsID(studyDetailsId).Rows[0]["ctr"]);
+
+                   // Convert.ToInt32(subjModel.GetCountStudyDetailsID. [0]["ctr"].ToString());
+
+                    int type = Convert.ToInt32(dr["_type"].ToString());
+
+                    string strType = "Exam";
+                    if (type == 1) {
+                        strType = "Exam";
+                    } else if (type == 2) {
+                        strType = "Quiz";
+                    } else {
+                        strType = "Assignment";
                     }
 
+                   double value = Convert.ToDouble((Convert.ToDouble(totalPercent) / denominator).ToString());
+                    object[] row1 = new object[] { subjCode.ToString(),
+                     studyName,strType,Convert.ToInt32( value) };
+                    iMainPage.eventList.Rows.Add(row1);
 
                 }
+        
                 //  iMainPage.eventList.DataSource = perEventPercentage;
-                await Task.Delay(1000);
+                await Task.Delay(60000);
             }
 
+        }
+
+
+        public void ShowAllProgress(int selectedIndex) {
+            DataRow dr = scheduledEvents.Rows[selectedIndex];
+
+            ActSched scheduler = new ActSched(iMainPage.userInfo);
+            ScheduleTime form = new ScheduleTime(scheduler,dr);
+            form.Show();
         }
 
 

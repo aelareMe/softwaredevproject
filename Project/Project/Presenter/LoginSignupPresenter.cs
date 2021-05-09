@@ -44,7 +44,7 @@ namespace Project.Presenter
             this.iSignup = iSignup;
         }
 
-
+        MainPagePresenter presenter;
         public void startLogin() {
 
             DataTable dt = model.login(iLogin.username, iLogin.password);

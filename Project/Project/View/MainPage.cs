@@ -15,15 +15,15 @@ namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
-        Adding_Subject Adding_Subject = new Adding_Subject(null);
 
         UserInfObject _userInfObject;
 
 
         int _minuteRange =1;
-        int _minuteNotifyEvery = 1;
+        double _minuteNotifyEvery = 1.0;
 
         MainPagePresenter presenter;
+
         public MainPage(UserInfObject _userInfObject)
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace Project.View
             presenter.loadSubjectsAsync();
             txtMinuteRange.Text = _minuteRange.ToString();
             textBox1.Text = _minuteNotifyEvery.ToString();
-
         }
         public UserInfObject userInfo {
             get { return _userInfObject; }
@@ -59,9 +58,17 @@ namespace Project.View
             set { _minuteRange = value; }
         }
 
-        public int minuteNotifyEvery {
+        public double minuteNotifyEvery {
             get { return _minuteNotifyEvery; }
             set { _minuteNotifyEvery = value; }
+        }
+
+        public NotifyIcon notifyIcon {
+            get { return notifyIcon1; }
+            set { notifyIcon1 = value; }
+        }
+        public Form mainpageForm {
+            get { return this; }
         }
 
         Label IMainPage.lblUpComingEvents {
@@ -74,17 +81,19 @@ namespace Project.View
             set { this.lblSubjectsEnrolled = value; }
         }
 
+        public ContextMenuStrip contextMenu {
+            get { return this.contextMenuStrip1; }
+            set { this.contextMenuStrip1 = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
             presenter.showAddSubjects();
-  
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            presenter.showTaskScheduler();
-         //   MessageBox.Show(Adding_Subject.Subject_Adding_Subject.Count+"");
+            presenter.ShowScheduleTime();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -95,6 +104,38 @@ namespace Project.View
         private void button4_Click(object sender, EventArgs e)
         {
             _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
+        }
+
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+        }
+
+       
+
+        private void dataGridView2_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            _minuteNotifyEvery = Int32.Parse(txtMinuteRange.Text.ToString());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            if (eventList.Rows.Count > 0)
+            {
+
+                presenter.ShowAllProgress(eventList.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Nothing to Show");
+            }
         }
     }
 }
