@@ -20,7 +20,7 @@ namespace Project.View
 
 
         int _minuteRange =1;
-        double _minuteNotifyEvery = 1.0;
+        int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
 
@@ -58,7 +58,7 @@ namespace Project.View
             set { _minuteRange = value; }
         }
 
-        public double minuteNotifyEvery {
+        public int minuteNotifyEvery {
             get { return _minuteNotifyEvery; }
             set { _minuteNotifyEvery = value; }
         }
@@ -121,7 +121,8 @@ namespace Project.View
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            _minuteNotifyEvery = Int32.Parse(txtMinuteRange.Text.ToString());
+            _minuteNotifyEvery = Int32.Parse(textBox1.Text.ToString());
+
         }
 
         private void button5_Click(object sender, EventArgs e)
