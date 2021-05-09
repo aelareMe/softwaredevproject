@@ -108,9 +108,8 @@ namespace Project.Presenter
                     }   
 
                 }
-
-                double delay = iMainPage.minuteNotifyEvery * 60000.00;
-                await Task.Delay(Convert.ToInt32(delay.ToString()));
+                int delay = iMainPage.minuteNotifyEvery * 60000;
+                await Task.Delay(delay);
             }
         }
 

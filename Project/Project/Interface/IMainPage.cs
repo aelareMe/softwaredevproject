@@ -22,7 +22,7 @@ namespace Project.Interface
 
         int minuteRange { get; set; }
 
-        double minuteNotifyEvery { get; set; }
+        int minuteNotifyEvery { get; set; }
 
         NotifyIcon notifyIcon { get; set; }
 
