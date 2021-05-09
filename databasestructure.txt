@@ -17,7 +17,8 @@ CREATE TABLE subject (
 	study_decription VARCHAR (255),
 	study_limit int8,
 	user_id int8,
-	CONSTRAINT fkuser_id FOREIGN KEY (user_id) REFERENCES user_info (user_id)
+	CONSTRAINT fkuser_id FOREIGN KEY (user_id) REFERENCES user_info (user_id) 
+ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE schedule_study (
 	study_details_id serial2 PRIMARY KEY,
@@ -27,7 +28,8 @@ CREATE TABLE schedule_study (
 	type int8,
 	study_description VARCHAR (255),
 	time_start timestamp,
-	CONSTRAINT fkstudy_id FOREIGN KEY (study_id) REFERENCES subject (study_id)
+	CONSTRAINT fkstudy_id FOREIGN KEY (study_id) REFERENCES subject (study_id) 
+ ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE study_progress (
@@ -35,6 +37,7 @@ CREATE TABLE study_progress (
 	study_details_id int8,
 	study_percent int2 DEFAULT 0,
 	study_time time ,
-CONSTRAINT fkstudy_details_id FOREIGN KEY (study_details_id) REFERENCES schedule_study (study_details_id)
+CONSTRAINT fkstudy_details_id FOREIGN KEY (study_details_id) REFERENCES schedule_study (study_details_id) 
+ ON DELETE CASCADE ON UPDATE CASCADE
 );
 

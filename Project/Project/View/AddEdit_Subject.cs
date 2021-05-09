@@ -24,6 +24,7 @@ namespace Project.View
         UserInfObject _userInfObject;
         AddSubjectPresenter presenter;
         int total_subject = 0;
+        int _selectedIndex = 0;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
             (
@@ -90,6 +91,11 @@ namespace Project.View
         {
             get { return SubjectDescription_txt.Text; }
             set { SubjectDescription_txt.Text = value; }
+        }
+
+        public int selectedIndex   {
+            get { return _selectedIndex; }
+            set { _selectedIndex = value; }
         }
 
         private void subject_list_view_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,15 +212,11 @@ namespace Project.View
         }
         private void edit_subject_edit_btn_Click(object sender, EventArgs e)
         {
-            int selectedIndex = subject_list_view.FocusedItem.Index;
+            _selectedIndex = subject_list_view.FocusedItem.Index;
             subject_list_view.Items[subject_list_view.FocusedItem.Index].Text = edit_subject_code.Text;
-            Subject.ElementAt(selectedIndex - 1).Subject_Code = edit_subject_code.Text;
-            Subject.ElementAt(selectedIndex - 1).Subject_Description = edit_subject_description.Text;
-            string editTextDescr = edit_subject_description.Text;
-            string subjCode = edit_subject_code.Text;
-            presenter.updateSubject(selectedIndex, subjCode, editTextDescr);
-
-
+            Subject.ElementAt(_selectedIndex - 1).Subject_Code = edit_subject_code.Text;
+            Subject.ElementAt(_selectedIndex - 1).Subject_Description = edit_subject_description.Text;
+            presenter.updateSubject();
             edit_subject_panel.Visible = false;
             add_subject_panel.Visible = false;
         }
@@ -243,7 +245,9 @@ namespace Project.View
             subject_list_view.Size = new Size(711, 313);
             edit_btn.Visible = false;
             delete_btn.Visible = false;
-            DataTable dt = presenter.loadSubjects();
+
+            _selectedIndex = subject_list_view.FocusedItem.Index;
+            presenter.deleteSubject();
             
         }
     }

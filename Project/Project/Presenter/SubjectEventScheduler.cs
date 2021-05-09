@@ -111,12 +111,26 @@ namespace Project.Presenter
         }
 
 
-        public void showStudyHelper(int rowIndex)
+        public void showStudyHelper(int index)
         {
-            int progressId = Convert.ToInt32(studyProgress.Rows[rowIndex]["study_progress_id"].ToString());
-            string name = studyProgress.Rows[rowIndex]["Study Name"].ToString();
+            int progressId = Convert.ToInt32(studyProgress.Rows[index]["study_progress_id"].ToString());
+            string name = studyProgress.Rows[index]["Study Name"].ToString();
             StudyHelper studyHelper = new StudyHelper(progressId, name);
             studyHelper.ShowDialog();
+        }
+
+
+        public void deleteScheduledStudy(DataRow dr)
+        {
+           int  selectedIndex = Convert.ToInt32(dr["study_details_id"].ToString());
+            DataTable dt = model.DeleteScheduledEvent(selectedIndex);
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("Deleting Subject Success");
+
+            }
+
         }
 
     }

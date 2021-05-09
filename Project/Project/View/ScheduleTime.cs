@@ -40,10 +40,11 @@ namespace Project.View
             presenter.loadScheduledTime(selectedID, dataGridView1);
         }
 
-        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            presenter.showStudyHelper(e.RowIndex);
-        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            presenter.showStudyHelper(dataGridView1.SelectedRows[0].Index);
+            loadItems(dr);
+        }
     }
 }

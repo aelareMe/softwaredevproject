@@ -45,7 +45,5 @@ namespace Project.Presenter
 
         }
 
-
-
     }
 }

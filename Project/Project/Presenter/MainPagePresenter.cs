@@ -109,8 +109,8 @@ namespace Project.Presenter
 
                 }
 
-                int delay = iMainPage.minuteNotifyEvery * 60000;
-                await Task.Delay(delay);
+                double delay = iMainPage.minuteNotifyEvery * 60000;
+                await Task.Delay(Convert.ToInt32(delay.ToString()));
             }
         }
 
@@ -156,7 +156,11 @@ namespace Project.Presenter
                     string subjCode = dr["Subject Code"].ToString();
                     string studyName = dr["Description"].ToString();
                     int totalPercent = Convert.ToInt32(dr["Total Percent"].ToString());
-                    double denominator = Convert.ToDouble(dr["Percent Denomitator"].ToString());
+                    int studyDetailsId = Convert.ToInt32(dr["study_details_id"].ToString());
+
+                    double denominator = Convert.ToDouble(subjModel.GetCountStudyDetailsID(studyDetailsId).Rows[0]["ctr"]);
+
+                   // Convert.ToInt32(subjModel.GetCountStudyDetailsID. [0]["ctr"].ToString());
 
                     int type = Convert.ToInt32(dr["_type"].ToString());
 
@@ -169,9 +173,9 @@ namespace Project.Presenter
                         strType = "Assignment";
                     }
 
-                        int value = Convert.ToInt32((totalPercent / denominator).ToString());
+                   double value = Convert.ToDouble((Convert.ToDouble(totalPercent) / denominator).ToString());
                     object[] row1 = new object[] { subjCode.ToString(),
-                     studyName,strType, value };
+                     studyName,strType,Convert.ToInt32( value) };
                     iMainPage.eventList.Rows.Add(row1);
 
                 }

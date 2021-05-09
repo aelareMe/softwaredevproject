@@ -11,6 +11,7 @@ namespace Project.Interface
     {
          string subjectCode { get; set; }
          string subjectDescription { get; set; }
-        
+         int selectedIndex { get; set; }
+
     }
 }
