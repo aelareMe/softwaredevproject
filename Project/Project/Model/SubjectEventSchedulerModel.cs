@@ -99,8 +99,10 @@ namespace Project.Model
         public DataTable LoadSubjectStudyTime(int studyID)
         {
 
-            string sql = "SELECT study_id,study_details_id, study_description AS \"Description\" ," +
-                "time_start AS \"Scheduled Date\", no_days_accomplish AS \"No of Days To Accomplish\" , " +
+            string sql = "SELECT study_id,study_details_id, study_description AS \"Description\" , " +
+                "time_start AS \"Scheduled Date\", " +
+                "(time_start::date - NOW()::date) AS \"Remaining Day/s\"," +
+                " no_days_accomplish AS \"No of Days To Accomplish\" , " +
                 "no_sessions_day AS \"No of Sessions Per Day\"" +
                 "FROM schedule_study WHERE study_id = "+ studyID + "";
             DataTable dt = new DataTable();
@@ -164,8 +166,8 @@ namespace Project.Model
             string sql = "Select subject.study_name as \"Subject Code\", "+
                          "schedule_study.type as \"_type\", "+
                          "schedule_study.study_description as \"Description\", "+
-                         "schedule_study.study_details_id, "+
-                         "s1.sum_type as \"Total Percent\" , s1.count as \"Percent Denomitator\" "+
+                         "schedule_study.study_details_id , " +
+                         "s1.sum_type as \"Total Percent\"  "+
                          "from user_info "+
                          "inner join subject on user_info.user_id = subject.user_id " +
                          "inner join schedule_study on subject.study_id = schedule_study.study_id "+
@@ -173,12 +175,12 @@ namespace Project.Model
                          "schedule_study.study_details_id , ctr.count " +
                          "from schedule_study " +
                          "inner join study_progress on schedule_study.study_details_id = study_progress.study_details_id " +        
-                         "inner join ( Select count(study_progress.study_progress_id )as \"count\", " +
+                         "inner join ( Select " +
                          "schedule_study.type as \"typee\" " +
                          "from study_progress "+
                          "inner join schedule_study on study_progress.study_details_id = schedule_study.study_details_id "+
                          "group by typee) as \"ctr\" on schedule_study.type = ctr.typee " +
-                         "group by schedule_study.study_details_id, schedule_study.type,ctr.count) as s1 " +
+                         "group by schedule_study.study_details_id, schedule_study.type) as s1 " +
                          "on schedule_study.study_details_id = s1.study_details_id " +
                          "WHERE user_info.user_id = "+ userID + "";
             DataTable dt = new DataTable();
@@ -241,6 +243,59 @@ namespace Project.Model
                 "Order by  study_time::time(0) ASC";
 
             
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+
+
+        public DataTable GetCountStudyDetailsID(int studyDetailsID)
+        {
+            string sql = "Select count(study_details_id) as \"ctr\"  " +
+                "from study_progress where study_details_id = "+ studyDetailsID + "";
+
+
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+        public DataTable DeleteScheduledEvent(int studyDetailsId)
+        {
+
+            string sql = "Delete from schedule_study where study_details_id = " + studyDetailsId + " RETURNING * ";
+
             DataTable dt = new DataTable();
             trans.OpenConnection();
             trans.startTransaction();

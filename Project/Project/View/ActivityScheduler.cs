@@ -21,7 +21,7 @@ namespace Project
         UserInfObject _userInfObject;
         SubjectEventScheduler presenter;
         DataTable _dtEventList = new DataTable();
-    
+
         public ActSched(UserInfObject _userInfObject)
         {
             this._userInfObject = _userInfObject;
@@ -50,6 +50,7 @@ namespace Project
             set { _dtEventList = value; }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (eventList.Rows.Count == 300){ //puno na ang events
@@ -72,13 +73,34 @@ namespace Project
             numEvent.Text = eventList.Rows.Count.ToString() + "/300 Events"; //para ni sa number of events
         }
 
-        private void eventList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            DataRow dr = this.dtEventList.Rows[e.RowIndex];
-            ScheduleTime form = new ScheduleTime(this, dr);
-            form.ShowDialog();
+            if (eventList.Rows.Count > 0)
+            {
+                DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
+
+                presenter.deleteScheduledStudy(dr);
+                presenter.loadStudyTime();
+            }
+            else {
+                MessageBox.Show("Nothing to delete");
+            }
+ 
         }
 
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (eventList.Rows.Count > 0)
+            {
+                DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
+                ScheduleTime form = new ScheduleTime(this, dr);
+                form.ShowDialog();
+            }
+            else {
+                MessageBox.Show("Nothing to Show");
+            }
+        
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace Project.View
 
 
         int _minuteRange =1;
-        int _minuteNotifyEvery = 1;
+        double _minuteNotifyEvery = 1.0;
 
         MainPagePresenter presenter;
 
@@ -58,7 +58,7 @@ namespace Project.View
             set { _minuteRange = value; }
         }
 
-        public int minuteNotifyEvery {
+        public double minuteNotifyEvery {
             get { return _minuteNotifyEvery; }
             set { _minuteNotifyEvery = value; }
         }
@@ -93,7 +93,7 @@ namespace Project.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //presenter.ShowScheduleTime();
+            presenter.ShowScheduleTime();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -116,8 +116,26 @@ namespace Project.View
 
         private void dataGridView2_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.ShowAllProgress(e.RowIndex);
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            _minuteNotifyEvery = Int32.Parse(txtMinuteRange.Text.ToString());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            if (eventList.Rows.Count > 0)
+            {
+
+                presenter.ShowAllProgress(eventList.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Nothing to Show");
+            }
         }
     }
 }

@@ -42,16 +42,27 @@ namespace Project.Presenter
         }
 
 
-        public void updateSubject(int selectedItem,string subjectCode,string newDescription) {
-            int studyId = Convert.ToInt32(dtSubject.Rows[selectedItem - 1]["study_id"].ToString());
-            DataTable reponse = model.UpdateSubject(subjectCode,
-              newDescription, userInfo.getId());
+        public void updateSubject() {
+            int studyId = Convert.ToInt32(dtSubject.Rows[iAddSubject.selectedIndex - 1]["study_id"].ToString());
+            DataTable reponse = model.UpdateSubject(iAddSubject.subjectCode,
+              iAddSubject.subjectDescription, studyId);
             if (reponse.Rows.Count > 0)
             {
-                MessageBox.Show("Editing Subject Success");
+                MessageBox.Show("Updating Subject Success");
 
             }
 
+        }
+
+        public void deleteSubject() {
+  
+            int studyId = Convert.ToInt32(dtSubject.Rows[iAddSubject.selectedIndex - 1]["study_id"].ToString());
+            DataTable reponse = model.DeleteSubject(studyId);
+            if (reponse.Rows.Count > 0)
+            {
+                MessageBox.Show("Deleting Subject Success");
+
+            }
         }
 
     }
