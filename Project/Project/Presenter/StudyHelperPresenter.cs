@@ -24,7 +24,7 @@ namespace Project.Presenter
                 iStudyHelper.percent);
 
             if (dt.Rows.Count > 0) {
-                MessageBox.Show("Sucess");
+                MessageBox.Show("Success");
             }
     
 

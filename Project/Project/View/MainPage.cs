@@ -64,8 +64,8 @@ namespace Project.View
         }
 
         public NotifyIcon notifyIcon {
-            get { return notifyIcon1; }
-            set { notifyIcon1 = value; }
+            get { return notifyIcon2; }
+            set { notifyIcon2 = value; }
         }
         public Form mainpageForm {
             get { return this; }
@@ -94,11 +94,6 @@ namespace Project.View
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.ShowScheduleTime();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -138,5 +133,62 @@ namespace Project.View
                 MessageBox.Show("Nothing to Show");
             }
         }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            currentPanel.Show();
+            currentPanel.BringToFront();
+            currentPanel.Controls.Add(childForm);
+            currentPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void edit_subject_btn_Click(object sender, EventArgs e)
+        {
+            Adding_Subject Adding_Subject = new Adding_Subject(_userInfObject);
+            openChildForm(Adding_Subject);
+            edit_subject_btn.BackColor = Color.FromArgb(15, 39, 63);
+            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
+        }
+
+        private void addAcitivty_btn_Click(object sender, EventArgs e)
+        {
+            ActSched ActSched = new ActSched(_userInfObject);
+            openChildForm(ActSched);
+            edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
+            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(15, 39, 63);
+        }
+
+        private void Schedule_btn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void minmize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void clse_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            currentPanel.Hide();
+            currentPanel.SendToBack();
+        }
+
     }
 }
