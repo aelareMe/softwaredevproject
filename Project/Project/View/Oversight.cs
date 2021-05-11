@@ -119,5 +119,7 @@ namespace Project.View
             Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(15, 39, 63);
         }
+
+
     }
 }
