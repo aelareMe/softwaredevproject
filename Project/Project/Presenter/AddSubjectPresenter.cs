@@ -56,7 +56,7 @@ namespace Project.Presenter
 
         public void deleteSubject() {
   
-            int studyId = Convert.ToInt32(dtSubject.Rows[iAddSubject.selectedIndex - 1]["study_id"].ToString());
+            int studyId = Convert.ToInt32(dtSubject.Rows[iAddSubject.selectedIndex]["study_id"].ToString());
             DataTable reponse = model.DeleteSubject(studyId);
             if (reponse.Rows.Count > 0)
             {

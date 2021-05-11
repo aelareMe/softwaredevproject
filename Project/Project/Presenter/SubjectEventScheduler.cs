@@ -76,7 +76,7 @@ namespace Project.Presenter
             DataTable response = model.InsertStudyProgress(studyDetailsId, strBuildDate);
 
             if (response.Rows.Count > 0) {
-                MessageBox.Show("Sucesss");
+                MessageBox.Show("Success");
             }
 
         }

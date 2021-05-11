@@ -216,6 +216,8 @@ namespace Project.View
             subject_list_view.Items[subject_list_view.FocusedItem.Index].Text = edit_subject_code.Text;
             Subject.ElementAt(_selectedIndex - 1).Subject_Code = edit_subject_code.Text;
             Subject.ElementAt(_selectedIndex - 1).Subject_Description = edit_subject_description.Text;
+            subjectCode = edit_subject_code.Text;
+            subjectDescription = edit_subject_description.Text;
             presenter.updateSubject();
             edit_subject_panel.Visible = false;
             add_subject_panel.Visible = false;
