@@ -50,7 +50,6 @@ namespace Project
             set { _dtEventList = value; }
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (eventList.Rows.Count == 300){ //puno na ang events
@@ -60,12 +59,7 @@ namespace Project
             {
                 presenter.showAddEvent();
             }
-            
-            
-            
         }
-
-   
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -101,6 +95,25 @@ namespace Project
                 MessageBox.Show("Nothing to Show");
             }
         
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //Copy event
+     
+
+         DataGridViewSelectedRowCollection rows = eventList.SelectedRows;
+
+            List<DataRow> listDr = new List<DataRow>();
+            foreach (DataGridViewRow row in rows)
+            {
+                DataRow temp = this.dtEventList.Rows[row.Index];
+                listDr.Add(temp);
+            }
+
+            presenter.showCopyEvent(listDr);
+
+
         }
     }
 }
