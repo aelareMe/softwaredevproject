@@ -92,6 +92,12 @@
     </Compile>
     <Compile Include="Presenter\StudyHelperPresenter.cs" />
     <Compile Include="Subjects.cs" />
+    <Compile Include="View\CopyEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CopyEvent.Designer.cs">
+      <DependentUpon>CopyEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ScheduleTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     <Compile Include="View\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CopyEvent.resx">
+      <DependentUpon>CopyEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ScheduleTime.resx">
       <DependentUpon>ScheduleTime.cs</DependentUpon>
     </EmbeddedResource>

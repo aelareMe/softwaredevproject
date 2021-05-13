@@ -99,7 +99,7 @@ namespace Project.Model
         public DataTable LoadSubjectStudyTime(int studyID)
         {
 
-            string sql = "SELECT study_id,study_details_id, study_description AS \"Description\" , " +
+            string sql = "SELECT study_id,type as  \"_type\",study_details_id, study_description AS \"Description\" , " +
                 "time_start AS \"Scheduled Date\", " +
                 "(time_start::date - NOW()::date) AS \"Remaining Day/s\"," +
                 " no_days_accomplish AS \"No of Days To Accomplish\" , " +
