@@ -23,6 +23,14 @@ namespace Project.Object
             this.isLoggedIn = isLoggedIn;
         }
 
+        public String getPassword()
+        {
+            return password;
+        }
+        public String getUsername()
+        {
+            return username;
+        }
         public String getName() {
             return name;
         }

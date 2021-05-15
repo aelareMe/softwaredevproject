@@ -57,12 +57,15 @@
             this.clse = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Setting_btn = new System.Windows.Forms.Button();
             this.addAcitivty_btn = new System.Windows.Forms.Button();
             this.Schedule_btn = new System.Windows.Forms.Button();
             this.edit_subject_btn = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -365,7 +368,7 @@
             this.minmize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minmize.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minmize.ForeColor = System.Drawing.Color.White;
-            this.minmize.Location = new System.Drawing.Point(657, 6);
+            this.minmize.Location = new System.Drawing.Point(652, 6);
             this.minmize.Name = "minmize";
             this.minmize.Size = new System.Drawing.Size(41, 32);
             this.minmize.TabIndex = 29;
@@ -381,7 +384,7 @@
             this.clse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clse.ForeColor = System.Drawing.Color.White;
-            this.clse.Location = new System.Drawing.Point(704, 5);
+            this.clse.Location = new System.Drawing.Point(699, 6);
             this.clse.Name = "clse";
             this.clse.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.clse.Size = new System.Drawing.Size(41, 32);
@@ -406,12 +409,31 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel5.Controls.Add(this.Setting_btn);
             this.panel5.Controls.Add(this.addAcitivty_btn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 231);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 130);
             this.panel5.TabIndex = 11;
+            // 
+            // Setting_btn
+            // 
+            this.Setting_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.Setting_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Setting_btn.FlatAppearance.BorderSize = 0;
+            this.Setting_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Setting_btn.ForeColor = System.Drawing.Color.White;
+            this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
+            this.Setting_btn.Location = new System.Drawing.Point(0, 53);
+            this.Setting_btn.Name = "Setting_btn";
+            this.Setting_btn.Size = new System.Drawing.Size(167, 53);
+            this.Setting_btn.TabIndex = 13;
+            this.Setting_btn.Text = "  Setting";
+            this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Setting_btn.UseVisualStyleBackColor = false;
+            this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
             // 
             // addAcitivty_btn
             // 
@@ -499,6 +521,18 @@
             this.notifyIcon2.Visible = true;
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel3;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 35;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,5 +599,8 @@
         private System.Windows.Forms.Panel currentPanel;
         private System.Windows.Forms.Button minmize;
         private System.Windows.Forms.NotifyIcon notifyIcon2;
+        private System.Windows.Forms.Button Setting_btn;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
