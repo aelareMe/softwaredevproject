@@ -32,10 +32,7 @@ namespace Project.View
 
         private void changeProfile_btn_Click(object sender, EventArgs e)
         {
-            /*obj = new UserInfObject(true, userName_txt.Text, password_txt.Text, name_txt.Text, Int32.Parse(Id_txt.Text));
-            MainPage form = new MainPage(obj);
-            form.userInfo = obj;*/
-
+            // setting profile change button
         }
     }
 }
