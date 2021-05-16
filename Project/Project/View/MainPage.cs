@@ -18,12 +18,10 @@ namespace Project.View
 
         UserInfObject _userInfObject;
 
-
         int _minuteRange =1;
         int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
-
         public MainPage(UserInfObject _userInfObject)
         {
             InitializeComponent();
@@ -34,13 +32,17 @@ namespace Project.View
             txtMinuteRange.Text = _minuteRange.ToString();
             textBox1.Text = _minuteNotifyEvery.ToString();
         }
+
+        public MainPage MainPage1
+        {
+            get { return this;}
+        }
         public UserInfObject userInfo {
             get { return _userInfObject; }
             set {
 
                 _userInfObject = value;
                 lblName.Text = _userInfObject.getName();
-
             }
         }
 
@@ -158,6 +160,7 @@ namespace Project.View
             edit_subject_btn.BackColor = Color.FromArgb(15, 39, 63);
             Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
+            Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
         private void addAcitivty_btn_Click(object sender, EventArgs e)
@@ -167,6 +170,7 @@ namespace Project.View
             edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
             Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(15, 39, 63);
+            Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
         private void Schedule_btn_Click(object sender, EventArgs e)
@@ -190,5 +194,14 @@ namespace Project.View
             currentPanel.SendToBack();
         }
 
+        private void Setting_btn_Click(object sender, EventArgs e)
+        {
+            Setting Setting = new Setting(userInfo);
+            openChildForm(Setting);
+            Setting_btn.BackColor = Color.FromArgb(15, 39, 63);
+            edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
+            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
+        }
     }
 }

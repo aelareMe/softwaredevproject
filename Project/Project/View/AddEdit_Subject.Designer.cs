@@ -34,6 +34,7 @@ namespace Project.View
             this.add_subject_panel = new System.Windows.Forms.Panel();
             this.edit_subject_panel = new System.Windows.Forms.Panel();
             this.edit_cancel_btn = new System.Windows.Forms.Button();
+            this.edit_subject_code = new Project.CelearningTextbox();
             this.edit_subject_description = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@ namespace Project.View
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.cancel_subjectAdd_btn = new System.Windows.Forms.Button();
+            this.SubjectCode_txt = new Project.CelearningTextbox();
             this.SubjectDescription_txt = new System.Windows.Forms.RichTextBox();
             this.add_subjectAdd_btn = new System.Windows.Forms.Button();
             this.add_Subject_limiter = new Bunifu.Framework.UI.BunifuCircleProgressbar();
@@ -56,21 +58,16 @@ namespace Project.View
             this.view_subject_panel = new System.Windows.Forms.Panel();
             this.view_subject_details = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.view_subject_desription = new System.Windows.Forms.TextBox();
             this.subjectCode_lbl = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.back_btn = new System.Windows.Forms.Button();
-            this.edit_subject_code = new Project.CelearningTextbox();
-            this.SubjectCode_txt = new Project.CelearningTextbox();
             this.search_txtbox = new Project.CelearningTextbox();
+            this.back_btn = new System.Windows.Forms.Button();
             this.add_subject_panel.SuspendLayout();
             this.edit_subject_panel.SuspendLayout();
             this.adding_panel.SuspendLayout();
             this.view_subject_panel.SuspendLayout();
             this.view_subject_details.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // add_subject_panel
@@ -117,6 +114,17 @@ namespace Project.View
             this.edit_cancel_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.edit_cancel_btn.UseVisualStyleBackColor = false;
             this.edit_cancel_btn.Click += new System.EventHandler(this.edit_cancel_btn_Click);
+            // 
+            // edit_subject_code
+            // 
+            this.edit_subject_code.BackColor = System.Drawing.Color.Transparent;
+            this.edit_subject_code.Br = System.Drawing.Color.White;
+            this.edit_subject_code.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_code.ForeColor = System.Drawing.Color.Black;
+            this.edit_subject_code.Location = new System.Drawing.Point(210, 13);
+            this.edit_subject_code.Name = "edit_subject_code";
+            this.edit_subject_code.Size = new System.Drawing.Size(210, 34);
+            this.edit_subject_code.TabIndex = 27;
             // 
             // edit_subject_description
             // 
@@ -262,6 +270,17 @@ namespace Project.View
             this.cancel_subjectAdd_btn.UseVisualStyleBackColor = false;
             this.cancel_subjectAdd_btn.Click += new System.EventHandler(this.cancel_btn_Click_1);
             // 
+            // SubjectCode_txt
+            // 
+            this.SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
+            this.SubjectCode_txt.Br = System.Drawing.Color.White;
+            this.SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
+            this.SubjectCode_txt.Location = new System.Drawing.Point(184, 9);
+            this.SubjectCode_txt.Name = "SubjectCode_txt";
+            this.SubjectCode_txt.Size = new System.Drawing.Size(208, 34);
+            this.SubjectCode_txt.TabIndex = 27;
+            // 
             // SubjectDescription_txt
             // 
             this.SubjectDescription_txt.BackColor = System.Drawing.Color.White;
@@ -404,8 +423,6 @@ namespace Project.View
             this.view_subject_details.AutoScroll = true;
             this.view_subject_details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
             this.view_subject_details.Controls.Add(this.label7);
-            this.view_subject_details.Controls.Add(this.label8);
-            this.view_subject_details.Controls.Add(this.dataGridView1);
             this.view_subject_details.Controls.Add(this.view_subject_desription);
             this.view_subject_details.Controls.Add(this.subjectCode_lbl);
             this.view_subject_details.Controls.Add(this.label6);
@@ -424,25 +441,6 @@ namespace Project.View
             this.label7.Size = new System.Drawing.Size(176, 24);
             this.label7.TabIndex = 44;
             this.label7.Text = "Subject Code:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(16, 202);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 26);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Activities:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(260, 210);
-            this.dataGridView1.TabIndex = 42;
             // 
             // view_subject_desription
             // 
@@ -478,6 +476,18 @@ namespace Project.View
             this.label6.TabIndex = 24;
             this.label6.Text = "Description:";
             // 
+            // search_txtbox
+            // 
+            this.search_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.search_txtbox.Br = System.Drawing.Color.White;
+            this.search_txtbox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.search_txtbox.Location = new System.Drawing.Point(463, 18);
+            this.search_txtbox.Name = "search_txtbox";
+            this.search_txtbox.Size = new System.Drawing.Size(208, 34);
+            this.search_txtbox.TabIndex = 28;
+            this.search_txtbox.TextChanged += new System.EventHandler(this.search_txtbox_TextChanged);
+            // 
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
@@ -493,40 +503,6 @@ namespace Project.View
             this.back_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.back_btn.UseVisualStyleBackColor = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
-            // 
-            // edit_subject_code
-            // 
-            this.edit_subject_code.BackColor = System.Drawing.Color.Transparent;
-            this.edit_subject_code.Br = System.Drawing.Color.White;
-            this.edit_subject_code.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_subject_code.ForeColor = System.Drawing.Color.Black;
-            this.edit_subject_code.Location = new System.Drawing.Point(210, 13);
-            this.edit_subject_code.Name = "edit_subject_code";
-            this.edit_subject_code.Size = new System.Drawing.Size(210, 34);
-            this.edit_subject_code.TabIndex = 27;
-            // 
-            // SubjectCode_txt
-            // 
-            this.SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
-            this.SubjectCode_txt.Br = System.Drawing.Color.White;
-            this.SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
-            this.SubjectCode_txt.Location = new System.Drawing.Point(184, 9);
-            this.SubjectCode_txt.Name = "SubjectCode_txt";
-            this.SubjectCode_txt.Size = new System.Drawing.Size(208, 34);
-            this.SubjectCode_txt.TabIndex = 27;
-            // 
-            // search_txtbox
-            // 
-            this.search_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.search_txtbox.Br = System.Drawing.Color.White;
-            this.search_txtbox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.search_txtbox.Location = new System.Drawing.Point(463, 18);
-            this.search_txtbox.Name = "search_txtbox";
-            this.search_txtbox.Size = new System.Drawing.Size(208, 34);
-            this.search_txtbox.TabIndex = 28;
-            this.search_txtbox.TextChanged += new System.EventHandler(this.search_txtbox_TextChanged);
             // 
             // Adding_Subject
             // 
@@ -547,7 +523,6 @@ namespace Project.View
             this.view_subject_panel.ResumeLayout(false);
             this.view_subject_details.ResumeLayout(false);
             this.view_subject_details.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,8 +552,6 @@ namespace Project.View
         private System.Windows.Forms.Panel view_subject_details;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label subjectCode_lbl;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox view_subject_desription;
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button delete_btn;
