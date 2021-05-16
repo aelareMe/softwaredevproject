@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEvent));
             this.button2 = new System.Windows.Forms.Button();
             this.addEventConfirm = new System.Windows.Forms.Button();
             this.eventDate = new System.Windows.Forms.DateTimePicker();
@@ -231,16 +230,16 @@
             // close_btn
             // 
             this.close_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.close_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.close_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(128)))));
             this.close_btn.FlatAppearance.BorderSize = 0;
             this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.close_btn.ForeColor = System.Drawing.Color.Black;
-            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(388, 7);
+            this.close_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close_btn.ForeColor = System.Drawing.Color.White;
+            this.close_btn.Location = new System.Drawing.Point(388, 9);
             this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(46, 40);
+            this.close_btn.Size = new System.Drawing.Size(38, 36);
             this.close_btn.TabIndex = 32;
+            this.close_btn.Text = "X";
             this.close_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.close_btn.UseVisualStyleBackColor = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
@@ -248,16 +247,16 @@
             // minimize_btn
             // 
             this.minimize_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimize_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.minimize_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(128)))), ((int)(((byte)(180)))));
             this.minimize_btn.FlatAppearance.BorderSize = 0;
             this.minimize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimize_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimize_btn.ForeColor = System.Drawing.Color.Black;
-            this.minimize_btn.Image = ((System.Drawing.Image)(resources.GetObject("minimize_btn.Image")));
-            this.minimize_btn.Location = new System.Drawing.Point(337, 5);
+            this.minimize_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimize_btn.ForeColor = System.Drawing.Color.White;
+            this.minimize_btn.Location = new System.Drawing.Point(337, 9);
             this.minimize_btn.Name = "minimize_btn";
-            this.minimize_btn.Size = new System.Drawing.Size(45, 44);
+            this.minimize_btn.Size = new System.Drawing.Size(40, 36);
             this.minimize_btn.TabIndex = 34;
+            this.minimize_btn.Text = "__";
             this.minimize_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.minimize_btn.UseVisualStyleBackColor = false;
             this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
