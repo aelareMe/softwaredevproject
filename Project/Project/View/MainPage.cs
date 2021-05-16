@@ -88,6 +88,7 @@ namespace Project.View
             set { this.contextMenuStrip1 = value; }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             presenter.showAddSubjects();
@@ -151,6 +152,7 @@ namespace Project.View
             currentPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
         }
 
         private void edit_subject_btn_Click(object sender, EventArgs e)
@@ -196,12 +198,14 @@ namespace Project.View
 
         private void Setting_btn_Click(object sender, EventArgs e)
         {
-            Setting Setting = new Setting(userInfo);
+            Setting Setting = new Setting(userInfo,this);
             openChildForm(Setting);
             Setting_btn.BackColor = Color.FromArgb(15, 39, 63);
             edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
             Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
+
+   
         }
     }
 }
