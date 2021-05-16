@@ -83,13 +83,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\ISettings.cs" />
     <Compile Include="Interface\IStudyHelper.cs" />
+    <Compile Include="Model\SettingsModel.cs" />
     <Compile Include="Model\StudyHelperModel.cs" />
     <Compile Include="Object\DataGridViewProgressColumn.cs" />
     <Compile Include="Object\EventType.cs" />
     <Compile Include="CelearningTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Presenter\SettingsPresenter.cs" />
     <Compile Include="Presenter\StudyHelperPresenter.cs" />
     <Compile Include="Subjects.cs" />
     <Compile Include="View\CopyEvent.cs">

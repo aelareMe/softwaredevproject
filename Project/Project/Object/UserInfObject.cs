@@ -35,6 +35,11 @@ namespace Project.Object
             return name;
         }
 
+        public void setName(string name)
+        {
+            this.name = name;
+        }
+
         public int getId() {
             return id;
         }
