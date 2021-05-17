@@ -121,6 +121,30 @@
     <value>163, 21</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="help_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAAABGdBTUEAALGPC/xhBQAABGRJREFUaEPt
+        mc2rVVUYxq+mSZqkYgY6sCyIJIQcSCRhRGr4D2TYyCBQyLCBINQoGwUiQlCzBAdROC6IgqBJEEI0MKik
+        slLIjOj78/Z71nrO2p/nnH3u3vfcK+wfPOx79vOu51337rO/1p3p6enp6VlszM7OLvWP1y/8EkvQPegF
+        9CH6Hv2B/vJWn7VfvuqWeOjihUmuQa+gX9EkqF7j1jhq8cCkVqDX0H+oDRqvnBWOXliYyE70GxqFJv03
+        0hHSdtwfQXk73WJhYALHw1Tq+RI9izajwpHQZ++Xr7phHPeQ6ULjU7F/hQ/QnS5rhOo9ro5TLpsONDwW
+        +xbQVfBhl8wJjXdOmWMumV9otCP2K/AtusUlrVCO88rscMn8QINl6OfQKuM7NPTqhrcU6fzah57w9nY0
+        9IaOp3NSuXnUd5lLuofw06FNxp9one0KeE+jX1RYg66Iz6PaGzj71yHl5zltu1sIXon+DS0y9tkuwH49
+        obwXKsbzCao9IuzXUc6j/ittdwehJ0J8xnlbFfBejSWJf9DrSEfyJfQDyvOOh1bAOx9LEidsdQOBOhI/
+        huiMbbYLsF8XhPxNWufKrbYDfNZ5+JHMHJttF2D/tmgnNI/unkUJ2xhiM67aqoD3eCxJPGqrAPvvinbi
+        GVsV8K7GksRGW+0h7HDMTJy0VQHvDvQUehm9j26wVYD95T/Yc7Yq4J2MJYnDttpD2LmYmdhua86Q8UaM
+        StxvqwLe9liSOGerPYRdjJmJ1bYmhrE6f98MKRl6vhx6HuGtDlUZF221h7ArMTOgK99yWxPBON2cP1ZI
+        Dt0H17ukFvzlSH0HXLHVHsKuxcyAXlkmflJgzI3oawXk+And5pKhUKMnI/UdcM1Wewi7HDMDupFOfOQY
+        81YYnfEZWmV7JNTpyOUfIC7bag9hF2JmYugjVx3Ur4rDEp+ixkefWj2K5blgqz2EnY2ZiV22GkH9vXFY
+        4m5bjaB+VxyWOGurPYTtj5mJM7YaQf2DcVjiZluNoP5MHJbYb6s9hK2NmQmthTR+BKJWX0vdq+7ztvH6
+        JbW6dZRX09ba7gYCL8XcxB5bY6F2PdLRH2iLrbFQuwfluWSrOwg9FLMT36BGR4+6B8KIjCdtjYQ6HTX1
+        yXPIdncQqnvN7yE+46jtkVA311/uaCxPqP/8vI0TfCS0yNCrzVbbQ6Fm4l+Omq2ovL55xHb3EK6vyVeh
+        TYZWqza5pBZ8veM9ktPIVxb8Tai8Cqa+3b3H1UEDvarkn/OEJlL78jopynFeHvXr7h1uFDTaG1oW0Vdo
+        6ILPODTO4+uW2ve6bDrQ8EDsW0HrI4+hRie+6lxfXlcZcMCl04XGu1H+aT2PluXeRlp22IL0762bvNVn
+        7ZdfXr4boNzdbrUwMIEN6HPNpkOUt8EtFh4mcxCVV6MnReMPOnJxwcS0ZKfzR69IdReGOlSneo27Pv5n
+        zkS1Qv0QehG9i7S88IW3+qz98rtfQe7p6enp6enp6Zk+MzP/A+cQvlh+nPTrAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="Setting_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

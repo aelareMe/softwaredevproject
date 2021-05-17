@@ -207,5 +207,16 @@ namespace Project.View
 
    
         }
+
+        private void help_btn_Click(object sender, EventArgs e)
+        {
+            Help Help = new Help();
+            openChildForm(Help);
+            help_btn.BackColor = Color.FromArgb(15, 39, 63);
+            Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
+            edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
+            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
+        }
     }
 }
