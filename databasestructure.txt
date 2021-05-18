@@ -7,7 +7,7 @@ DROP TABLE  IF EXISTS  user_info ;
 CREATE TABLE user_info (
 	user_id serial2 PRIMARY KEY,
 	user_name VARCHAR (255) UNIQUE NOT NULL,
-	user_password VARCHAR (255) UNIQUE NOT NULL,
+	user_password VARCHAR (255) NOT NULL,
 	NAME VARCHAR (255) NOT NULL
 );
 
