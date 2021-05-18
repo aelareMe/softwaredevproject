@@ -17,8 +17,8 @@ namespace Project.View
         public Help()
         {
             InitializeComponent();
-            _filePath = Directory.GetParent(_filePath).FullName+@"\Debug";
-            _filePath += @"\user-manual.pdf";
+            _filePath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            _filePath += @"\PDF\user-manual.pdf";
             pdffile.src = _filePath;
         }
 
