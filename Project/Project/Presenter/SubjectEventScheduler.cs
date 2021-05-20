@@ -38,12 +38,18 @@ namespace Project.Presenter
         public void showAddEvent() {
             AddEvent aE = new AddEvent(iSubjectEventScheduler);
             aE.ShowDialog();
+        }
+
+        public void showAddEvent(DataRow dr)
+        {
+            AddEvent aE = new AddEvent(iSubjectEventScheduler, dr);
+            aE.ShowDialog();
 
         }
 
         public void showCopyEvent(List<DataRow> listDr)
         {
-            int removeIndex = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString())-1;
+            int removeIndex = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedIndex.ToString());
             DataTable copyDt = subjectList.Copy();
             copyDt.Rows.RemoveAt(removeIndex);
             CopyEvent cE = new CopyEvent(copyDt);
@@ -104,6 +110,20 @@ namespace Project.Presenter
             {
                 MessageBox.Show("Success Adding Event");
             }       
+        }
+
+
+        public void updateEvent(DateTime selectedDate, string eventName,
+         int eventType, int numberOfDaysAccomplish, int numberOfSessionsDay,int studyDetailsId)
+        {
+      
+            string strBuildDate = buildDate(selectedDate);
+            DataTable response = model.UpdateEvent(studyDetailsId,
+                strBuildDate, eventName, eventType, numberOfDaysAccomplish, numberOfSessionsDay);
+            if (response.Rows.Count > 0)
+            {
+                MessageBox.Show("Success Updating Event");
+            }
         }
 
         public string buildDate(DateTime selectedDate) {
