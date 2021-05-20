@@ -95,6 +95,35 @@ namespace Project.Model
         }
 
 
+        public DataTable UpdateEvent(int studyDetailsId, string timeStart,
+             string eventName, int eventType, int numberOfDaysAccomplish, int numberOfSessionsDay)
+        {
+
+            string sql = "Update schedule_study set no_days_accomplish = "+ numberOfDaysAccomplish + ", " +
+                " no_sessions_day = "+ numberOfSessionsDay + " , type = "+ eventType + ", " +
+                "study_description  = '"+ eventName + "' , time_start  = '"+ timeStart + "' " +
+                "where study_details_id = "+ studyDetailsId + "  RETURNING * ";
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+
 
         public DataTable LoadSubjectStudyTime(int studyID)
         {

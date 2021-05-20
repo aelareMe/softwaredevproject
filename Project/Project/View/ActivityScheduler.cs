@@ -22,6 +22,8 @@ namespace Project
         SubjectEventScheduler presenter;
         DataTable _dtEventList = new DataTable();
 
+        bool _isAddEventMode = true;
+
         public ActSched(UserInfObject _userInfObject)
         {
             this._userInfObject = _userInfObject;
@@ -48,6 +50,12 @@ namespace Project
         public DataTable dtEventList {
             get { return _dtEventList; }
             set { _dtEventList = value; }
+        }
+
+      
+        public bool isAddEventMode {
+            get { return _isAddEventMode; }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -113,6 +121,14 @@ namespace Project
 
             presenter.showCopyEvent(listDr);
 
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
+            _isAddEventMode = false;
+            presenter.showAddEvent(dr);
 
         }
     }

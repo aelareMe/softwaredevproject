@@ -16,5 +16,7 @@ namespace Project.Interface
         UserInfObject userInfo { get; set; }
         DataGridView listEvents { get; set; }
         DataTable dtEventList { get; set; }
+
+        bool isAddEventMode { get; }
     }
 }
