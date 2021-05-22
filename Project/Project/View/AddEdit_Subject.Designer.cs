@@ -163,7 +163,7 @@ namespace Project.View
             this.edit_subject_edit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
             this.edit_subject_edit_btn.FlatAppearance.BorderSize = 0;
             this.edit_subject_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit_subject_edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_edit_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_subject_edit_btn.ForeColor = System.Drawing.Color.Black;
             this.edit_subject_edit_btn.Location = new System.Drawing.Point(479, 374);
             this.edit_subject_edit_btn.Name = "edit_subject_edit_btn";
