@@ -60,14 +60,17 @@ namespace Project.Presenter
         public async void loadSubjectsAsync()
         {
             Task[] task1 = { asyncUpcommingvents(),
-                            asyncLoadAllMainPageSubjects(),
-                            getAllPercentage()
+                            asyncLoadAllMainPageSubjects()
                            };
 
-              Task[] task2 = { asyncScheduledWithinTimeFrame() };
+           Task[] task2 = { asyncScheduledWithinTimeFrame() };
+
+            Task[] task3 = { getAllPercentage() };
 
             await Task.WhenAll(task1);
             await Task.WhenAll(task2);
+            await Task.WhenAll(task3);
+
     }
 
 
@@ -180,7 +183,7 @@ namespace Project.Presenter
                 }
         
                 //  iMainPage.eventList.DataSource = perEventPercentage;
-                await Task.Delay(60000);
+                await Task.Delay(10000);
             }
 
         }
