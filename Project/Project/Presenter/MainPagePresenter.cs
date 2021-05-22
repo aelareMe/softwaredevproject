@@ -197,7 +197,5 @@ namespace Project.Presenter
             form.Show();
         }
 
-
-
     }
 }
