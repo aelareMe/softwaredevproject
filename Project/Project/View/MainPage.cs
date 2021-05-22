@@ -160,7 +160,7 @@ namespace Project.View
             Adding_Subject Adding_Subject = new Adding_Subject(_userInfObject);
             openChildForm(Adding_Subject);
             edit_subject_btn.BackColor = Color.FromArgb(15, 39, 63);
-            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
             Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
@@ -170,7 +170,7 @@ namespace Project.View
             ActSched ActSched = new ActSched(_userInfObject);
             openChildForm(ActSched);
             edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
-            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(15, 39, 63);
             Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
@@ -202,7 +202,7 @@ namespace Project.View
             openChildForm(Setting);
             Setting_btn.BackColor = Color.FromArgb(15, 39, 63);
             edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
-            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
 
    
@@ -215,7 +215,7 @@ namespace Project.View
             help_btn.BackColor = Color.FromArgb(15, 39, 63);
             Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
             edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
-            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
     }

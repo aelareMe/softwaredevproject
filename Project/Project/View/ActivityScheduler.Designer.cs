@@ -60,7 +60,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button1.Location = new System.Drawing.Point(27, 323);
+            this.button1.Location = new System.Drawing.Point(27, 317);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 45);
             this.button1.TabIndex = 11;
@@ -162,7 +162,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button3.Location = new System.Drawing.Point(27, 382);
+            this.button3.Location = new System.Drawing.Point(27, 376);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(189, 45);
             this.button3.TabIndex = 29;
@@ -175,7 +175,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.button4.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(460, 323);
+            this.button4.Location = new System.Drawing.Point(460, 317);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(188, 105);
             this.button4.TabIndex = 30;
@@ -187,7 +187,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button5.Location = new System.Drawing.Point(242, 323);
+            this.button5.Location = new System.Drawing.Point(242, 317);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(189, 45);
             this.button5.TabIndex = 31;
@@ -199,7 +199,7 @@
             // 
             this.button6.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button6.Location = new System.Drawing.Point(242, 382);
+            this.button6.Location = new System.Drawing.Point(242, 376);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(189, 45);
             this.button6.TabIndex = 32;

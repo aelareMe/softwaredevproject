@@ -60,7 +60,6 @@
             this.help_btn = new System.Windows.Forms.Button();
             this.Setting_btn = new System.Windows.Forms.Button();
             this.addAcitivty_btn = new System.Windows.Forms.Button();
-            this.Schedule_btn = new System.Windows.Forms.Button();
             this.edit_subject_btn = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -85,7 +84,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.label1.Location = new System.Drawing.Point(14, 23);
+            this.label1.Location = new System.Drawing.Point(16, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 16);
@@ -109,7 +108,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.lblName.Location = new System.Drawing.Point(350, 55);
+            this.lblName.Location = new System.Drawing.Point(350, 52);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(0, 26);
@@ -399,7 +398,6 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.Schedule_btn);
             this.panel4.Controls.Add(this.edit_subject_btn);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
@@ -415,7 +413,7 @@
             this.panel5.Controls.Add(this.Setting_btn);
             this.panel5.Controls.Add(this.addAcitivty_btn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 231);
+            this.panel5.Location = new System.Drawing.Point(0, 178);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 195);
             this.panel5.TabIndex = 11;
@@ -426,14 +424,14 @@
             this.help_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.help_btn.FlatAppearance.BorderSize = 0;
             this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.help_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.help_btn.ForeColor = System.Drawing.Color.White;
             this.help_btn.Image = ((System.Drawing.Image)(resources.GetObject("help_btn.Image")));
             this.help_btn.Location = new System.Drawing.Point(0, 106);
             this.help_btn.Name = "help_btn";
             this.help_btn.Size = new System.Drawing.Size(167, 53);
             this.help_btn.TabIndex = 14;
-            this.help_btn.Text = "  Help";
+            this.help_btn.Text = "HELP";
             this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.help_btn.UseVisualStyleBackColor = false;
             this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
@@ -444,14 +442,14 @@
             this.Setting_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.Setting_btn.FlatAppearance.BorderSize = 0;
             this.Setting_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Setting_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Setting_btn.ForeColor = System.Drawing.Color.White;
             this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
             this.Setting_btn.Location = new System.Drawing.Point(0, 53);
             this.Setting_btn.Name = "Setting_btn";
             this.Setting_btn.Size = new System.Drawing.Size(167, 53);
             this.Setting_btn.TabIndex = 13;
-            this.Setting_btn.Text = "  Setting";
+            this.Setting_btn.Text = "SETTING";
             this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Setting_btn.UseVisualStyleBackColor = false;
             this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
@@ -462,7 +460,7 @@
             this.addAcitivty_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.addAcitivty_btn.FlatAppearance.BorderSize = 0;
             this.addAcitivty_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addAcitivty_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAcitivty_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addAcitivty_btn.ForeColor = System.Drawing.Color.White;
             this.addAcitivty_btn.Image = ((System.Drawing.Image)(resources.GetObject("addAcitivty_btn.Image")));
             this.addAcitivty_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -470,29 +468,10 @@
             this.addAcitivty_btn.Name = "addAcitivty_btn";
             this.addAcitivty_btn.Size = new System.Drawing.Size(167, 53);
             this.addAcitivty_btn.TabIndex = 12;
-            this.addAcitivty_btn.Text = "  Add Activity";
+            this.addAcitivty_btn.Text = "ADD ACTIVITY";
             this.addAcitivty_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.addAcitivty_btn.UseVisualStyleBackColor = false;
             this.addAcitivty_btn.Click += new System.EventHandler(this.addAcitivty_btn_Click);
-            // 
-            // Schedule_btn
-            // 
-            this.Schedule_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.Schedule_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Schedule_btn.FlatAppearance.BorderSize = 0;
-            this.Schedule_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Schedule_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Schedule_btn.ForeColor = System.Drawing.Color.White;
-            this.Schedule_btn.Image = ((System.Drawing.Image)(resources.GetObject("Schedule_btn.Image")));
-            this.Schedule_btn.Location = new System.Drawing.Point(0, 178);
-            this.Schedule_btn.Name = "Schedule_btn";
-            this.Schedule_btn.Size = new System.Drawing.Size(167, 53);
-            this.Schedule_btn.TabIndex = 10;
-            this.Schedule_btn.Text = "  Schedule ";
-            this.Schedule_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Schedule_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Schedule_btn.UseVisualStyleBackColor = false;
-            this.Schedule_btn.Click += new System.EventHandler(this.Schedule_btn_Click);
             // 
             // edit_subject_btn
             // 
@@ -500,14 +479,14 @@
             this.edit_subject_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.edit_subject_btn.FlatAppearance.BorderSize = 0;
             this.edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_subject_btn.ForeColor = System.Drawing.Color.White;
             this.edit_subject_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_subject_btn.Image")));
             this.edit_subject_btn.Location = new System.Drawing.Point(0, 125);
             this.edit_subject_btn.Name = "edit_subject_btn";
             this.edit_subject_btn.Size = new System.Drawing.Size(167, 53);
             this.edit_subject_btn.TabIndex = 9;
-            this.edit_subject_btn.Text = "  Add Subject";
+            this.edit_subject_btn.Text = "ADD SUBJECT";
             this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.edit_subject_btn.UseVisualStyleBackColor = false;
@@ -526,7 +505,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(32, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(37, 23);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(95, 76);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -614,7 +593,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button addAcitivty_btn;
-        private System.Windows.Forms.Button Schedule_btn;
         private System.Windows.Forms.Button edit_subject_btn;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
