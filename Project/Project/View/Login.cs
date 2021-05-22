@@ -55,5 +55,10 @@ namespace Project
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }

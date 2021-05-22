@@ -29,6 +29,7 @@ namespace Project.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,6 +45,7 @@ namespace Project.View
             this.password_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,11 +107,12 @@ namespace Project.View
             this.button2.Font = new System.Drawing.Font("Copperplate Gothic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(249, 9);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 39);
             this.button2.TabIndex = 32;
             this.button2.Text = "Edit";
+            this.toolTip1.SetToolTip(this.button2, "Edit");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -119,11 +122,12 @@ namespace Project.View
             this.button1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(10, 216);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 42);
             this.button1.TabIndex = 31;
             this.button1.Text = "Logout";
+            this.toolTip1.SetToolTip(this.button1, "Logout");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -133,11 +137,12 @@ namespace Project.View
             this.changeProfile_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeProfile_btn.ForeColor = System.Drawing.Color.White;
             this.changeProfile_btn.Location = new System.Drawing.Point(214, 216);
-            this.changeProfile_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changeProfile_btn.Margin = new System.Windows.Forms.Padding(2);
             this.changeProfile_btn.Name = "changeProfile_btn";
             this.changeProfile_btn.Size = new System.Drawing.Size(155, 42);
             this.changeProfile_btn.TabIndex = 30;
             this.changeProfile_btn.Text = "Save";
+            this.toolTip1.SetToolTip(this.changeProfile_btn, "Save");
             this.changeProfile_btn.UseVisualStyleBackColor = false;
             this.changeProfile_btn.Click += new System.EventHandler(this.changeProfile_btn_Click);
             // 
@@ -149,6 +154,7 @@ namespace Project.View
             this.Id_txt.Name = "Id_txt";
             this.Id_txt.Size = new System.Drawing.Size(153, 24);
             this.Id_txt.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.Id_txt, "ID");
             // 
             // label4
             // 
@@ -169,6 +175,7 @@ namespace Project.View
             this.userName_txt.Name = "userName_txt";
             this.userName_txt.Size = new System.Drawing.Size(153, 24);
             this.userName_txt.TabIndex = 28;
+            this.toolTip1.SetToolTip(this.userName_txt, "Username");
             // 
             // label3
             // 
@@ -189,6 +196,7 @@ namespace Project.View
             this.name_txt.Name = "name_txt";
             this.name_txt.Size = new System.Drawing.Size(153, 24);
             this.name_txt.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.name_txt, "Nane");
             // 
             // password_txt
             // 
@@ -198,6 +206,7 @@ namespace Project.View
             this.password_txt.Name = "password_txt";
             this.password_txt.Size = new System.Drawing.Size(153, 24);
             this.password_txt.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.password_txt, "Password");
             // 
             // label6
             // 
@@ -220,6 +229,10 @@ namespace Project.View
             this.label2.Size = new System.Drawing.Size(67, 18);
             this.label2.TabIndex = 20;
             this.label2.Text = "NAME:";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
             // 
             // Setting
             // 
@@ -255,5 +268,6 @@ namespace Project.View
         private System.Windows.Forms.Button changeProfile_btn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

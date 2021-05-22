@@ -42,8 +42,8 @@ namespace Project.Presenter
         }
 
         public void showAddSubjects() {
-            Subject_Oversight open_add_subject = new Subject_Oversight(iMainPage.userInfo);
-            open_add_subject.Show();
+            //Subject_Oversight open_add_subject = new Subject_Oversight(iMainPage.userInfo);
+            //open_add_subject.Show();
         }
 
         public UserInfObject getUserObj() {

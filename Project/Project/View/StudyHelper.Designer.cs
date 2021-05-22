@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudyHelper));
             this.percentLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +47,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.close_btn = new System.Windows.Forms.Button();
             this.minimize_btn = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -81,6 +85,7 @@
             this.messageBox.Size = new System.Drawing.Size(372, 55);
             this.messageBox.TabIndex = 21;
             this.messageBox.Text = "";
+            this.toolTip1.SetToolTip(this.messageBox, "Message");
             // 
             // label4
             // 
@@ -99,6 +104,7 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(372, 23);
             this.progressBar.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.progressBar, "Your Progress");
             // 
             // label2
             // 
@@ -122,6 +128,7 @@
             this.setBtn.Size = new System.Drawing.Size(75, 32);
             this.setBtn.TabIndex = 17;
             this.setBtn.Text = "SET";
+            this.toolTip1.SetToolTip(this.setBtn, "Set");
             this.setBtn.UseVisualStyleBackColor = false;
             this.setBtn.Click += new System.EventHandler(this.SetBtn_Click);
             // 
@@ -131,6 +138,7 @@
             this.percentTb.Name = "percentTb";
             this.percentTb.Size = new System.Drawing.Size(86, 20);
             this.percentTb.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.percentTb, "Study Progress");
             // 
             // label1
             // 
@@ -155,6 +163,7 @@
             this.button1.Size = new System.Drawing.Size(56, 24);
             this.button1.TabIndex = 26;
             this.button1.Text = "Save";
+            this.toolTip1.SetToolTip(this.button1, "Save");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -236,6 +245,7 @@
             this.close_btn.TabIndex = 32;
             this.close_btn.Text = "X";
             this.close_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.close_btn, "Close");
             this.close_btn.UseVisualStyleBackColor = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
@@ -253,8 +263,25 @@
             this.minimize_btn.TabIndex = 34;
             this.minimize_btn.Text = "__";
             this.minimize_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.minimize_btn, "Minimize");
             this.minimize_btn.UseVisualStyleBackColor = false;
             this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel5;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 35;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
             // 
             // StudyHelper
             // 
@@ -298,5 +325,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button close_btn;
         private System.Windows.Forms.Button minimize_btn;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

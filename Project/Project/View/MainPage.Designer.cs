@@ -60,13 +60,13 @@
             this.help_btn = new System.Windows.Forms.Button();
             this.Setting_btn = new System.Windows.Forms.Button();
             this.addAcitivty_btn = new System.Windows.Forms.Button();
-            this.Schedule_btn = new System.Windows.Forms.Button();
             this.edit_subject_btn = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -126,6 +126,7 @@
             this.lblSubjectsEnrolled.Size = new System.Drawing.Size(16, 16);
             this.lblSubjectsEnrolled.TabIndex = 9;
             this.lblSubjectsEnrolled.Text = "0";
+            this.toolTip1.SetToolTip(this.lblSubjectsEnrolled, "Subject Enrolled");
             // 
             // label2
             // 
@@ -163,6 +164,7 @@
             this.lblUpComingEvent.Size = new System.Drawing.Size(16, 16);
             this.lblUpComingEvent.TabIndex = 15;
             this.lblUpComingEvent.Text = "0";
+            this.toolTip1.SetToolTip(this.lblUpComingEvent, "Upcoming Events");
             // 
             // txtMinuteRange
             // 
@@ -171,6 +173,7 @@
             this.txtMinuteRange.Name = "txtMinuteRange";
             this.txtMinuteRange.Size = new System.Drawing.Size(76, 20);
             this.txtMinuteRange.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.txtMinuteRange, "Notify Schedule Every");
             // 
             // label6
             // 
@@ -195,6 +198,7 @@
             this.button4.Size = new System.Drawing.Size(56, 19);
             this.button4.TabIndex = 20;
             this.button4.Text = "Start";
+            this.toolTip1.SetToolTip(this.button4, "Start");
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -209,6 +213,7 @@
             this.button3.Size = new System.Drawing.Size(56, 19);
             this.button3.TabIndex = 23;
             this.button3.Text = "Start";
+            this.toolTip1.SetToolTip(this.button3, "Start");
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
@@ -231,6 +236,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.textBox1, "Upcoming Event Range");
             // 
             // dataGridView1
             // 
@@ -253,6 +259,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(333, 240);
             this.dataGridView1.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.dataGridView1, "All Listed Subject");
             // 
             // contextMenuStrip1
             // 
@@ -296,6 +303,7 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(353, 240);
             this.dataGridView2.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.dataGridView2, "Listed Activities");
             // 
             // panel1
             // 
@@ -330,6 +338,7 @@
             this.button5.Size = new System.Drawing.Size(155, 42);
             this.button5.TabIndex = 29;
             this.button5.Text = "See Detailed Progress";
+            this.toolTip1.SetToolTip(this.button5, "See Detailed Progress");
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -375,6 +384,7 @@
             this.minmize.Size = new System.Drawing.Size(41, 32);
             this.minmize.TabIndex = 29;
             this.minmize.Text = "___";
+            this.toolTip1.SetToolTip(this.minmize, "Minimize");
             this.minmize.UseVisualStyleBackColor = false;
             this.minmize.Click += new System.EventHandler(this.minmize_Click);
             // 
@@ -392,6 +402,7 @@
             this.clse.Size = new System.Drawing.Size(41, 32);
             this.clse.TabIndex = 28;
             this.clse.Text = "X";
+            this.toolTip1.SetToolTip(this.clse, "Close");
             this.clse.UseVisualStyleBackColor = false;
             this.clse.Click += new System.EventHandler(this.clse_Click);
             // 
@@ -399,7 +410,6 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.Schedule_btn);
             this.panel4.Controls.Add(this.edit_subject_btn);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
@@ -415,7 +425,7 @@
             this.panel5.Controls.Add(this.Setting_btn);
             this.panel5.Controls.Add(this.addAcitivty_btn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 231);
+            this.panel5.Location = new System.Drawing.Point(0, 178);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 195);
             this.panel5.TabIndex = 11;
@@ -435,6 +445,7 @@
             this.help_btn.TabIndex = 14;
             this.help_btn.Text = "  Help";
             this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.help_btn, "Help");
             this.help_btn.UseVisualStyleBackColor = false;
             this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
             // 
@@ -453,6 +464,7 @@
             this.Setting_btn.TabIndex = 13;
             this.Setting_btn.Text = "  Setting";
             this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Setting_btn, "Setting");
             this.Setting_btn.UseVisualStyleBackColor = false;
             this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
             // 
@@ -472,27 +484,9 @@
             this.addAcitivty_btn.TabIndex = 12;
             this.addAcitivty_btn.Text = "  Add Activity";
             this.addAcitivty_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.addAcitivty_btn, "Add Activity");
             this.addAcitivty_btn.UseVisualStyleBackColor = false;
             this.addAcitivty_btn.Click += new System.EventHandler(this.addAcitivty_btn_Click);
-            // 
-            // Schedule_btn
-            // 
-            this.Schedule_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.Schedule_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Schedule_btn.FlatAppearance.BorderSize = 0;
-            this.Schedule_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Schedule_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Schedule_btn.ForeColor = System.Drawing.Color.White;
-            this.Schedule_btn.Image = ((System.Drawing.Image)(resources.GetObject("Schedule_btn.Image")));
-            this.Schedule_btn.Location = new System.Drawing.Point(0, 178);
-            this.Schedule_btn.Name = "Schedule_btn";
-            this.Schedule_btn.Size = new System.Drawing.Size(167, 53);
-            this.Schedule_btn.TabIndex = 10;
-            this.Schedule_btn.Text = "  Schedule ";
-            this.Schedule_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Schedule_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Schedule_btn.UseVisualStyleBackColor = false;
-            this.Schedule_btn.Click += new System.EventHandler(this.Schedule_btn_Click);
             // 
             // edit_subject_btn
             // 
@@ -510,6 +504,7 @@
             this.edit_subject_btn.Text = "  Add Subject";
             this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.edit_subject_btn, "Add Subject");
             this.edit_subject_btn.UseVisualStyleBackColor = false;
             this.edit_subject_btn.Click += new System.EventHandler(this.edit_subject_btn_Click);
             // 
@@ -532,6 +527,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Home");
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // notifyIcon2
@@ -553,6 +549,10 @@
             // 
             this.bunifuElipse1.ElipseRadius = 35;
             this.bunifuElipse1.TargetControl = this;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
             // 
             // MainPage
             // 
@@ -614,7 +614,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button addAcitivty_btn;
-        private System.Windows.Forms.Button Schedule_btn;
         private System.Windows.Forms.Button edit_subject_btn;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -626,5 +625,6 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Button help_btn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

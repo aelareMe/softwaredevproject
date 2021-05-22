@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -42,6 +43,10 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.close_btn = new System.Windows.Forms.Button();
             this.minimize_btn = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Cancel_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -52,10 +57,10 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.button2.Font = new System.Drawing.Font("Copperplate Gothic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(38, 184);
+            this.button2.Location = new System.Drawing.Point(156, 186);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 41);
+            this.button2.Size = new System.Drawing.Size(106, 41);
             this.button2.TabIndex = 11;
             this.button2.Text = "Signup";
             this.button2.UseVisualStyleBackColor = false;
@@ -69,6 +74,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(127, 22);
             this.textBox2.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.textBox2, "Password");
             // 
             // textBox1
             // 
@@ -78,6 +84,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(127, 22);
             this.textBox1.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.textBox1, "Username");
             // 
             // label2
             // 
@@ -122,10 +129,12 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(127, 20);
             this.textBox3.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.textBox3, "Name");
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.Cancel_btn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
@@ -185,7 +194,9 @@
             this.close_btn.TabIndex = 32;
             this.close_btn.Text = "X";
             this.close_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.close_btn, "Close");
             this.close_btn.UseVisualStyleBackColor = false;
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
             // minimize_btn
             // 
@@ -201,7 +212,40 @@
             this.minimize_btn.TabIndex = 34;
             this.minimize_btn.Text = "__";
             this.minimize_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.minimize_btn, "Minimize");
             this.minimize_btn.UseVisualStyleBackColor = false;
+            this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel5;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 35;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            // 
+            // Cancel_btn
+            // 
+            this.Cancel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
+            this.Cancel_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancel_btn.ForeColor = System.Drawing.Color.White;
+            this.Cancel_btn.Location = new System.Drawing.Point(26, 186);
+            this.Cancel_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.Cancel_btn.Name = "Cancel_btn";
+            this.Cancel_btn.Size = new System.Drawing.Size(106, 41);
+            this.Cancel_btn.TabIndex = 14;
+            this.Cancel_btn.Text = "Cancel";
+            this.toolTip1.SetToolTip(this.Cancel_btn, "Cancel");
+            this.Cancel_btn.UseVisualStyleBackColor = false;
+            this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
             // Signup
             // 
@@ -242,5 +286,9 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button close_btn;
         private System.Windows.Forms.Button minimize_btn;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button Cancel_btn;
     }
 }

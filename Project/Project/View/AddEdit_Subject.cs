@@ -105,6 +105,8 @@ namespace Project.View
                 if (subject_list_view.FocusedItem.Index == 0)
                 {
                     add_subject_panel.Visible = true;
+                    add_Subject_limiter.Value = subject_list_view.Items.Count;
+                    view_subject_details.Visible = false;
                 }
                 else if(subject_list_view.FocusedItem.Index >=1)
                 {

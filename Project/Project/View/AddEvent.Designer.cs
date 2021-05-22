@@ -47,11 +47,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.close_btn = new System.Windows.Forms.Button();
             this.minimize_btn = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.btnEnableEdit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +67,7 @@
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 13;
             this.button2.Text = "BACK";
+            this.toolTip1.SetToolTip(this.button2, "Back");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -79,6 +81,7 @@
             this.addEventConfirm.Size = new System.Drawing.Size(116, 44);
             this.addEventConfirm.TabIndex = 12;
             this.addEventConfirm.Text = "CONFIRM";
+            this.toolTip1.SetToolTip(this.addEventConfirm, "Confirm");
             this.addEventConfirm.UseVisualStyleBackColor = false;
             this.addEventConfirm.Click += new System.EventHandler(this.addEventConfirm_Click);
             // 
@@ -89,6 +92,7 @@
             this.eventDate.Name = "eventDate";
             this.eventDate.Size = new System.Drawing.Size(203, 20);
             this.eventDate.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.eventDate, "Event Deadline");
             // 
             // eventName
             // 
@@ -98,6 +102,7 @@
             this.eventName.Size = new System.Drawing.Size(203, 17);
             this.eventName.TabIndex = 10;
             this.eventName.Text = "";
+            this.toolTip1.SetToolTip(this.eventName, "Event Name");
             // 
             // label3
             // 
@@ -151,6 +156,7 @@
             this.days2Accomplish.Size = new System.Drawing.Size(71, 21);
             this.days2Accomplish.TabIndex = 15;
             this.days2Accomplish.Text = "";
+            this.toolTip1.SetToolTip(this.days2Accomplish, "Number of Days Accomplish");
             // 
             // label5
             // 
@@ -171,6 +177,7 @@
             this.noOfSession.Size = new System.Drawing.Size(71, 21);
             this.noOfSession.TabIndex = 17;
             this.noOfSession.Text = "";
+            this.toolTip1.SetToolTip(this.noOfSession, "Number of Sessions");
             // 
             // label6
             // 
@@ -192,6 +199,7 @@
             this.cmbSubjectList.Name = "cmbSubjectList";
             this.cmbSubjectList.Size = new System.Drawing.Size(203, 24);
             this.cmbSubjectList.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.cmbSubjectList, "Event Type");
             // 
             // panel1
             // 
@@ -236,6 +244,16 @@
             this.panel5.Size = new System.Drawing.Size(439, 56);
             this.panel5.TabIndex = 23;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // close_btn
             // 
             this.close_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -250,6 +268,7 @@
             this.close_btn.TabIndex = 32;
             this.close_btn.Text = "X";
             this.close_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.close_btn, "Close");
             this.close_btn.UseVisualStyleBackColor = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
@@ -267,6 +286,7 @@
             this.minimize_btn.TabIndex = 34;
             this.minimize_btn.Text = "__";
             this.minimize_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.minimize_btn, "Minimize");
             this.minimize_btn.UseVisualStyleBackColor = false;
             this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
             // 
@@ -287,18 +307,13 @@
             this.btnEnableEdit.Size = new System.Drawing.Size(116, 25);
             this.btnEnableEdit.TabIndex = 24;
             this.btnEnableEdit.Text = "ENABLE EDIT";
+            this.toolTip1.SetToolTip(this.btnEnableEdit, "Enable Edit");
             this.btnEnableEdit.UseVisualStyleBackColor = false;
             this.btnEnableEdit.Click += new System.EventHandler(this.btnEnableEdit_Click);
             // 
-            // pictureBox1
+            // toolTip1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
+            this.toolTip1.IsBalloon = true;
             // 
             // AddEvent
             // 
@@ -350,5 +365,6 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Button btnEnableEdit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

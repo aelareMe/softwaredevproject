@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.eventList)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +67,7 @@
             this.button1.Size = new System.Drawing.Size(189, 45);
             this.button1.TabIndex = 11;
             this.button1.Text = "ADD EVENT";
+            this.toolTip1.SetToolTip(this.button1, "Add Event");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -86,6 +89,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.comboBox1, "Select Subject");
             // 
             // label1
             // 
@@ -109,6 +113,7 @@
             this.button2.Size = new System.Drawing.Size(167, 29);
             this.button2.TabIndex = 15;
             this.button2.Text = "Load Scheduled Events";
+            this.toolTip1.SetToolTip(this.button2, "Load Scheduled Events");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -143,6 +148,7 @@
             this.eventList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.eventList.Size = new System.Drawing.Size(519, 127);
             this.eventList.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.eventList, "List of Event");
             // 
             // panel1
             // 
@@ -167,6 +173,7 @@
             this.button3.Size = new System.Drawing.Size(189, 45);
             this.button3.TabIndex = 29;
             this.button3.Text = "DELETE EVENT";
+            this.toolTip1.SetToolTip(this.button3, "Delete Event");
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -180,6 +187,7 @@
             this.button4.Size = new System.Drawing.Size(188, 105);
             this.button4.TabIndex = 30;
             this.button4.Text = "ADD SCHEDULED TIME";
+            this.toolTip1.SetToolTip(this.button4, "Add Schedule Time");
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -192,6 +200,7 @@
             this.button5.Size = new System.Drawing.Size(189, 45);
             this.button5.TabIndex = 31;
             this.button5.Text = "COPY EVENT";
+            this.toolTip1.SetToolTip(this.button5, "Copy Event");
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -204,8 +213,13 @@
             this.button6.Size = new System.Drawing.Size(189, 45);
             this.button6.TabIndex = 32;
             this.button6.Text = "EDIT EVENT";
+            this.toolTip1.SetToolTip(this.button6, "Edit Event");
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
             // 
             // ActSched
             // 
@@ -245,5 +259,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

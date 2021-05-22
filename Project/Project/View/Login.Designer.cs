@@ -45,6 +45,7 @@
             this.close_btn = new System.Windows.Forms.Button();
             this.minimize_btn = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,6 +91,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(127, 22);
             this.textBox1.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.textBox1, "Username");
             // 
             // textBox2
             // 
@@ -100,6 +102,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(127, 22);
             this.textBox2.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.textBox2, "Password");
             // 
             // button1
             // 
@@ -113,6 +116,7 @@
             this.button1.Size = new System.Drawing.Size(103, 36);
             this.button1.TabIndex = 4;
             this.button1.Text = "Register";
+            this.toolTip1.SetToolTip(this.button1, "Register");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -128,6 +132,7 @@
             this.button2.Size = new System.Drawing.Size(103, 36);
             this.button2.TabIndex = 5;
             this.button2.Text = "Login";
+            this.toolTip1.SetToolTip(this.button2, "Login");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -211,6 +216,7 @@
             this.close_btn.TabIndex = 32;
             this.close_btn.Text = "X";
             this.close_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.close_btn, "Close");
             this.close_btn.UseVisualStyleBackColor = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
@@ -228,6 +234,7 @@
             this.minimize_btn.TabIndex = 34;
             this.minimize_btn.Text = "__";
             this.minimize_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.minimize_btn, "Minimize");
             this.minimize_btn.UseVisualStyleBackColor = false;
             this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
             // 
@@ -237,6 +244,11 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.panel5;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // Login
             // 
@@ -279,6 +291,7 @@
         private System.Windows.Forms.Button close_btn;
         private System.Windows.Forms.Button minimize_btn;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
