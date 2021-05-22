@@ -52,5 +52,10 @@ namespace Project.View
         {
             numSched.Text = "Schedules:" + dataGridView1.RowCount.ToString();
         }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

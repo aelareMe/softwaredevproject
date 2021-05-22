@@ -211,7 +211,8 @@ namespace Project.Model
                          "group by typee) as \"ctr\" on schedule_study.type = ctr.typee " +
                          "group by schedule_study.study_details_id, schedule_study.type) as s1 " +
                          "on schedule_study.study_details_id = s1.study_details_id " +
-                         "WHERE user_info.user_id = "+ userID + "";
+                         "WHERE user_info.user_id = "+ userID + ""+
+                         "order by \"Total Percent\"  DESC";
             DataTable dt = new DataTable();
             trans.OpenConnection();
             trans.startTransaction();
