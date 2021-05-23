@@ -91,7 +91,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(127, 22);
             this.textBox1.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.textBox1, "Username");
+            this.toolTip1.SetToolTip(this.textBox1, "Enter username");
             // 
             // textBox2
             // 
@@ -102,7 +102,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(127, 22);
             this.textBox2.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.textBox2, "Password");
+            this.toolTip1.SetToolTip(this.textBox2, "Enter password");
             // 
             // button1
             // 
