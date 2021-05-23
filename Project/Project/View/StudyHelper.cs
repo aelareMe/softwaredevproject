@@ -94,7 +94,7 @@ namespace Project
 
                 int diff = 100 - set_progress;
 
-                messageBox.Text = "You have studied " + set_progress + "% and a remaining of " + diff + " % to achieve highest possible score!\n";
+                messageBox.Text = "You have studied " + set_progress + "% so only " + diff + " % remains for you to achieve the highest possible score!\n";
                 dispMessage(set_progress);
 
 
@@ -334,5 +334,7 @@ namespace Project
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+
     }
 }

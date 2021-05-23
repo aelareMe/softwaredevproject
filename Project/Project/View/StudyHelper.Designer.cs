@@ -174,16 +174,16 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
             this.label6.Location = new System.Drawing.Point(25, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 18);
+            this.label6.Size = new System.Drawing.Size(131, 18);
             this.label6.TabIndex = 28;
-            this.label6.Text = "Study Name";
+            this.label6.Text = "STUDY NAME:";
             // 
             // lblStudyName
             // 
             this.lblStudyName.AutoSize = true;
             this.lblStudyName.Font = new System.Drawing.Font("Copperplate Gothic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblStudyName.Location = new System.Drawing.Point(195, 26);
+            this.lblStudyName.Location = new System.Drawing.Point(158, 26);
             this.lblStudyName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStudyName.Name = "lblStudyName";
             this.lblStudyName.Size = new System.Drawing.Size(19, 18);
