@@ -180,7 +180,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(333, 127);
+            this.dataGridView1.Size = new System.Drawing.Size(333, 130);
             this.dataGridView1.TabIndex = 26;
             this.toolTip1.SetToolTip(this.dataGridView1, "Time List");
             // 
@@ -242,6 +242,7 @@
             this.minimize_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.minimize_btn, "Minimize");
             this.minimize_btn.UseVisualStyleBackColor = false;
+            this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
             // 
             // bunifuDragControl1
             // 
