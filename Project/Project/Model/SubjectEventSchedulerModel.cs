@@ -190,6 +190,38 @@ namespace Project.Model
 
         }
 
+        public DataTable GetDateStudy(int userID)
+        {
+
+            string sql = "SELECT schedule_study.time_start::date as \"Scheduled Date\", " +
+                         "subject.study_name  as \"Subject Name\" , study_progress.study_time as \"Study Time\"  " +
+                          "from schedule_study "+
+                          "INNER JOIN subject  on schedule_study.study_id = subject.study_id  " +
+                          "INNER JOIN user_info  on subject.user_id = user_info.user_id   " +
+                          "INNER JOIN study_progress on schedule_study.study_details_id  = study_progress.study_details_id " +
+                          "where user_info.user_id = " + userID + "";
+        
+
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
         public DataTable GetPercentsPerType(int userID) {
 
             string sql = "Select subject.study_name as \"Subject Code\", "+
