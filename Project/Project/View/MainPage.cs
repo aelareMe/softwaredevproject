@@ -35,6 +35,8 @@ namespace Project.View
 
             presenter.loadSubjectsAsync();
 
+            presenter.scheduledSubjectToday();
+
         }
 
         public MainPage MainPage1

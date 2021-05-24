@@ -66,12 +66,10 @@ namespace Project.Presenter
 
 
             Task[] task3 = { getAllPercentage() };
-            Task[] task4 = { asyncScheduledSubjectToday() };
-
+       
             await Task.WhenAll(task1);
             await Task.WhenAll(task2);
             await Task.WhenAll(task3);
-            await Task.WhenAll(task4);
 
         }
 
@@ -119,10 +117,9 @@ namespace Project.Presenter
         }
 
 
-        public async Task asyncScheduledSubjectToday()
+        public void scheduledSubjectToday()
         {
-            while (true)
-            {
+           
                 DataTable dt =
                    subjModel.GetDateStudy(iMainPage.userInfo.getId());
 
@@ -156,10 +153,8 @@ namespace Project.Presenter
 
                     }
 
-
                 }
-                await Task.Delay(60000);
-            }
+            
         }
       
 

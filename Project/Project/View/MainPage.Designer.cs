@@ -51,10 +51,10 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.edit_subject_btn = new System.Windows.Forms.Button();
-            this.addAcitivty_btn = new System.Windows.Forms.Button();
-            this.Setting_btn = new System.Windows.Forms.Button();
             this.help_btn = new System.Windows.Forms.Button();
+            this.edit_subject_btn = new System.Windows.Forms.Button();
+            this.Setting_btn = new System.Windows.Forms.Button();
+            this.addAcitivty_btn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -109,7 +109,7 @@
             this.lblSubjectsEnrolled.AutoSize = true;
             this.lblSubjectsEnrolled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubjectsEnrolled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(261, 31);
+            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(234, 32);
             this.lblSubjectsEnrolled.Name = "lblSubjectsEnrolled";
             this.lblSubjectsEnrolled.Size = new System.Drawing.Size(19, 20);
             this.lblSubjectsEnrolled.TabIndex = 9;
@@ -202,7 +202,6 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Controls.Add(this.lblSubjectsEnrolled);
             this.panel1.Controls.Add(this.currentPanel);
             this.panel1.Location = new System.Drawing.Point(221, 110);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -228,6 +227,7 @@
             // currentPanel
             // 
             this.currentPanel.Controls.Add(this.label1);
+            this.currentPanel.Controls.Add(this.lblSubjectsEnrolled);
             this.currentPanel.Location = new System.Drawing.Point(0, 0);
             this.currentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.currentPanel.Name = "currentPanel";
@@ -296,74 +296,48 @@
             // 
             // notifyIcon2
             // 
-
+            this.notifyIcon2.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.notifyIcon2.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon2.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon2.Icon")));
             this.notifyIcon2.Text = "notifyIcon2";
             this.notifyIcon2.Visible = true;
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
-
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.edit_subject_btn);
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(223, 652);
-            this.panel4.TabIndex = 29;
-
             // 
             // bunifuDragControl1
             // 
-
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.panel3;
             this.bunifuDragControl1.Vertical = true;
-
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.panel5.Controls.Add(this.help_btn);
-            this.panel5.Controls.Add(this.Setting_btn);
-            this.panel5.Controls.Add(this.addAcitivty_btn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 219);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(223, 240);
-            this.panel5.TabIndex = 11;
-
             // 
             // bunifuElipse1
             // 
-
             this.bunifuElipse1.ElipseRadius = 35;
             this.bunifuElipse1.TargetControl = this;
-
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            // 
+            // help_btn
+            // 
             this.help_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.help_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.help_btn.FlatAppearance.BorderSize = 0;
             this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.help_btn.ForeColor = System.Drawing.Color.White;
             this.help_btn.Image = ((System.Drawing.Image)(resources.GetObject("help_btn.Image")));
-            this.help_btn.Location = new System.Drawing.Point(0, 130);
+            this.help_btn.Location = new System.Drawing.Point(0, 118);
             this.help_btn.Margin = new System.Windows.Forms.Padding(4);
             this.help_btn.Name = "help_btn";
-            this.help_btn.Size = new System.Drawing.Size(223, 65);
+            this.help_btn.Size = new System.Drawing.Size(167, 53);
             this.help_btn.TabIndex = 14;
-            this.help_btn.Text = "       HELP";
+            this.help_btn.Text = "  Help";
             this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.help_btn, "Help");
             this.help_btn.UseVisualStyleBackColor = false;
             this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
-
-            // 
-            // toolTip1
-            // 
-
-            this.toolTip1.IsBalloon = true;
             // 
             // edit_subject_btn
             // 
@@ -371,38 +345,40 @@
             this.edit_subject_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.edit_subject_btn.FlatAppearance.BorderSize = 0;
             this.edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_subject_btn.ForeColor = System.Drawing.Color.White;
             this.edit_subject_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_subject_btn.Image")));
             this.edit_subject_btn.Location = new System.Drawing.Point(0, 125);
+            this.edit_subject_btn.Margin = new System.Windows.Forms.Padding(4);
             this.edit_subject_btn.Name = "edit_subject_btn";
-            this.edit_subject_btn.Size = new System.Drawing.Size(167, 53);
+            this.edit_subject_btn.Size = new System.Drawing.Size(167, 65);
             this.edit_subject_btn.TabIndex = 9;
-            this.edit_subject_btn.Text = "  Add Subject";
+            this.edit_subject_btn.Text = "ADD SUBJECT";
             this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.edit_subject_btn, "Add Subject");
             this.edit_subject_btn.UseVisualStyleBackColor = false;
             this.edit_subject_btn.Click += new System.EventHandler(this.edit_subject_btn_Click);
-
+            // 
+            // Setting_btn
+            // 
             this.Setting_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.Setting_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.Setting_btn.FlatAppearance.BorderSize = 0;
             this.Setting_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Setting_btn.ForeColor = System.Drawing.Color.White;
             this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
             this.Setting_btn.Location = new System.Drawing.Point(0, 65);
             this.Setting_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Setting_btn.Name = "Setting_btn";
-            this.Setting_btn.Size = new System.Drawing.Size(223, 65);
+            this.Setting_btn.Size = new System.Drawing.Size(167, 53);
             this.Setting_btn.TabIndex = 13;
-            this.Setting_btn.Text = "      SETTING";
+            this.Setting_btn.Text = "  Setting";
             this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.Setting_btn, "Setting");
             this.Setting_btn.UseVisualStyleBackColor = false;
             this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
-
             // 
             // addAcitivty_btn
             // 
@@ -417,80 +393,13 @@
             this.addAcitivty_btn.Location = new System.Drawing.Point(0, 0);
             this.addAcitivty_btn.Margin = new System.Windows.Forms.Padding(4);
             this.addAcitivty_btn.Name = "addAcitivty_btn";
-            this.addAcitivty_btn.Size = new System.Drawing.Size(223, 65);
+            this.addAcitivty_btn.Size = new System.Drawing.Size(167, 65);
             this.addAcitivty_btn.TabIndex = 12;
             this.addAcitivty_btn.Text = "ADD ACTIVITY";
             this.addAcitivty_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.addAcitivty_btn, "Add Activity");
             this.addAcitivty_btn.UseVisualStyleBackColor = false;
             this.addAcitivty_btn.Click += new System.EventHandler(this.addAcitivty_btn_Click);
-            // 
-            // Setting_btn
-            // 
-            this.Setting_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.Setting_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Setting_btn.FlatAppearance.BorderSize = 0;
-            this.Setting_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Setting_btn.ForeColor = System.Drawing.Color.White;
-            this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
-            this.Setting_btn.Location = new System.Drawing.Point(0, 53);
-            this.Setting_btn.Name = "Setting_btn";
-            this.Setting_btn.Size = new System.Drawing.Size(167, 53);
-            this.Setting_btn.TabIndex = 13;
-            this.Setting_btn.Text = "  Setting";
-            this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Setting_btn, "Setting");
-            this.Setting_btn.UseVisualStyleBackColor = false;
-            this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
-
-            this.edit_subject_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.edit_subject_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.edit_subject_btn.FlatAppearance.BorderSize = 0;
-            this.edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_subject_btn.ForeColor = System.Drawing.Color.White;
-            this.edit_subject_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_subject_btn.Image")));
-            this.edit_subject_btn.Location = new System.Drawing.Point(0, 154);
-            this.edit_subject_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.edit_subject_btn.Name = "edit_subject_btn";
-            this.edit_subject_btn.Size = new System.Drawing.Size(223, 65);
-            this.edit_subject_btn.TabIndex = 9;
-            this.edit_subject_btn.Text = "ADD SUBJECT";
-            this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.edit_subject_btn, "Add Subject");
-            this.edit_subject_btn.UseVisualStyleBackColor = false;
-            this.edit_subject_btn.Click += new System.EventHandler(this.edit_subject_btn_Click);
-            // 
-            // help_btn
-            // 
-
-            this.help_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.help_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.help_btn.FlatAppearance.BorderSize = 0;
-            this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.help_btn.ForeColor = System.Drawing.Color.White;
-            this.help_btn.Image = ((System.Drawing.Image)(resources.GetObject("help_btn.Image")));
-            this.help_btn.Location = new System.Drawing.Point(0, 106);
-            this.help_btn.Name = "help_btn";
-            this.help_btn.Size = new System.Drawing.Size(167, 53);
-            this.help_btn.TabIndex = 14;
-            this.help_btn.Text = "  Help";
-            this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.help_btn, "Help");
-            this.help_btn.UseVisualStyleBackColor = false;
-            this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
-
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(223, 154);
-            this.panel6.TabIndex = 7;
             // 
             // pictureBox2
             // 
@@ -505,27 +414,15 @@
             this.toolTip1.SetToolTip(this.pictureBox2, "Home");
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-
             // panel5
-
-            // notifyIcon2
-            // 
-            this.notifyIcon2.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon2.ContextMenuStrip = this.contextMenuStrip1;
-            this.notifyIcon2.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon2.Icon")));
-            this.notifyIcon2.Text = "notifyIcon2";
-            this.notifyIcon2.Visible = true;
-            this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
-            // 
-            // bunifuDragControl1
-
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.panel5.Controls.Add(this.help_btn);
             this.panel5.Controls.Add(this.Setting_btn);
             this.panel5.Controls.Add(this.addAcitivty_btn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 178);
+            this.panel5.Location = new System.Drawing.Point(0, 190);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(167, 195);
             this.panel5.TabIndex = 11;
@@ -538,8 +435,9 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(167, 530);
+            this.panel4.Size = new System.Drawing.Size(167, 652);
             this.panel4.TabIndex = 29;
             // 
             // panel6
@@ -548,6 +446,7 @@
             this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(167, 125);
             this.panel6.TabIndex = 7;
