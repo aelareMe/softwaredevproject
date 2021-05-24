@@ -8,7 +8,6 @@ namespace Project.View
 {
     public partial class ScheduleTime : Form
     {
-  
         SubjectEventScheduler presenter;
         DataRow dr;
         ISubjectEventScheduler iSubjectEventScheduler;

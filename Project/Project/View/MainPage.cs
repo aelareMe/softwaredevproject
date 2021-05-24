@@ -9,12 +9,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
+        SubjectEventScheduler schedule;
 
         UserInfObject _userInfObject;
 
@@ -22,6 +24,9 @@ namespace Project.View
         int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
+
+        System.Timers.Timer timer;
+
         public MainPage(UserInfObject _userInfObject)
         {
             InitializeComponent();
@@ -31,6 +36,16 @@ namespace Project.View
             presenter.loadSubjectsAsync();
             txtMinuteRange.Text = _minuteRange.ToString();
             textBox1.Text = _minuteNotifyEvery.ToString();
+
+            timer = new System.Timers.Timer();
+            timer.Interval = 1000;
+            timer.Elapsed += Timer_Elapsed;
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            DateTime currentTime = DateTime.Now;
+            //DateTime userTime = 
         }
 
         public MainPage MainPage1
@@ -218,5 +233,6 @@ namespace Project.View
             //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
+
     }
 }

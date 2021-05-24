@@ -125,8 +125,10 @@ namespace Project.View
         private void add_subject_btn_Click(object sender, EventArgs e)
         {
         }
+        
         private void add_btn_Click(object sender, EventArgs e)
         {
+            bool same = false;
             if (add_Subject_limiter.MaxValue > Subject.Count)
             {
                 if (SubjectCode_txt.Text == "")
@@ -135,8 +137,22 @@ namespace Project.View
                 }
                 else
                 {
-                    presenter.AddSubject();
-                    loadSubjects();
+                    for (int x = 0; x < subject_list_view.Items.Count; x++)
+                    {
+                        if (subject_list_view.Items[x].Text == SubjectCode_txt.Text) 
+                        {
+                            same = true;
+                        }
+                    }
+                    if (same == false)
+                    {
+                        presenter.AddSubject();
+                        loadSubjects();
+                    }
+                    else if (same == true)
+                    {
+                        MessageBox.Show("Subject Code has same value!!  ");
+                    }
                 }
             }
             else 

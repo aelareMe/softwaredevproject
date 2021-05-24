@@ -18,7 +18,7 @@ namespace Project.View
         {
             InitializeComponent();
             _filePath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-            _filePath += @"\PDF\user-manual.pdf";
+            _filePath += @"\PDF\user-manualxd.pdf";
             pdffile.src = _filePath;
         }
 

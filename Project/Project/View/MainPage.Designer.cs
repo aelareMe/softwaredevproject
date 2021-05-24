@@ -55,18 +55,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.minmize = new System.Windows.Forms.Button();
             this.clse = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.help_btn = new System.Windows.Forms.Button();
-            this.Setting_btn = new System.Windows.Forms.Button();
-            this.addAcitivty_btn = new System.Windows.Forms.Button();
-            this.edit_subject_btn = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.edit_subject_btn = new System.Windows.Forms.Button();
+            this.addAcitivty_btn = new System.Windows.Forms.Button();
+            this.Setting_btn = new System.Windows.Forms.Button();
+            this.help_btn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -74,10 +74,10 @@
             this.currentPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -406,130 +406,6 @@
             this.clse.UseVisualStyleBackColor = false;
             this.clse.Click += new System.EventHandler(this.clse_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.edit_subject_btn);
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(167, 530);
-            this.panel4.TabIndex = 29;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.panel5.Controls.Add(this.help_btn);
-            this.panel5.Controls.Add(this.Setting_btn);
-            this.panel5.Controls.Add(this.addAcitivty_btn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 178);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(167, 195);
-            this.panel5.TabIndex = 11;
-            // 
-            // help_btn
-            // 
-            this.help_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.help_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.help_btn.FlatAppearance.BorderSize = 0;
-            this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.help_btn.ForeColor = System.Drawing.Color.White;
-            this.help_btn.Image = ((System.Drawing.Image)(resources.GetObject("help_btn.Image")));
-            this.help_btn.Location = new System.Drawing.Point(0, 106);
-            this.help_btn.Name = "help_btn";
-            this.help_btn.Size = new System.Drawing.Size(167, 53);
-            this.help_btn.TabIndex = 14;
-            this.help_btn.Text = "  Help";
-            this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.help_btn, "Help");
-            this.help_btn.UseVisualStyleBackColor = false;
-            this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
-            // 
-            // Setting_btn
-            // 
-            this.Setting_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.Setting_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Setting_btn.FlatAppearance.BorderSize = 0;
-            this.Setting_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Setting_btn.ForeColor = System.Drawing.Color.White;
-            this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
-            this.Setting_btn.Location = new System.Drawing.Point(0, 53);
-            this.Setting_btn.Name = "Setting_btn";
-            this.Setting_btn.Size = new System.Drawing.Size(167, 53);
-            this.Setting_btn.TabIndex = 13;
-            this.Setting_btn.Text = "  Setting";
-            this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Setting_btn, "Setting");
-            this.Setting_btn.UseVisualStyleBackColor = false;
-            this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
-            // 
-            // addAcitivty_btn
-            // 
-            this.addAcitivty_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.addAcitivty_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addAcitivty_btn.FlatAppearance.BorderSize = 0;
-            this.addAcitivty_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addAcitivty_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAcitivty_btn.ForeColor = System.Drawing.Color.White;
-            this.addAcitivty_btn.Image = ((System.Drawing.Image)(resources.GetObject("addAcitivty_btn.Image")));
-            this.addAcitivty_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addAcitivty_btn.Location = new System.Drawing.Point(0, 0);
-            this.addAcitivty_btn.Name = "addAcitivty_btn";
-            this.addAcitivty_btn.Size = new System.Drawing.Size(167, 53);
-            this.addAcitivty_btn.TabIndex = 12;
-            this.addAcitivty_btn.Text = "  Add Activity";
-            this.addAcitivty_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.addAcitivty_btn, "Add Activity");
-            this.addAcitivty_btn.UseVisualStyleBackColor = false;
-            this.addAcitivty_btn.Click += new System.EventHandler(this.addAcitivty_btn_Click);
-            // 
-            // edit_subject_btn
-            // 
-            this.edit_subject_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.edit_subject_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.edit_subject_btn.FlatAppearance.BorderSize = 0;
-            this.edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_subject_btn.ForeColor = System.Drawing.Color.White;
-            this.edit_subject_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_subject_btn.Image")));
-            this.edit_subject_btn.Location = new System.Drawing.Point(0, 125);
-            this.edit_subject_btn.Name = "edit_subject_btn";
-            this.edit_subject_btn.Size = new System.Drawing.Size(167, 53);
-            this.edit_subject_btn.TabIndex = 9;
-            this.edit_subject_btn.Text = "  Add Subject";
-            this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.edit_subject_btn, "Add Subject");
-            this.edit_subject_btn.UseVisualStyleBackColor = false;
-            this.edit_subject_btn.Click += new System.EventHandler(this.edit_subject_btn_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(167, 125);
-            this.panel6.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(32, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(95, 76);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox2, "Home");
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // notifyIcon2
             // 
             this.notifyIcon2.ContextMenuStrip = this.contextMenuStrip1;
@@ -553,6 +429,130 @@
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
+            // 
+            // edit_subject_btn
+            // 
+            this.edit_subject_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.edit_subject_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.edit_subject_btn.FlatAppearance.BorderSize = 0;
+            this.edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_btn.ForeColor = System.Drawing.Color.White;
+            this.edit_subject_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_subject_btn.Image")));
+            this.edit_subject_btn.Location = new System.Drawing.Point(0, 125);
+            this.edit_subject_btn.Name = "edit_subject_btn";
+            this.edit_subject_btn.Size = new System.Drawing.Size(167, 53);
+            this.edit_subject_btn.TabIndex = 9;
+            this.edit_subject_btn.Text = "  Add Subject";
+            this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.edit_subject_btn, "Add Subject");
+            this.edit_subject_btn.UseVisualStyleBackColor = false;
+            this.edit_subject_btn.Click += new System.EventHandler(this.edit_subject_btn_Click);
+            // 
+            // addAcitivty_btn
+            // 
+            this.addAcitivty_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.addAcitivty_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addAcitivty_btn.FlatAppearance.BorderSize = 0;
+            this.addAcitivty_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addAcitivty_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAcitivty_btn.ForeColor = System.Drawing.Color.White;
+            this.addAcitivty_btn.Image = ((System.Drawing.Image)(resources.GetObject("addAcitivty_btn.Image")));
+            this.addAcitivty_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addAcitivty_btn.Location = new System.Drawing.Point(0, 0);
+            this.addAcitivty_btn.Name = "addAcitivty_btn";
+            this.addAcitivty_btn.Size = new System.Drawing.Size(167, 53);
+            this.addAcitivty_btn.TabIndex = 12;
+            this.addAcitivty_btn.Text = "  Add Activity";
+            this.addAcitivty_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.addAcitivty_btn, "Add Activity");
+            this.addAcitivty_btn.UseVisualStyleBackColor = false;
+            this.addAcitivty_btn.Click += new System.EventHandler(this.addAcitivty_btn_Click);
+            // 
+            // Setting_btn
+            // 
+            this.Setting_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.Setting_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Setting_btn.FlatAppearance.BorderSize = 0;
+            this.Setting_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Setting_btn.ForeColor = System.Drawing.Color.White;
+            this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
+            this.Setting_btn.Location = new System.Drawing.Point(0, 53);
+            this.Setting_btn.Name = "Setting_btn";
+            this.Setting_btn.Size = new System.Drawing.Size(167, 53);
+            this.Setting_btn.TabIndex = 13;
+            this.Setting_btn.Text = "  Setting";
+            this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Setting_btn, "Setting");
+            this.Setting_btn.UseVisualStyleBackColor = false;
+            this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
+            // 
+            // help_btn
+            // 
+            this.help_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.help_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.help_btn.FlatAppearance.BorderSize = 0;
+            this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.help_btn.ForeColor = System.Drawing.Color.White;
+            this.help_btn.Image = ((System.Drawing.Image)(resources.GetObject("help_btn.Image")));
+            this.help_btn.Location = new System.Drawing.Point(0, 106);
+            this.help_btn.Name = "help_btn";
+            this.help_btn.Size = new System.Drawing.Size(167, 53);
+            this.help_btn.TabIndex = 14;
+            this.help_btn.Text = "  Help";
+            this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.help_btn, "Help");
+            this.help_btn.UseVisualStyleBackColor = false;
+            this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(32, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(95, 76);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Home");
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel5.Controls.Add(this.help_btn);
+            this.panel5.Controls.Add(this.Setting_btn);
+            this.panel5.Controls.Add(this.addAcitivty_btn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 178);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(167, 195);
+            this.panel5.TabIndex = 11;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.edit_subject_btn);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(167, 530);
+            this.panel4.TabIndex = 29;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(167, 125);
+            this.panel6.TabIndex = 7;
             // 
             // MainPage
             // 
@@ -578,10 +578,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,20 +611,20 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button clse;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button addAcitivty_btn;
-        private System.Windows.Forms.Button edit_subject_btn;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel currentPanel;
         private System.Windows.Forms.Button minmize;
         private System.Windows.Forms.NotifyIcon notifyIcon2;
-        private System.Windows.Forms.Button Setting_btn;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.Button help_btn;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button help_btn;
+        private System.Windows.Forms.Button Setting_btn;
+        private System.Windows.Forms.Button addAcitivty_btn;
+        private System.Windows.Forms.Button edit_subject_btn;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
