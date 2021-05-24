@@ -35,14 +35,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblSubjectsEnrolled = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblUpComingEvent = new System.Windows.Forms.Label();
-            this.txtMinuteRange = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,36 +75,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.label1.Location = new System.Drawing.Point(14, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(20, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 16);
+            this.label1.Size = new System.Drawing.Size(163, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Subjects Enrolled:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(180, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(240, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 26);
+            this.label3.Size = new System.Drawing.Size(177, 36);
             this.label3.TabIndex = 5;
             this.label3.Text = "WELCOME:";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.lblName.Location = new System.Drawing.Point(350, 55);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(453, 64);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 26);
+            this.lblName.Size = new System.Drawing.Size(0, 36);
             this.lblName.TabIndex = 6;
             // 
             // lblSubjectsEnrolled
@@ -120,10 +109,9 @@
             this.lblSubjectsEnrolled.AutoSize = true;
             this.lblSubjectsEnrolled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubjectsEnrolled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(196, 25);
-            this.lblSubjectsEnrolled.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(261, 31);
             this.lblSubjectsEnrolled.Name = "lblSubjectsEnrolled";
-            this.lblSubjectsEnrolled.Size = new System.Drawing.Size(16, 16);
+            this.lblSubjectsEnrolled.Size = new System.Drawing.Size(19, 20);
             this.lblSubjectsEnrolled.TabIndex = 9;
             this.lblSubjectsEnrolled.Text = "0";
             this.toolTip1.SetToolTip(this.lblSubjectsEnrolled, "Subject Enrolled");
@@ -132,111 +120,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
-            this.label2.Font = new System.Drawing.Font("Copperplate Gothic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.label2.Location = new System.Drawing.Point(109, 75);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(145, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 24);
+            this.label2.Size = new System.Drawing.Size(155, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Subject List";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.label5.Location = new System.Drawing.Point(374, 24);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Upcoming Events:";
-            // 
-            // lblUpComingEvent
-            // 
-            this.lblUpComingEvent.AutoSize = true;
-            this.lblUpComingEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpComingEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.lblUpComingEvent.Location = new System.Drawing.Point(572, 24);
-            this.lblUpComingEvent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUpComingEvent.Name = "lblUpComingEvent";
-            this.lblUpComingEvent.Size = new System.Drawing.Size(16, 16);
-            this.lblUpComingEvent.TabIndex = 15;
-            this.lblUpComingEvent.Text = "0";
-            this.toolTip1.SetToolTip(this.lblUpComingEvent, "Upcoming Events");
-            // 
-            // txtMinuteRange
-            // 
-            this.txtMinuteRange.Location = new System.Drawing.Point(575, 80);
-            this.txtMinuteRange.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMinuteRange.Name = "txtMinuteRange";
-            this.txtMinuteRange.Size = new System.Drawing.Size(76, 20);
-            this.txtMinuteRange.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.txtMinuteRange, "Set your desired time to be notified on your set study sessions (in mins)");
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.label6.Location = new System.Drawing.Point(374, 53);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 15);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Upcoming Event Range:";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(674, 53);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 19);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Start";
-            this.toolTip1.SetToolTip(this.button4, "Start");
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(674, 80);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 19);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Start";
-            this.toolTip1.SetToolTip(this.button3, "Start");
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.label7.Location = new System.Drawing.Point(374, 81);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 15);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Notify Schedule Every:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(575, 52);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 21;
-            this.toolTip1.SetToolTip(this.textBox1, "Set your desired time to be notified before the actual event date (in hrs)");
             // 
             // dataGridView1
             // 
@@ -250,14 +140,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 116);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 143);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(333, 240);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 295);
             this.dataGridView1.TabIndex = 24;
             this.toolTip1.SetToolTip(this.dataGridView1, "All Listed Subject");
             // 
@@ -268,18 +158,18 @@
             this.showToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 52);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.showToolStripMenuItem.Text = "Show";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // dataGridView2
@@ -293,49 +183,42 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(377, 116);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Location = new System.Drawing.Point(503, 143);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(353, 240);
+            this.dataGridView2.Size = new System.Drawing.Size(471, 295);
             this.dataGridView2.TabIndex = 25;
             this.toolTip1.SetToolTip(this.dataGridView2, "Listed Activities");
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.txtMinuteRange);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.lblUpComingEvent);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.lblSubjectsEnrolled);
             this.panel1.Controls.Add(this.currentPanel);
-            this.panel1.Location = new System.Drawing.Point(166, 89);
+            this.panel1.Location = new System.Drawing.Point(221, 110);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(742, 429);
+            this.panel1.Size = new System.Drawing.Size(989, 528);
             this.panel1.TabIndex = 26;
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.button5.Font = new System.Drawing.Font("Copperplate Gothic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(575, 375);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Location = new System.Drawing.Point(767, 462);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(155, 42);
+            this.button5.Size = new System.Drawing.Size(207, 52);
             this.button5.TabIndex = 29;
             this.button5.Text = "See Detailed Progress";
             this.toolTip1.SetToolTip(this.button5, "Set your study sessions and study progress");
@@ -346,8 +229,9 @@
             // 
             this.currentPanel.Controls.Add(this.label1);
             this.currentPanel.Location = new System.Drawing.Point(0, 0);
+            this.currentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.currentPanel.Name = "currentPanel";
-            this.currentPanel.Size = new System.Drawing.Size(743, 429);
+            this.currentPanel.Size = new System.Drawing.Size(991, 528);
             this.currentPanel.TabIndex = 30;
             // 
             // panel2
@@ -358,8 +242,9 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(920, 530);
+            this.panel2.Size = new System.Drawing.Size(1227, 652);
             this.panel2.TabIndex = 28;
             // 
             // panel3
@@ -368,9 +253,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.minmize);
             this.panel3.Controls.Add(this.clse);
-            this.panel3.Location = new System.Drawing.Point(166, 0);
+            this.panel3.Location = new System.Drawing.Point(221, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(754, 44);
+            this.panel3.Size = new System.Drawing.Size(1005, 54);
             this.panel3.TabIndex = 30;
             // 
             // minmize
@@ -379,9 +265,10 @@
             this.minmize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minmize.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minmize.ForeColor = System.Drawing.Color.White;
-            this.minmize.Location = new System.Drawing.Point(652, 6);
+            this.minmize.Location = new System.Drawing.Point(869, 7);
+            this.minmize.Margin = new System.Windows.Forms.Padding(4);
             this.minmize.Name = "minmize";
-            this.minmize.Size = new System.Drawing.Size(41, 32);
+            this.minmize.Size = new System.Drawing.Size(55, 39);
             this.minmize.TabIndex = 29;
             this.minmize.Text = "___";
             this.toolTip1.SetToolTip(this.minmize, "Minimize");
@@ -396,10 +283,11 @@
             this.clse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clse.ForeColor = System.Drawing.Color.White;
-            this.clse.Location = new System.Drawing.Point(699, 6);
+            this.clse.Location = new System.Drawing.Point(932, 7);
+            this.clse.Margin = new System.Windows.Forms.Padding(4);
             this.clse.Name = "clse";
             this.clse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.clse.Size = new System.Drawing.Size(41, 32);
+            this.clse.Size = new System.Drawing.Size(55, 39);
             this.clse.TabIndex = 28;
             this.clse.Text = "X";
             this.toolTip1.SetToolTip(this.clse, "Close");
@@ -408,26 +296,73 @@
             // 
             // notifyIcon2
             // 
+
             this.notifyIcon2.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon2.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon2.Icon")));
             this.notifyIcon2.Text = "notifyIcon2";
             this.notifyIcon2.Visible = true;
             this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.edit_subject_btn);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(223, 652);
+            this.panel4.TabIndex = 29;
+
             // 
             // bunifuDragControl1
             // 
+
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.panel3;
             this.bunifuDragControl1.Vertical = true;
+
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel5.Controls.Add(this.help_btn);
+            this.panel5.Controls.Add(this.Setting_btn);
+            this.panel5.Controls.Add(this.addAcitivty_btn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 219);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(223, 240);
+            this.panel5.TabIndex = 11;
+
             // 
             // bunifuElipse1
             // 
+
             this.bunifuElipse1.ElipseRadius = 35;
             this.bunifuElipse1.TargetControl = this;
+
+            this.help_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.help_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.help_btn.FlatAppearance.BorderSize = 0;
+            this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.help_btn.ForeColor = System.Drawing.Color.White;
+            this.help_btn.Image = ((System.Drawing.Image)(resources.GetObject("help_btn.Image")));
+            this.help_btn.Location = new System.Drawing.Point(0, 130);
+            this.help_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.help_btn.Name = "help_btn";
+            this.help_btn.Size = new System.Drawing.Size(223, 65);
+            this.help_btn.TabIndex = 14;
+            this.help_btn.Text = "       HELP";
+            this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.help_btn, "Help");
+            this.help_btn.UseVisualStyleBackColor = false;
+            this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
+
             // 
             // toolTip1
             // 
+
             this.toolTip1.IsBalloon = true;
             // 
             // edit_subject_btn
@@ -449,6 +384,25 @@
             this.toolTip1.SetToolTip(this.edit_subject_btn, "Add Subject");
             this.edit_subject_btn.UseVisualStyleBackColor = false;
             this.edit_subject_btn.Click += new System.EventHandler(this.edit_subject_btn_Click);
+
+            this.Setting_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.Setting_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Setting_btn.FlatAppearance.BorderSize = 0;
+            this.Setting_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Setting_btn.ForeColor = System.Drawing.Color.White;
+            this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
+            this.Setting_btn.Location = new System.Drawing.Point(0, 65);
+            this.Setting_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Setting_btn.Name = "Setting_btn";
+            this.Setting_btn.Size = new System.Drawing.Size(223, 65);
+            this.Setting_btn.TabIndex = 13;
+            this.Setting_btn.Text = "      SETTING";
+            this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Setting_btn, "Setting");
+            this.Setting_btn.UseVisualStyleBackColor = false;
+            this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
+
             // 
             // addAcitivty_btn
             // 
@@ -456,15 +410,16 @@
             this.addAcitivty_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.addAcitivty_btn.FlatAppearance.BorderSize = 0;
             this.addAcitivty_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addAcitivty_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAcitivty_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addAcitivty_btn.ForeColor = System.Drawing.Color.White;
             this.addAcitivty_btn.Image = ((System.Drawing.Image)(resources.GetObject("addAcitivty_btn.Image")));
             this.addAcitivty_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addAcitivty_btn.Location = new System.Drawing.Point(0, 0);
+            this.addAcitivty_btn.Margin = new System.Windows.Forms.Padding(4);
             this.addAcitivty_btn.Name = "addAcitivty_btn";
-            this.addAcitivty_btn.Size = new System.Drawing.Size(167, 53);
+            this.addAcitivty_btn.Size = new System.Drawing.Size(223, 65);
             this.addAcitivty_btn.TabIndex = 12;
-            this.addAcitivty_btn.Text = "  Add Activity";
+            this.addAcitivty_btn.Text = "ADD ACTIVITY";
             this.addAcitivty_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.addAcitivty_btn, "Add Activity");
             this.addAcitivty_btn.UseVisualStyleBackColor = false;
@@ -488,9 +443,29 @@
             this.toolTip1.SetToolTip(this.Setting_btn, "Setting");
             this.Setting_btn.UseVisualStyleBackColor = false;
             this.Setting_btn.Click += new System.EventHandler(this.Setting_btn_Click);
+
+            this.edit_subject_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.edit_subject_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.edit_subject_btn.FlatAppearance.BorderSize = 0;
+            this.edit_subject_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_btn.ForeColor = System.Drawing.Color.White;
+            this.edit_subject_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_subject_btn.Image")));
+            this.edit_subject_btn.Location = new System.Drawing.Point(0, 154);
+            this.edit_subject_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.edit_subject_btn.Name = "edit_subject_btn";
+            this.edit_subject_btn.Size = new System.Drawing.Size(223, 65);
+            this.edit_subject_btn.TabIndex = 9;
+            this.edit_subject_btn.Text = "ADD SUBJECT";
+            this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.edit_subject_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.edit_subject_btn, "Add Subject");
+            this.edit_subject_btn.UseVisualStyleBackColor = false;
+            this.edit_subject_btn.Click += new System.EventHandler(this.edit_subject_btn_Click);
             // 
             // help_btn
             // 
+
             this.help_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.help_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.help_btn.FlatAppearance.BorderSize = 0;
@@ -507,20 +482,43 @@
             this.toolTip1.SetToolTip(this.help_btn, "Help");
             this.help_btn.UseVisualStyleBackColor = false;
             this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
+
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(223, 154);
+            this.panel6.TabIndex = 7;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(32, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(43, 15);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(95, 76);
+            this.pictureBox2.Size = new System.Drawing.Size(127, 94);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox2, "Home");
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+
             // panel5
+
+            // notifyIcon2
+            // 
+            this.notifyIcon2.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon2.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon2.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon2.Icon")));
+            this.notifyIcon2.Text = "notifyIcon2";
+            this.notifyIcon2.Visible = true;
+            this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // bunifuDragControl1
+
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
             this.panel5.Controls.Add(this.help_btn);
@@ -556,15 +554,15 @@
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(920, 530);
+            this.ClientSize = new System.Drawing.Size(1227, 652);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
@@ -593,14 +591,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblSubjectsEnrolled;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblUpComingEvent;
-        private System.Windows.Forms.TextBox txtMinuteRange;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         //private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

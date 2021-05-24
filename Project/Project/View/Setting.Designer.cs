@@ -65,11 +65,11 @@ namespace Project.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.label1.Location = new System.Drawing.Point(57, 60);
+            this.label1.Location = new System.Drawing.Point(57, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 24);
+            this.label1.Size = new System.Drawing.Size(164, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "SETTINGS";
             // 
@@ -77,7 +77,7 @@ namespace Project.View
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(58, 102);
+            this.panel2.Location = new System.Drawing.Point(58, 78);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 287);
             this.panel2.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace Project.View
             this.panel3.Controls.Add(this.password_txt);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(3, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(385, 278);
             this.panel3.TabIndex = 1;

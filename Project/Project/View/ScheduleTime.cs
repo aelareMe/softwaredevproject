@@ -56,5 +56,10 @@ namespace Project.View
         {
             this.Close();
         }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

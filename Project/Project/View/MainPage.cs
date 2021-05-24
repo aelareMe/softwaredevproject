@@ -34,18 +34,7 @@ namespace Project.View
             this._userInfObject = _userInfObject;
 
             presenter.loadSubjectsAsync();
-            txtMinuteRange.Text = _minuteRange.ToString();
-            textBox1.Text = _minuteNotifyEvery.ToString();
 
-            timer = new System.Timers.Timer();
-            timer.Interval = 1000;
-            timer.Elapsed += Timer_Elapsed;
-        }
-
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            DateTime currentTime = DateTime.Now;
-            //DateTime userTime = 
         }
 
         public MainPage MainPage1
@@ -88,11 +77,7 @@ namespace Project.View
             get { return this; }
         }
 
-        Label IMainPage.lblUpComingEvents {
-            get { return this.lblUpComingEvent; }
-            set { this.lblUpComingEvent = value; }
-        }
-
+  
         Label IMainPage.lblSubjectsEnrolled {
             get { return this.lblSubjectsEnrolled; }
             set { this.lblSubjectsEnrolled = value; }
@@ -114,11 +99,6 @@ namespace Project.View
             presenter.ShowScheduleTime();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
-        }
-
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -132,11 +112,6 @@ namespace Project.View
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            _minuteNotifyEvery = Int32.Parse(textBox1.Text.ToString());
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
