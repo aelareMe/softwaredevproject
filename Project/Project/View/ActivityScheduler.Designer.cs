@@ -62,9 +62,9 @@
             // 
             this.button1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button1.Location = new System.Drawing.Point(27, 323);
+            this.button1.Location = new System.Drawing.Point(27, 340);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 45);
+            this.button1.Size = new System.Drawing.Size(189, 30);
             this.button1.TabIndex = 11;
             this.button1.Text = "ADD EVENT";
             this.toolTip1.SetToolTip(this.button1, "Add Event");
@@ -146,7 +146,7 @@
             this.eventList.RowHeadersVisible = false;
             this.eventList.RowTemplate.Height = 24;
             this.eventList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.eventList.Size = new System.Drawing.Size(519, 127);
+            this.eventList.Size = new System.Drawing.Size(519, 150);
             this.eventList.TabIndex = 26;
             this.toolTip1.SetToolTip(this.eventList, "List of Event");
             // 
@@ -161,16 +161,16 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Location = new System.Drawing.Point(22, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(626, 245);
+            this.panel1.Size = new System.Drawing.Size(626, 268);
             this.panel1.TabIndex = 27;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button3.Location = new System.Drawing.Point(27, 382);
+            this.button3.Location = new System.Drawing.Point(27, 380);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(189, 45);
+            this.button3.Size = new System.Drawing.Size(189, 31);
             this.button3.TabIndex = 29;
             this.button3.Text = "DELETE EVENT";
             this.toolTip1.SetToolTip(this.button3, "Delete Event");
@@ -182,9 +182,9 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.button4.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(460, 323);
+            this.button4.Location = new System.Drawing.Point(460, 340);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(188, 105);
+            this.button4.Size = new System.Drawing.Size(188, 72);
             this.button4.TabIndex = 30;
             this.button4.Text = "ADD SCHEDULED TIME";
             this.toolTip1.SetToolTip(this.button4, "Add Schedule Time");
@@ -195,9 +195,9 @@
             // 
             this.button5.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button5.Location = new System.Drawing.Point(242, 323);
+            this.button5.Location = new System.Drawing.Point(242, 340);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(189, 45);
+            this.button5.Size = new System.Drawing.Size(189, 30);
             this.button5.TabIndex = 31;
             this.button5.Text = "COPY EVENT";
             this.toolTip1.SetToolTip(this.button5, "Copy Event");
@@ -208,9 +208,9 @@
             // 
             this.button6.Font = new System.Drawing.Font("Copperplate Gothic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.button6.Location = new System.Drawing.Point(242, 382);
+            this.button6.Location = new System.Drawing.Point(242, 380);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(189, 45);
+            this.button6.Size = new System.Drawing.Size(189, 31);
             this.button6.TabIndex = 32;
             this.button6.Text = "EDIT EVENT";
             this.toolTip1.SetToolTip(this.button6, "Edit Event");
