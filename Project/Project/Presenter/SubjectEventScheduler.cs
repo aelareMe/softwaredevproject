@@ -22,7 +22,11 @@ namespace Project.Presenter
 
         DataTable studyProgress = new DataTable();
 
-
+        public ISubjectEventScheduler copy_date
+        {
+            get { return iSubjectEventScheduler; }
+            set { value = iSubjectEventScheduler; }
+        }
         public SubjectEventScheduler(ISubjectEventScheduler iSubjectEventScheduler) {
             this.iSubjectEventScheduler = iSubjectEventScheduler;
         }
@@ -104,7 +108,6 @@ namespace Project.Presenter
             }
 
         }
-
         public void addEvent(DateTime selectedDate,string eventName, 
             int eventType,int numberOfDaysAccomplish ,int numberOfSessionsDay) {
             int selectedSubjectID =Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());     
@@ -114,7 +117,7 @@ namespace Project.Presenter
             if (response.Rows.Count > 0)
             {
                 MessageBox.Show("Success Adding Event");
-            }       
+            }
         }
 
 
@@ -137,7 +140,7 @@ namespace Project.Presenter
                     "-" + selectedDate.Date.Day.ToString();
             return strBuildDate;
         }
-
+        public DataTable copy;
         public void loadStudyTime() {
 
           int selectedSubjectID = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());
@@ -151,7 +154,7 @@ namespace Project.Presenter
                     dc.Visible = false;
                 }
             }
-
+            copy = response;
         }
 
         public void submitScheduledTime(int studyDetailsId, DateTime selectedDate) {
@@ -187,12 +190,7 @@ namespace Project.Presenter
       
                 object[] temp = new object[] { date.ToString("hh:mm tt"), percent };
                 dtg.Rows.Add(temp);
-
             }
-
-      
-
-
         }
 
 

@@ -9,12 +9,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
+        SubjectEventScheduler schedule;
 
         UserInfObject _userInfObject;
 
@@ -22,6 +24,9 @@ namespace Project.View
         int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
+
+        System.Timers.Timer timer;
+
         public MainPage(UserInfObject _userInfObject)
         {
             InitializeComponent();
@@ -29,7 +34,9 @@ namespace Project.View
             this._userInfObject = _userInfObject;
 
             presenter.loadSubjectsAsync();
+
             presenter.scheduledSubjectToday();
+
         }
 
         public MainPage MainPage1
