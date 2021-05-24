@@ -29,6 +29,7 @@ namespace Project.View
             this._userInfObject = _userInfObject;
 
             presenter.loadSubjectsAsync();
+            presenter.scheduledSubjectToday();
         }
 
         public MainPage MainPage1
