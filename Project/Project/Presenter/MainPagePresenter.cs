@@ -59,8 +59,7 @@ namespace Project.Presenter
 
         public async void loadSubjectsAsync()
         {
-            Task[] task1 = { asyncUpcommingvents(),
-                            asyncLoadAllMainPageSubjects()
+            Task[] task1 = {  asyncLoadAllMainPageSubjects()
                            };
 
            Task[] task2 = { asyncScheduledWithinTimeFrame() };
@@ -124,8 +123,6 @@ namespace Project.Presenter
             {
                 DataTable scheduledEvents = 
                 subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
-                iMainPage.lblUpComingEvents.Text = scheduledEvents.Rows.Count.ToString();
-
 
                 await Task.Delay(60000);
             }
