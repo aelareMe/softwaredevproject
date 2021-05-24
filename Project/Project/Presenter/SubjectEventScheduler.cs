@@ -22,7 +22,11 @@ namespace Project.Presenter
 
         DataTable studyProgress = new DataTable();
 
-
+        public ISubjectEventScheduler copy_date
+        {
+            get { return iSubjectEventScheduler; }
+            set { value = iSubjectEventScheduler; }
+        }
         public SubjectEventScheduler(ISubjectEventScheduler iSubjectEventScheduler) {
             this.iSubjectEventScheduler = iSubjectEventScheduler;
         }
@@ -38,62 +42,72 @@ namespace Project.Presenter
         public void showAddEvent() {
             AddEvent aE = new AddEvent(iSubjectEventScheduler);
             aE.ShowDialog();
+        }
+
+        public void showAddEvent(DataRow dr)
+        {
+            AddEvent aE = new AddEvent(iSubjectEventScheduler, dr);
+            aE.ShowDialog();
 
         }
 
         public void showCopyEvent(List<DataRow> listDr)
         {
-            int removeIndex = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString())-1;
-            DataTable copyDt = subjectList.Copy();
-            copyDt.Rows.RemoveAt(removeIndex);
-            CopyEvent cE = new CopyEvent(copyDt);
-            cE.ShowDialog();
-            int selctedId = 0;
-            if (cE.DialogResult == DialogResult.OK) {
-                selctedId = cE.selectedId;
-                try
+            int removeIndex = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedIndex.ToString());
+            if (removeIndex != -1)
+            {
+                DataTable copyDt = subjectList.Copy();
+                copyDt.Rows.RemoveAt(removeIndex);
+                CopyEvent cE = new CopyEvent(copyDt);
+                cE.ShowDialog();
+                int selctedId = 0;
+                if (cE.DialogResult == DialogResult.OK)
                 {
-                    foreach (DataRow drStudies in listDr)
+                    selctedId = cE.selectedId;
+                    try
                     {
-                        int studyDetailsId = Int32.Parse(drStudies["study_details_id"].ToString());
-
-
-                        string studyDetailsDescription = drStudies["Description"].ToString();
-                        string studyDetailsSchedDate = drStudies["Scheduled Date"].ToString();
-                        string strBuildDate = buildDate(DateTime.Parse(studyDetailsSchedDate));
-                        int studyDetailsDaysAccomplish =
-                            Int32.Parse(drStudies["No of Days To Accomplish"].ToString());
-                        int studyDetailsNoSessions = Int32.Parse(drStudies["No of Sessions Per Day"].ToString());
-                        int type =
-                          Int32.Parse(drStudies["_type"].ToString());
-
-                        DataTable dtNewScheduledStudy =   model.AddEventToSubject(selctedId,
-                        strBuildDate, studyDetailsDescription, type, studyDetailsDaysAccomplish, studyDetailsNoSessions);
-
-                        if (dtNewScheduledStudy.Rows.Count > 0)
+                        foreach (DataRow drStudies in listDr)
                         {
-                            int newScheduledId = Int32.Parse(dtNewScheduledStudy.Rows[0]["study_details_id"].ToString());
+                            int studyDetailsId = Int32.Parse(drStudies["study_details_id"].ToString());
 
-                            DataTable dtProgress = model.GettStudyProgress(studyDetailsId);
-                            foreach (DataRow dr in dtProgress.Rows)
+
+                            string studyDetailsDescription = drStudies["Description"].ToString();
+                            string studyDetailsSchedDate = drStudies["Scheduled Date"].ToString();
+                            string strBuildDate = buildDate(DateTime.Parse(studyDetailsSchedDate));
+                            int studyDetailsDaysAccomplish =
+                                Int32.Parse(drStudies["No of Days To Accomplish"].ToString());
+                            int studyDetailsNoSessions = Int32.Parse(drStudies["No of Sessions Per Day"].ToString());
+                            int type =
+                              Int32.Parse(drStudies["_type"].ToString());
+
+                            DataTable dtNewScheduledStudy = model.AddEventToSubject(selctedId,
+                            strBuildDate, studyDetailsDescription, type, studyDetailsDaysAccomplish, studyDetailsNoSessions);
+
+                            if (dtNewScheduledStudy.Rows.Count > 0)
                             {
-                                string scheduleTime = dr["Scheduled Time"].ToString();
-                                model.InsertStudyProgress(newScheduledId, scheduleTime);
+                                int newScheduledId = Int32.Parse(dtNewScheduledStudy.Rows[0]["study_details_id"].ToString());
+
+                                DataTable dtProgress = model.GettStudyProgress(studyDetailsId);
+                                foreach (DataRow dr in dtProgress.Rows)
+                                {
+                                    string scheduleTime = dr["Scheduled Time"].ToString();
+                                    model.InsertStudyProgress(newScheduledId, scheduleTime);
+                                }
                             }
                         }
+
+                        MessageBox.Show("Success");
                     }
 
-                    MessageBox.Show("Success");
-                }
+                    catch (Exception e)
+                    {
 
-                catch (Exception e) {
-                    
-                }
+                    }
 
+                }
             }
 
         }
-
         public void addEvent(DateTime selectedDate,string eventName, 
             int eventType,int numberOfDaysAccomplish ,int numberOfSessionsDay) {
             int selectedSubjectID =Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());     
@@ -103,7 +117,21 @@ namespace Project.Presenter
             if (response.Rows.Count > 0)
             {
                 MessageBox.Show("Success Adding Event");
-            }       
+            }
+        }
+
+
+        public void updateEvent(DateTime selectedDate, string eventName,
+         int eventType, int numberOfDaysAccomplish, int numberOfSessionsDay,int studyDetailsId)
+        {
+      
+            string strBuildDate = buildDate(selectedDate);
+            DataTable response = model.UpdateEvent(studyDetailsId,
+                strBuildDate, eventName, eventType, numberOfDaysAccomplish, numberOfSessionsDay);
+            if (response.Rows.Count > 0)
+            {
+                MessageBox.Show("Success Updating Event");
+            }
         }
 
         public string buildDate(DateTime selectedDate) {
@@ -112,8 +140,9 @@ namespace Project.Presenter
                     "-" + selectedDate.Date.Day.ToString();
             return strBuildDate;
         }
-
+        public DataTable copy;
         public void loadStudyTime() {
+
           int selectedSubjectID = Int32.Parse(iSubjectEventScheduler.cmbSubjectList.SelectedValue.ToString());
           DataTable response = model.LoadSubjectStudyTime(selectedSubjectID);
           iSubjectEventScheduler.dtEventList = response;
@@ -125,7 +154,7 @@ namespace Project.Presenter
                     dc.Visible = false;
                 }
             }
-
+            copy = response;
         }
 
         public void submitScheduledTime(int studyDetailsId, DateTime selectedDate) {
@@ -161,12 +190,7 @@ namespace Project.Presenter
       
                 object[] temp = new object[] { date.ToString("hh:mm tt"), percent };
                 dtg.Rows.Add(temp);
-
             }
-
-      
-
-
         }
 
 
@@ -190,6 +214,10 @@ namespace Project.Presenter
 
             }
 
+        }
+
+        public int getSubjectListSize() {
+            return subjectList.Rows.Count;
         }
 
     }

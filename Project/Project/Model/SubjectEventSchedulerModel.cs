@@ -95,6 +95,35 @@ namespace Project.Model
         }
 
 
+        public DataTable UpdateEvent(int studyDetailsId, string timeStart,
+             string eventName, int eventType, int numberOfDaysAccomplish, int numberOfSessionsDay)
+        {
+
+            string sql = "Update schedule_study set no_days_accomplish = "+ numberOfDaysAccomplish + ", " +
+                " no_sessions_day = "+ numberOfSessionsDay + " , type = "+ eventType + ", " +
+                "study_description  = '"+ eventName + "' , time_start  = '"+ timeStart + "' " +
+                "where study_details_id = "+ studyDetailsId + "  RETURNING * ";
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
+
 
         public DataTable LoadSubjectStudyTime(int studyID)
         {
@@ -161,6 +190,38 @@ namespace Project.Model
 
         }
 
+        public DataTable GetDateStudy(int userID)
+        {
+
+            string sql = "SELECT schedule_study.time_start::date as \"Scheduled Date\", " +
+                         "subject.study_name  as \"Subject Name\" , study_progress.study_time as \"Study Time\"  " +
+                          "from schedule_study "+
+                          "INNER JOIN subject  on schedule_study.study_id = subject.study_id  " +
+                          "INNER JOIN user_info  on subject.user_id = user_info.user_id   " +
+                          "INNER JOIN study_progress on schedule_study.study_details_id  = study_progress.study_details_id " +
+                          "where user_info.user_id = " + userID + "";
+        
+
+            DataTable dt = new DataTable();
+            trans.OpenConnection();
+            trans.startTransaction();
+            try
+            {
+
+                dt = trans.Datasource(sql);
+                trans.commitQuery();
+                trans.closeTransaction();
+            }
+            catch (Exception e)
+            {
+                trans.closeTransaction();
+                MessageBox.Show(e.Message);
+            }
+
+            return dt;
+
+        }
+
         public DataTable GetPercentsPerType(int userID) {
 
             string sql = "Select subject.study_name as \"Subject Code\", "+
@@ -182,7 +243,8 @@ namespace Project.Model
                          "group by typee) as \"ctr\" on schedule_study.type = ctr.typee " +
                          "group by schedule_study.study_details_id, schedule_study.type) as s1 " +
                          "on schedule_study.study_details_id = s1.study_details_id " +
-                         "WHERE user_info.user_id = "+ userID + "";
+                         "WHERE user_info.user_id = "+ userID + ""+
+                         "order by \"Total Percent\"  DESC";
             DataTable dt = new DataTable();
             trans.OpenConnection();
             trans.startTransaction();

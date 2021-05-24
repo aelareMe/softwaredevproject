@@ -105,6 +105,8 @@ namespace Project.View
                 if (subject_list_view.FocusedItem.Index == 0)
                 {
                     add_subject_panel.Visible = true;
+                    add_Subject_limiter.Value = subject_list_view.Items.Count;
+                    view_subject_details.Visible = false;
                 }
                 else if(subject_list_view.FocusedItem.Index >=1)
                 {
@@ -123,8 +125,10 @@ namespace Project.View
         private void add_subject_btn_Click(object sender, EventArgs e)
         {
         }
+        
         private void add_btn_Click(object sender, EventArgs e)
         {
+            bool same = false;
             if (add_Subject_limiter.MaxValue > Subject.Count)
             {
                 if (SubjectCode_txt.Text == "")
@@ -133,8 +137,22 @@ namespace Project.View
                 }
                 else
                 {
-                    presenter.AddSubject();
-                    loadSubjects();
+                    for (int x = 0; x < subject_list_view.Items.Count; x++)
+                    {
+                        if (subject_list_view.Items[x].Text == SubjectCode_txt.Text) 
+                        {
+                            same = true;
+                        }
+                    }
+                    if (same == false)
+                    {
+                        presenter.AddSubject();
+                        loadSubjects();
+                    }
+                    else if (same == true)
+                    {
+                        MessageBox.Show("Subject Code has same value!!  ");
+                    }
                 }
             }
             else 
@@ -216,7 +234,7 @@ namespace Project.View
             subject_list_view.Items[subject_list_view.FocusedItem.Index].Text = edit_subject_code.Text;
             Subject.ElementAt(_selectedIndex - 1).Subject_Code = edit_subject_code.Text;
             Subject.ElementAt(_selectedIndex - 1).Subject_Description = edit_subject_description.Text;
-            subjectCode = edit_subject_description.Text;
+            subjectCode = edit_subject_code.Text;
             subjectDescription = edit_subject_description.Text;
             presenter.updateSubject();
             edit_subject_panel.Visible = false;

@@ -43,7 +43,7 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            presenter.startLogin();
+            presenter.startLogin(); //////
         }
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -54,6 +54,11 @@ namespace Project
         private void minimize_btn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

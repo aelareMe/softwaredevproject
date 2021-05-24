@@ -16,8 +16,6 @@ namespace Project.Interface
 
         DataGridView eventList { get; set; }
 
-        Label lblUpComingEvents { get; set; }
-
         Label lblSubjectsEnrolled { get; set; }
 
         int minuteRange { get; set; }

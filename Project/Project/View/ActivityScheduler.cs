@@ -22,6 +22,8 @@ namespace Project
         SubjectEventScheduler presenter;
         DataTable _dtEventList = new DataTable();
 
+        bool _isAddEventMode = true;
+
         public ActSched(UserInfObject _userInfObject)
         {
             this._userInfObject = _userInfObject;
@@ -50,35 +52,52 @@ namespace Project
             set { _dtEventList = value; }
         }
 
+      
+        public bool isAddEventMode {
+            get { return _isAddEventMode; }
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (eventList.Rows.Count == 300){ //puno na ang events
-                MessageBox.Show("Maximum events reached.");
-            }
-            else
+            if (presenter.getSubjectListSize() > 0)
             {
-                presenter.showAddEvent();
+                if (eventList.Rows.Count == 300)
+                { //puno na ang events
+                    MessageBox.Show("Maximum events reached.");
+                }
+                else
+                {
+                    presenter.showAddEvent();
+                }
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            presenter.loadStudyTime();
-            numEvent.Text = eventList.Rows.Count.ToString() + "/300 Events"; //para ni sa number of events
+            if (presenter.getSubjectListSize() > 0)
+            {
+                presenter.loadStudyTime();
+                numEvent.Text = eventList.Rows.Count.ToString() + "/300 Events"; //para ni sa number of events
+            }
         }
 
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (eventList.Rows.Count > 0)
+            if (presenter.getSubjectListSize() > 0)
             {
-                DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
+                if (eventList.Rows.Count > 0)
+                {
+                    DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
 
-                presenter.deleteScheduledStudy(dr);
-                presenter.loadStudyTime();
-            }
-            else {
-                MessageBox.Show("Nothing to delete");
+                    presenter.deleteScheduledStudy(dr);
+                    presenter.loadStudyTime();
+                }
+                else
+                {
+                    MessageBox.Show("Nothing to delete");
+                }
             }
  
         }
@@ -114,6 +133,27 @@ namespace Project
             presenter.showCopyEvent(listDr);
 
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (presenter.getSubjectListSize() > 0)
+            {
+                DataRow dr = this.dtEventList.Rows[eventList.SelectedRows[0].Index];
+                _isAddEventMode = false;
+                presenter.showAddEvent(dr);
+            }
+
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

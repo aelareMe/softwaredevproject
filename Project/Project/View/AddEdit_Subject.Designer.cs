@@ -34,6 +34,7 @@ namespace Project.View
             this.add_subject_panel = new System.Windows.Forms.Panel();
             this.edit_subject_panel = new System.Windows.Forms.Panel();
             this.edit_cancel_btn = new System.Windows.Forms.Button();
+            this.edit_subject_code = new Project.CelearningTextbox();
             this.edit_subject_description = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,9 +43,8 @@ namespace Project.View
             this.adding_panel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.cancel_subjectAdd_btn = new System.Windows.Forms.Button();
+            this.SubjectCode_txt = new Project.CelearningTextbox();
             this.SubjectDescription_txt = new System.Windows.Forms.RichTextBox();
             this.add_subjectAdd_btn = new System.Windows.Forms.Button();
             this.add_Subject_limiter = new Bunifu.Framework.UI.BunifuCircleProgressbar();
@@ -56,21 +56,17 @@ namespace Project.View
             this.view_subject_panel = new System.Windows.Forms.Panel();
             this.view_subject_details = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.view_subject_desription = new System.Windows.Forms.TextBox();
             this.subjectCode_lbl = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.back_btn = new System.Windows.Forms.Button();
-            this.edit_subject_code = new Project.CelearningTextbox();
-            this.SubjectCode_txt = new Project.CelearningTextbox();
             this.search_txtbox = new Project.CelearningTextbox();
+            this.back_btn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.add_subject_panel.SuspendLayout();
             this.edit_subject_panel.SuspendLayout();
             this.adding_panel.SuspendLayout();
             this.view_subject_panel.SuspendLayout();
             this.view_subject_details.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // add_subject_panel
@@ -115,8 +111,21 @@ namespace Project.View
             this.edit_cancel_btn.TabIndex = 28;
             this.edit_cancel_btn.Text = "Cancel";
             this.edit_cancel_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.edit_cancel_btn, "Cancel");
             this.edit_cancel_btn.UseVisualStyleBackColor = false;
             this.edit_cancel_btn.Click += new System.EventHandler(this.edit_cancel_btn_Click);
+            // 
+            // edit_subject_code
+            // 
+            this.edit_subject_code.BackColor = System.Drawing.Color.Transparent;
+            this.edit_subject_code.Br = System.Drawing.Color.White;
+            this.edit_subject_code.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_code.ForeColor = System.Drawing.Color.Black;
+            this.edit_subject_code.Location = new System.Drawing.Point(210, 13);
+            this.edit_subject_code.Name = "edit_subject_code";
+            this.edit_subject_code.Size = new System.Drawing.Size(210, 34);
+            this.edit_subject_code.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.edit_subject_code, "Subject Code");
             // 
             // edit_subject_description
             // 
@@ -127,6 +136,7 @@ namespace Project.View
             this.edit_subject_description.Size = new System.Drawing.Size(478, 308);
             this.edit_subject_description.TabIndex = 26;
             this.edit_subject_description.Text = "";
+            this.toolTip1.SetToolTip(this.edit_subject_description, "Subject Description");
             // 
             // label4
             // 
@@ -155,7 +165,7 @@ namespace Project.View
             this.edit_subject_edit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
             this.edit_subject_edit_btn.FlatAppearance.BorderSize = 0;
             this.edit_subject_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit_subject_edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_subject_edit_btn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_subject_edit_btn.ForeColor = System.Drawing.Color.Black;
             this.edit_subject_edit_btn.Location = new System.Drawing.Point(479, 374);
             this.edit_subject_edit_btn.Name = "edit_subject_edit_btn";
@@ -163,6 +173,7 @@ namespace Project.View
             this.edit_subject_edit_btn.TabIndex = 12;
             this.edit_subject_edit_btn.Text = "EDIT";
             this.edit_subject_edit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.edit_subject_edit_btn, "Edit Subject");
             this.edit_subject_edit_btn.UseVisualStyleBackColor = false;
             this.edit_subject_edit_btn.Click += new System.EventHandler(this.edit_subject_edit_btn_Click);
             // 
@@ -183,13 +194,11 @@ namespace Project.View
             this.adding_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.adding_panel.Controls.Add(this.label1);
             this.adding_panel.Controls.Add(this.label3);
-            this.adding_panel.Controls.Add(this.button2);
-            this.adding_panel.Controls.Add(this.button1);
             this.adding_panel.Controls.Add(this.cancel_subjectAdd_btn);
             this.adding_panel.Controls.Add(this.SubjectCode_txt);
             this.adding_panel.Controls.Add(this.SubjectDescription_txt);
             this.adding_panel.Controls.Add(this.add_subjectAdd_btn);
-            this.adding_panel.Location = new System.Drawing.Point(175, 29);
+            this.adding_panel.Location = new System.Drawing.Point(205, 10);
             this.adding_panel.Name = "adding_panel";
             this.adding_panel.Size = new System.Drawing.Size(500, 400);
             this.adding_panel.TabIndex = 3;
@@ -216,36 +225,6 @@ namespace Project.View
             this.label3.TabIndex = 31;
             this.label3.Text = "Subject Code:";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(67, 196);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 58);
-            this.button2.TabIndex = 30;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(67, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 58);
-            this.button1.TabIndex = 29;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // cancel_subjectAdd_btn
             // 
             this.cancel_subjectAdd_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
@@ -259,8 +238,21 @@ namespace Project.View
             this.cancel_subjectAdd_btn.TabIndex = 28;
             this.cancel_subjectAdd_btn.Text = "Cancel";
             this.cancel_subjectAdd_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.cancel_subjectAdd_btn, "Cancel ");
             this.cancel_subjectAdd_btn.UseVisualStyleBackColor = false;
             this.cancel_subjectAdd_btn.Click += new System.EventHandler(this.cancel_btn_Click_1);
+            // 
+            // SubjectCode_txt
+            // 
+            this.SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
+            this.SubjectCode_txt.Br = System.Drawing.Color.White;
+            this.SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
+            this.SubjectCode_txt.Location = new System.Drawing.Point(184, 9);
+            this.SubjectCode_txt.Name = "SubjectCode_txt";
+            this.SubjectCode_txt.Size = new System.Drawing.Size(208, 34);
+            this.SubjectCode_txt.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.SubjectCode_txt, "Subject Code");
             // 
             // SubjectDescription_txt
             // 
@@ -271,6 +263,7 @@ namespace Project.View
             this.SubjectDescription_txt.Size = new System.Drawing.Size(291, 260);
             this.SubjectDescription_txt.TabIndex = 26;
             this.SubjectDescription_txt.Text = "";
+            this.toolTip1.SetToolTip(this.SubjectDescription_txt, "Subject Description");
             // 
             // add_subjectAdd_btn
             // 
@@ -285,6 +278,7 @@ namespace Project.View
             this.add_subjectAdd_btn.TabIndex = 12;
             this.add_subjectAdd_btn.Text = "Add";
             this.add_subjectAdd_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.add_subjectAdd_btn, "Add Subject");
             this.add_subjectAdd_btn.UseVisualStyleBackColor = false;
             this.add_subjectAdd_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
@@ -320,11 +314,12 @@ namespace Project.View
             this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_btn.ForeColor = System.Drawing.Color.Black;
             this.delete_btn.Image = ((System.Drawing.Image)(resources.GetObject("delete_btn.Image")));
-            this.delete_btn.Location = new System.Drawing.Point(633, 372);
+            this.delete_btn.Location = new System.Drawing.Point(633, 360);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(55, 58);
             this.delete_btn.TabIndex = 41;
             this.delete_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.delete_btn, "Remove Subject");
             this.delete_btn.UseVisualStyleBackColor = false;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
@@ -336,11 +331,12 @@ namespace Project.View
             this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_btn.ForeColor = System.Drawing.Color.Black;
             this.edit_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_btn.Image")));
-            this.edit_btn.Location = new System.Drawing.Point(559, 374);
+            this.edit_btn.Location = new System.Drawing.Point(559, 364);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(55, 58);
             this.edit_btn.TabIndex = 37;
             this.edit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.edit_btn, "Edit Subject");
             this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
@@ -351,7 +347,7 @@ namespace Project.View
             this.subject_list_view.ForeColor = System.Drawing.Color.White;
             this.subject_list_view.HideSelection = false;
             this.subject_list_view.LargeImageList = this.icon_list;
-            this.subject_list_view.Location = new System.Drawing.Point(9, 72);
+            this.subject_list_view.Location = new System.Drawing.Point(9, 61);
             this.subject_list_view.Name = "subject_list_view";
             this.subject_list_view.Size = new System.Drawing.Size(711, 338);
             this.subject_list_view.SmallImageList = this.icon_list;
@@ -379,6 +375,7 @@ namespace Project.View
             this.Search_btn.Size = new System.Drawing.Size(42, 44);
             this.Search_btn.TabIndex = 36;
             this.Search_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Search_btn, "Search Subject");
             this.Search_btn.UseVisualStyleBackColor = false;
             this.Search_btn.Click += new System.EventHandler(this.Search_btn_Click);
             // 
@@ -404,12 +401,10 @@ namespace Project.View
             this.view_subject_details.AutoScroll = true;
             this.view_subject_details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
             this.view_subject_details.Controls.Add(this.label7);
-            this.view_subject_details.Controls.Add(this.label8);
-            this.view_subject_details.Controls.Add(this.dataGridView1);
             this.view_subject_details.Controls.Add(this.view_subject_desription);
             this.view_subject_details.Controls.Add(this.subjectCode_lbl);
             this.view_subject_details.Controls.Add(this.label6);
-            this.view_subject_details.Location = new System.Drawing.Point(379, 72);
+            this.view_subject_details.Location = new System.Drawing.Point(379, 62);
             this.view_subject_details.Name = "view_subject_details";
             this.view_subject_details.Size = new System.Drawing.Size(341, 293);
             this.view_subject_details.TabIndex = 39;
@@ -425,32 +420,13 @@ namespace Project.View
             this.label7.TabIndex = 44;
             this.label7.Text = "Subject Code:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(16, 202);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 26);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Activities:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(260, 210);
-            this.dataGridView1.TabIndex = 42;
-            // 
             // view_subject_desription
             // 
             this.view_subject_desription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
             this.view_subject_desription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.view_subject_desription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.view_subject_desription.ForeColor = System.Drawing.Color.White;
-            this.view_subject_desription.Location = new System.Drawing.Point(36, 77);
+            this.view_subject_desription.Location = new System.Drawing.Point(36, 76);
             this.view_subject_desription.Multiline = true;
             this.view_subject_desription.Name = "view_subject_desription";
             this.view_subject_desription.ReadOnly = true;
@@ -478,44 +454,6 @@ namespace Project.View
             this.label6.TabIndex = 24;
             this.label6.Text = "Description:";
             // 
-            // back_btn
-            // 
-            this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
-            this.back_btn.FlatAppearance.BorderSize = 0;
-            this.back_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back_btn.ForeColor = System.Drawing.Color.Black;
-            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
-            this.back_btn.Location = new System.Drawing.Point(415, 372);
-            this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(65, 55);
-            this.back_btn.TabIndex = 40;
-            this.back_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.back_btn.UseVisualStyleBackColor = false;
-            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
-            // 
-            // edit_subject_code
-            // 
-            this.edit_subject_code.BackColor = System.Drawing.Color.Transparent;
-            this.edit_subject_code.Br = System.Drawing.Color.White;
-            this.edit_subject_code.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_subject_code.ForeColor = System.Drawing.Color.Black;
-            this.edit_subject_code.Location = new System.Drawing.Point(210, 13);
-            this.edit_subject_code.Name = "edit_subject_code";
-            this.edit_subject_code.Size = new System.Drawing.Size(210, 34);
-            this.edit_subject_code.TabIndex = 27;
-            // 
-            // SubjectCode_txt
-            // 
-            this.SubjectCode_txt.BackColor = System.Drawing.Color.Transparent;
-            this.SubjectCode_txt.Br = System.Drawing.Color.White;
-            this.SubjectCode_txt.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectCode_txt.ForeColor = System.Drawing.Color.Black;
-            this.SubjectCode_txt.Location = new System.Drawing.Point(184, 9);
-            this.SubjectCode_txt.Name = "SubjectCode_txt";
-            this.SubjectCode_txt.Size = new System.Drawing.Size(208, 34);
-            this.SubjectCode_txt.TabIndex = 27;
-            // 
             // search_txtbox
             // 
             this.search_txtbox.BackColor = System.Drawing.Color.Transparent;
@@ -526,7 +464,29 @@ namespace Project.View
             this.search_txtbox.Name = "search_txtbox";
             this.search_txtbox.Size = new System.Drawing.Size(208, 34);
             this.search_txtbox.TabIndex = 28;
+            this.toolTip1.SetToolTip(this.search_txtbox, "Search Subject");
             this.search_txtbox.TextChanged += new System.EventHandler(this.search_txtbox_TextChanged);
+            // 
+            // back_btn
+            // 
+            this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.back_btn.FlatAppearance.BorderSize = 0;
+            this.back_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back_btn.ForeColor = System.Drawing.Color.Black;
+            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.Location = new System.Drawing.Point(415, 361);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(65, 55);
+            this.back_btn.TabIndex = 40;
+            this.back_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.back_btn, "Full View Subject");
+            this.back_btn.UseVisualStyleBackColor = false;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
             // 
             // Adding_Subject
             // 
@@ -547,7 +507,6 @@ namespace Project.View
             this.view_subject_panel.ResumeLayout(false);
             this.view_subject_details.ResumeLayout(false);
             this.view_subject_details.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,8 +524,6 @@ namespace Project.View
         private System.Windows.Forms.RichTextBox SubjectDescription_txt;
         private CelearningTextbox SubjectCode_txt;
         private System.Windows.Forms.Button cancel_subjectAdd_btn;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private CelearningTextbox search_txtbox;
         private Bunifu.Framework.UI.BunifuCircleProgressbar add_Subject_limiter;
         private System.Windows.Forms.Label label2;
@@ -577,8 +534,6 @@ namespace Project.View
         private System.Windows.Forms.Panel view_subject_details;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label subjectCode_lbl;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox view_subject_desription;
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button delete_btn;
@@ -591,5 +546,6 @@ namespace Project.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

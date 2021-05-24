@@ -46,5 +46,22 @@ namespace Project.View
         {
             presenter.signup();
         }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Cancel_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login Login = new Login();
+            Login.Show();
+        }
     }
 }

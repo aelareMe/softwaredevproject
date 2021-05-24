@@ -9,20 +9,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace Project.View
 {
     public partial class MainPage : Form,IMainPage
     {
+        SubjectEventScheduler schedule;
 
         UserInfObject _userInfObject;
-
 
         int _minuteRange =1;
         int _minuteNotifyEvery = 1;
 
         MainPagePresenter presenter;
+
+        System.Timers.Timer timer;
 
         public MainPage(UserInfObject _userInfObject)
         {
@@ -31,8 +34,14 @@ namespace Project.View
             this._userInfObject = _userInfObject;
 
             presenter.loadSubjectsAsync();
-            txtMinuteRange.Text = _minuteRange.ToString();
-            textBox1.Text = _minuteNotifyEvery.ToString();
+
+            presenter.scheduledSubjectToday();
+
+        }
+
+        public MainPage MainPage1
+        {
+            get { return this;}
         }
         public UserInfObject userInfo {
             get { return _userInfObject; }
@@ -40,7 +49,6 @@ namespace Project.View
 
                 _userInfObject = value;
                 lblName.Text = _userInfObject.getName();
-
             }
         }
 
@@ -71,11 +79,7 @@ namespace Project.View
             get { return this; }
         }
 
-        Label IMainPage.lblUpComingEvents {
-            get { return this.lblUpComingEvent; }
-            set { this.lblUpComingEvent = value; }
-        }
-
+  
         Label IMainPage.lblSubjectsEnrolled {
             get { return this.lblSubjectsEnrolled; }
             set { this.lblSubjectsEnrolled = value; }
@@ -86,6 +90,7 @@ namespace Project.View
             set { this.contextMenuStrip1 = value; }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             presenter.showAddSubjects();
@@ -94,11 +99,6 @@ namespace Project.View
         private void button2_Click(object sender, EventArgs e)
         {
             presenter.ShowScheduleTime();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
         }
 
 
@@ -114,11 +114,6 @@ namespace Project.View
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            _minuteNotifyEvery = Int32.Parse(textBox1.Text.ToString());
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -149,6 +144,7 @@ namespace Project.View
             currentPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
         }
 
         private void edit_subject_btn_Click(object sender, EventArgs e)
@@ -156,8 +152,9 @@ namespace Project.View
             Adding_Subject Adding_Subject = new Adding_Subject(_userInfObject);
             openChildForm(Adding_Subject);
             edit_subject_btn.BackColor = Color.FromArgb(15, 39, 63);
-            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
+            Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
         private void addAcitivty_btn_Click(object sender, EventArgs e)
@@ -165,8 +162,9 @@ namespace Project.View
             ActSched ActSched = new ActSched(_userInfObject);
             openChildForm(ActSched);
             edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
-            Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(15, 39, 63);
+            Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
         private void Schedule_btn_Click(object sender, EventArgs e)
@@ -188,6 +186,29 @@ namespace Project.View
         {
             currentPanel.Hide();
             currentPanel.SendToBack();
+        }
+
+        private void Setting_btn_Click(object sender, EventArgs e)
+        {
+            Setting Setting = new Setting(userInfo,this);
+            openChildForm(Setting);
+            Setting_btn.BackColor = Color.FromArgb(15, 39, 63);
+            edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
+
+   
+        }
+
+        private void help_btn_Click(object sender, EventArgs e)
+        {
+            Help Help = new Help();
+            openChildForm(Help);
+            help_btn.BackColor = Color.FromArgb(15, 39, 63);
+            Setting_btn.BackColor = Color.FromArgb(11, 17, 31);
+            edit_subject_btn.BackColor = Color.FromArgb(11, 17, 31);
+            //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
+            addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
     }

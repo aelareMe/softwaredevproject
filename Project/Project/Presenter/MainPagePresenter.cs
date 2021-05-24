@@ -42,8 +42,8 @@ namespace Project.Presenter
         }
 
         public void showAddSubjects() {
-            Subject_Oversight open_add_subject = new Subject_Oversight(iMainPage.userInfo);
-            open_add_subject.Show();
+            //Subject_Oversight open_add_subject = new Subject_Oversight(iMainPage.userInfo);
+            //open_add_subject.Show();
         }
 
         public UserInfObject getUserObj() {
@@ -59,16 +59,19 @@ namespace Project.Presenter
 
         public async void loadSubjectsAsync()
         {
-            Task[] task1 = { asyncUpcommingvents(),
-                            asyncLoadAllMainPageSubjects(),
-                            getAllPercentage()
+            Task[] task1 = {  asyncLoadAllMainPageSubjects()
                            };
 
-              Task[] task2 = { asyncScheduledWithinTimeFrame() };
+           Task[] task2 = { asyncScheduledWithinTimeFrame() };
 
+
+            Task[] task3 = { getAllPercentage() };
+       
             await Task.WhenAll(task1);
             await Task.WhenAll(task2);
-    }
+            await Task.WhenAll(task3);
+
+        }
 
 
         public async Task asyncScheduledWithinTimeFrame()
@@ -113,7 +116,47 @@ namespace Project.Presenter
             }
         }
 
-  
+
+        public void scheduledSubjectToday()
+        {
+           
+                DataTable dt =
+                   subjModel.GetDateStudy(iMainPage.userInfo.getId());
+
+                foreach (DataRow dr in dt.Rows)
+                {
+
+                    string studyScheduleDate = dr["Scheduled Date"].ToString();
+                    string studyTime = dr["Study Time"].ToString();
+                    DateTime parseData = DateTime.Parse(studyScheduleDate);
+                    DateTime parseStudyTime = DateTime.Parse(studyTime);
+
+                    TimeSpan temp = parseData.Subtract(DateTime.Now);
+
+                    TimeSpan tem2= parseStudyTime.Subtract(DateTime.Now);
+                    int result = Convert.ToInt32(Math.Round(temp.TotalDays));
+                    int result2 = Math.Abs( Convert.ToInt32(Math.Round(Convert.ToDouble(temp.Hours))));
+                    if (result == 0 && result2>0)
+                    {
+                        string subjectCode = dr["Subject Name"].ToString();
+
+                        string strTitleBuild = "Subject Code: " + subjectCode;
+
+                        iMainPage.notifyIcon.
+                            ShowBalloonTip(1000, strTitleBuild,
+                            "Heads Up! today you have a scheduled study session for " + strTitleBuild + " ", ToolTipIcon.Info);
+
+                        if (iMainPage.mainpageForm.WindowState == FormWindowState.Minimized)
+                        {
+                            iMainPage.mainpageForm.Hide();
+                        }
+
+                    }
+
+                }
+            
+        }
+      
 
         public  async Task asyncUpcommingvents()
         {
@@ -121,8 +164,6 @@ namespace Project.Presenter
             {
                 DataTable scheduledEvents = 
                 subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
-                iMainPage.lblUpComingEvents.Text = scheduledEvents.Rows.Count.ToString();
-
 
                 await Task.Delay(60000);
             }
@@ -180,7 +221,7 @@ namespace Project.Presenter
                 }
         
                 //  iMainPage.eventList.DataSource = perEventPercentage;
-                await Task.Delay(60000);
+                await Task.Delay(10000);
             }
 
         }
@@ -193,8 +234,6 @@ namespace Project.Presenter
             ScheduleTime form = new ScheduleTime(scheduler,dr);
             form.Show();
         }
-
-
 
     }
 }
