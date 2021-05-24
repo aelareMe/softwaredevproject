@@ -29,8 +29,6 @@ namespace Project.View
             this._userInfObject = _userInfObject;
 
             presenter.loadSubjectsAsync();
-            txtMinuteRange.Text = _minuteRange.ToString();
-            textBox1.Text = _minuteNotifyEvery.ToString();
         }
 
         public MainPage MainPage1
@@ -73,11 +71,7 @@ namespace Project.View
             get { return this; }
         }
 
-        Label IMainPage.lblUpComingEvents {
-            get { return this.lblUpComingEvent; }
-            set { this.lblUpComingEvent = value; }
-        }
-
+  
         Label IMainPage.lblSubjectsEnrolled {
             get { return this.lblSubjectsEnrolled; }
             set { this.lblSubjectsEnrolled = value; }
@@ -99,11 +93,6 @@ namespace Project.View
             presenter.ShowScheduleTime();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            _minuteRange = Int32.Parse(txtMinuteRange.Text.ToString());
-        }
-
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -117,11 +106,6 @@ namespace Project.View
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            _minuteNotifyEvery = Int32.Parse(textBox1.Text.ToString());
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -218,5 +202,6 @@ namespace Project.View
             //Schedule_btn.BackColor = Color.FromArgb(11, 17, 31);
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
+
     }
 }

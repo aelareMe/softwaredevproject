@@ -7,7 +7,7 @@
     <ProjectGuid>{F27A2E80-F827-416B-99F6-B19ED18FB70B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Project</RootNamespace>
-    <AssemblyName>Project</AssemblyName>
+    <AssemblyName>Oversight</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -59,19 +59,21 @@ namespace Project.Presenter
 
         public async void loadSubjectsAsync()
         {
-            Task[] task1 = { asyncUpcommingvents(),
-                            asyncLoadAllMainPageSubjects()
+            Task[] task1 = {  asyncLoadAllMainPageSubjects()
                            };
 
            Task[] task2 = { asyncScheduledWithinTimeFrame() };
 
+
             Task[] task3 = { getAllPercentage() };
+            Task[] task4 = { asyncScheduledSubjectToday() };
 
             await Task.WhenAll(task1);
             await Task.WhenAll(task2);
             await Task.WhenAll(task3);
+            await Task.WhenAll(task4);
 
-    }
+        }
 
 
         public async Task asyncScheduledWithinTimeFrame()
@@ -116,7 +118,50 @@ namespace Project.Presenter
             }
         }
 
-  
+
+        public async Task asyncScheduledSubjectToday()
+        {
+            while (true)
+            {
+                DataTable dt =
+                   subjModel.GetDateStudy(iMainPage.userInfo.getId());
+
+                foreach (DataRow dr in dt.Rows)
+                {
+
+                    string studyScheduleDate = dr["Scheduled Date"].ToString();
+                    string studyTime = dr["Study Time"].ToString();
+                    DateTime parseData = DateTime.Parse(studyScheduleDate);
+                    DateTime parseStudyTime = DateTime.Parse(studyTime);
+
+                    TimeSpan temp = parseData.Subtract(DateTime.Now);
+
+                    TimeSpan tem2= parseStudyTime.Subtract(DateTime.Now);
+                    int result = Convert.ToInt32(Math.Round(temp.TotalDays));
+                    int result2 = Math.Abs( Convert.ToInt32(Math.Round(Convert.ToDouble(temp.Hours))));
+                    if (result == 0 && result2>0)
+                    {
+                        string subjectCode = dr["Subject Name"].ToString();
+
+                        string strTitleBuild = "Subject Code: " + subjectCode;
+
+                        iMainPage.notifyIcon.
+                            ShowBalloonTip(1000, strTitleBuild,
+                            "Heads Up! today you have a scheduled study session for " + strTitleBuild + " ", ToolTipIcon.Info);
+
+                        if (iMainPage.mainpageForm.WindowState == FormWindowState.Minimized)
+                        {
+                            iMainPage.mainpageForm.Hide();
+                        }
+
+                    }
+
+
+                }
+                await Task.Delay(60000);
+            }
+        }
+      
 
         public  async Task asyncUpcommingvents()
         {
@@ -124,8 +169,6 @@ namespace Project.Presenter
             {
                 DataTable scheduledEvents = 
                 subjModel.GetScheduledStudy(iMainPage.userInfo.getId(), iMainPage.minuteRange.ToString());
-                iMainPage.lblUpComingEvents.Text = scheduledEvents.Rows.Count.ToString();
-
 
                 await Task.Delay(60000);
             }

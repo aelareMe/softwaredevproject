@@ -29,6 +29,7 @@ namespace Project
             presenter = new SubjectEventScheduler(iSubjectEventScheduler);
             InitializeComponent();
             setUpCmbDtp();
+            printTimeSpan();
             btnEnableEdit.Visible = false;
         }
 
@@ -136,6 +137,21 @@ namespace Project
         {
             isEditClicked = !isEditClicked;
             isItemsDisable();
+        }
+
+        private void eventDate_ValueChanged(object sender, EventArgs e)
+        {
+            printTimeSpan() ;
+        }
+
+        private void printTimeSpan() {
+            TimeSpan temp = eventDate.Value.Date.Subtract(DateTime.Now);
+            int result = Convert.ToInt32(Math.Round(temp.TotalDays));
+            if (result <= 0)
+            {
+                result = 0;
+            }
+            days2Accomplish.Text = result.ToString();
         }
     }
 }
