@@ -173,7 +173,7 @@
             this.txtMinuteRange.Name = "txtMinuteRange";
             this.txtMinuteRange.Size = new System.Drawing.Size(76, 20);
             this.txtMinuteRange.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.txtMinuteRange, "Notify Schedule Every");
+            this.toolTip1.SetToolTip(this.txtMinuteRange, "Set your desired time to be notified on your set study sessions (in mins)");
             // 
             // label6
             // 
@@ -236,7 +236,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 21;
-            this.toolTip1.SetToolTip(this.textBox1, "Upcoming Event Range");
+            this.toolTip1.SetToolTip(this.textBox1, "Set your desired time to be notified before the actual event date (in hrs)");
             // 
             // dataGridView1
             // 
@@ -250,7 +250,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 116);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 116);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -338,7 +338,7 @@
             this.button5.Size = new System.Drawing.Size(155, 42);
             this.button5.TabIndex = 29;
             this.button5.Text = "See Detailed Progress";
-            this.toolTip1.SetToolTip(this.button5, "See Detailed Progress");
+            this.toolTip1.SetToolTip(this.button5, "Set your study sessions and study progress");
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
