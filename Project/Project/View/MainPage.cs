@@ -37,6 +37,7 @@ namespace Project.View
 
             presenter.scheduledSubjectToday();
 
+
         }
 
         public MainPage MainPage1
@@ -211,5 +212,9 @@ namespace Project.View
             addAcitivty_btn.BackColor = Color.FromArgb(11, 17, 31);
         }
 
+        private void currentPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
