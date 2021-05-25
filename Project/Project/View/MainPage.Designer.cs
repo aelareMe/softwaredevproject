@@ -30,10 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblSubjectsEnrolled = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -43,6 +41,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.currentPanel = new System.Windows.Forms.Panel();
+            this.lblSubjectsEnrolled = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.minmize = new System.Windows.Forms.Button();
@@ -63,7 +63,6 @@
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
-            this.currentPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -72,25 +71,15 @@
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.label1.Location = new System.Drawing.Point(20, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Subjects Enrolled:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(240, 64);
+            this.label3.Location = new System.Drawing.Point(180, 52);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 36);
+            this.label3.Size = new System.Drawing.Size(142, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "WELCOME:";
             // 
@@ -99,22 +88,11 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.lblName.Location = new System.Drawing.Point(453, 64);
+            this.lblName.Location = new System.Drawing.Point(340, 52);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 36);
+            this.lblName.Size = new System.Drawing.Size(0, 29);
             this.lblName.TabIndex = 6;
-            // 
-            // lblSubjectsEnrolled
-            // 
-            this.lblSubjectsEnrolled.AutoSize = true;
-            this.lblSubjectsEnrolled.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubjectsEnrolled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(188)))), ((int)(((byte)(222)))));
-            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(234, 32);
-            this.lblSubjectsEnrolled.Name = "lblSubjectsEnrolled";
-            this.lblSubjectsEnrolled.Size = new System.Drawing.Size(19, 20);
-            this.lblSubjectsEnrolled.TabIndex = 9;
-            this.lblSubjectsEnrolled.Text = "0";
-            this.toolTip1.SetToolTip(this.lblSubjectsEnrolled, "Subject Enrolled");
             // 
             // label2
             // 
@@ -122,9 +100,10 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
-            this.label2.Location = new System.Drawing.Point(145, 92);
+            this.label2.Location = new System.Drawing.Point(109, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 31);
+            this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Subject List";
             // 
@@ -140,14 +119,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 143);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 116);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(333, 240);
             this.dataGridView1.TabIndex = 24;
             this.toolTip1.SetToolTip(this.dataGridView1, "All Listed Subject");
             // 
@@ -158,18 +137,18 @@
             this.showToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 48);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.showToolStripMenuItem.Text = "Show";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // dataGridView2
@@ -183,15 +162,15 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(503, 143);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(377, 116);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(471, 295);
+            this.dataGridView2.Size = new System.Drawing.Size(353, 240);
             this.dataGridView2.TabIndex = 25;
             this.toolTip1.SetToolTip(this.dataGridView2, "Listed Activities");
             // 
@@ -203,10 +182,9 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.currentPanel);
-            this.panel1.Location = new System.Drawing.Point(221, 110);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(166, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(989, 528);
+            this.panel1.Size = new System.Drawing.Size(742, 429);
             this.panel1.TabIndex = 26;
             // 
             // button5
@@ -214,10 +192,10 @@
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(767, 462);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Location = new System.Drawing.Point(575, 375);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(207, 52);
+            this.button5.Size = new System.Drawing.Size(155, 42);
             this.button5.TabIndex = 29;
             this.button5.Text = "See Detailed Progress";
             this.toolTip1.SetToolTip(this.button5, "Set your study sessions and study progress");
@@ -226,25 +204,50 @@
             // 
             // currentPanel
             // 
-            this.currentPanel.Controls.Add(this.label1);
-            this.currentPanel.Controls.Add(this.lblSubjectsEnrolled);
             this.currentPanel.Location = new System.Drawing.Point(0, 0);
-            this.currentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.currentPanel.Name = "currentPanel";
-            this.currentPanel.Size = new System.Drawing.Size(991, 528);
+            this.currentPanel.Size = new System.Drawing.Size(743, 429);
             this.currentPanel.TabIndex = 30;
+            this.currentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.currentPanel_Paint);
+            // 
+            // lblSubjectsEnrolled
+            // 
+            this.lblSubjectsEnrolled.AutoSize = true;
+            this.lblSubjectsEnrolled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.lblSubjectsEnrolled.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubjectsEnrolled.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblSubjectsEnrolled.Location = new System.Drawing.Point(838, 55);
+            this.lblSubjectsEnrolled.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubjectsEnrolled.Name = "lblSubjectsEnrolled";
+            this.lblSubjectsEnrolled.Size = new System.Drawing.Size(24, 25);
+            this.lblSubjectsEnrolled.TabIndex = 31;
+            this.lblSubjectsEnrolled.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(139)))));
+            this.label1.Location = new System.Drawing.Point(646, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 25);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Subject Enrolled";
             // 
             // panel2
             // 
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.lblSubjectsEnrolled);
             this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1227, 652);
+            this.panel2.Size = new System.Drawing.Size(920, 530);
             this.panel2.TabIndex = 28;
             // 
             // panel3
@@ -253,10 +256,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.minmize);
             this.panel3.Controls.Add(this.clse);
-            this.panel3.Location = new System.Drawing.Point(221, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(166, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1005, 54);
+            this.panel3.Size = new System.Drawing.Size(754, 44);
             this.panel3.TabIndex = 30;
             // 
             // minmize
@@ -265,10 +267,9 @@
             this.minmize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minmize.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minmize.ForeColor = System.Drawing.Color.White;
-            this.minmize.Location = new System.Drawing.Point(869, 7);
-            this.minmize.Margin = new System.Windows.Forms.Padding(4);
+            this.minmize.Location = new System.Drawing.Point(652, 6);
             this.minmize.Name = "minmize";
-            this.minmize.Size = new System.Drawing.Size(55, 39);
+            this.minmize.Size = new System.Drawing.Size(41, 32);
             this.minmize.TabIndex = 29;
             this.minmize.Text = "___";
             this.toolTip1.SetToolTip(this.minmize, "Minimize");
@@ -283,11 +284,10 @@
             this.clse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clse.ForeColor = System.Drawing.Color.White;
-            this.clse.Location = new System.Drawing.Point(932, 7);
-            this.clse.Margin = new System.Windows.Forms.Padding(4);
+            this.clse.Location = new System.Drawing.Point(699, 6);
             this.clse.Name = "clse";
             this.clse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.clse.Size = new System.Drawing.Size(55, 39);
+            this.clse.Size = new System.Drawing.Size(41, 32);
             this.clse.TabIndex = 28;
             this.clse.Text = "X";
             this.toolTip1.SetToolTip(this.clse, "Close");
@@ -328,10 +328,9 @@
             this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.help_btn.ForeColor = System.Drawing.Color.White;
             this.help_btn.Image = ((System.Drawing.Image)(resources.GetObject("help_btn.Image")));
-            this.help_btn.Location = new System.Drawing.Point(0, 118);
-            this.help_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.help_btn.Location = new System.Drawing.Point(0, 96);
             this.help_btn.Name = "help_btn";
-            this.help_btn.Size = new System.Drawing.Size(167, 53);
+            this.help_btn.Size = new System.Drawing.Size(125, 43);
             this.help_btn.TabIndex = 14;
             this.help_btn.Text = "  Help";
             this.help_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -348,10 +347,9 @@
             this.edit_subject_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_subject_btn.ForeColor = System.Drawing.Color.White;
             this.edit_subject_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_subject_btn.Image")));
-            this.edit_subject_btn.Location = new System.Drawing.Point(0, 125);
-            this.edit_subject_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.edit_subject_btn.Location = new System.Drawing.Point(0, 102);
             this.edit_subject_btn.Name = "edit_subject_btn";
-            this.edit_subject_btn.Size = new System.Drawing.Size(167, 65);
+            this.edit_subject_btn.Size = new System.Drawing.Size(125, 53);
             this.edit_subject_btn.TabIndex = 9;
             this.edit_subject_btn.Text = "ADD SUBJECT";
             this.edit_subject_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -369,10 +367,9 @@
             this.Setting_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Setting_btn.ForeColor = System.Drawing.Color.White;
             this.Setting_btn.Image = ((System.Drawing.Image)(resources.GetObject("Setting_btn.Image")));
-            this.Setting_btn.Location = new System.Drawing.Point(0, 65);
-            this.Setting_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Setting_btn.Location = new System.Drawing.Point(0, 53);
             this.Setting_btn.Name = "Setting_btn";
-            this.Setting_btn.Size = new System.Drawing.Size(167, 53);
+            this.Setting_btn.Size = new System.Drawing.Size(125, 43);
             this.Setting_btn.TabIndex = 13;
             this.Setting_btn.Text = "  Setting";
             this.Setting_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -391,9 +388,8 @@
             this.addAcitivty_btn.Image = ((System.Drawing.Image)(resources.GetObject("addAcitivty_btn.Image")));
             this.addAcitivty_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addAcitivty_btn.Location = new System.Drawing.Point(0, 0);
-            this.addAcitivty_btn.Margin = new System.Windows.Forms.Padding(4);
             this.addAcitivty_btn.Name = "addAcitivty_btn";
-            this.addAcitivty_btn.Size = new System.Drawing.Size(167, 65);
+            this.addAcitivty_btn.Size = new System.Drawing.Size(125, 53);
             this.addAcitivty_btn.TabIndex = 12;
             this.addAcitivty_btn.Text = "ADD ACTIVITY";
             this.addAcitivty_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -404,10 +400,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(43, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(32, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(127, 94);
+            this.pictureBox2.Size = new System.Drawing.Size(95, 76);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
@@ -421,10 +416,9 @@
             this.panel5.Controls.Add(this.Setting_btn);
             this.panel5.Controls.Add(this.addAcitivty_btn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 190);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(0, 155);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(167, 195);
+            this.panel5.Size = new System.Drawing.Size(125, 158);
             this.panel5.TabIndex = 11;
             // 
             // panel4
@@ -435,9 +429,8 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(167, 652);
+            this.panel4.Size = new System.Drawing.Size(125, 530);
             this.panel4.TabIndex = 29;
             // 
             // panel6
@@ -446,22 +439,21 @@
             this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(167, 125);
+            this.panel6.Size = new System.Drawing.Size(125, 102);
             this.panel6.TabIndex = 7;
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1227, 652);
+            this.ClientSize = new System.Drawing.Size(920, 530);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
@@ -470,8 +462,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.currentPanel.ResumeLayout(false);
-            this.currentPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -485,10 +475,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblSubjectsEnrolled;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         //private System.Windows.Forms.NotifyIcon notifyIcon1;
@@ -515,5 +503,7 @@
         private System.Windows.Forms.Button edit_subject_btn;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblSubjectsEnrolled;
+        private System.Windows.Forms.Label label1;
     }
 }
